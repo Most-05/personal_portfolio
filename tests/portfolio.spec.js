@@ -65,4 +65,20 @@ test.describe('Portfolio Website Tests', () => {
         await contact.scrollIntoViewIfNeeded();
         await expect(contact).toBeVisible();
     });
+
+    test('Language Switcher: should toggle between EN and TH', async ({ page }) => {
+        await page.goto(indexPath);
+        
+        // Initial language is EN
+        const contactBtn = page.locator('#main-content nav a[href="#contact"]').first();
+        await expect(contactBtn).toContainText('Contact Me');
+
+        // Click language switcher to switch to TH
+        await page.click('#lang-toggle');
+        await expect(contactBtn).toContainText('ติดต่อผม');
+
+        // Click again to switch back to EN
+        await page.click('#lang-toggle');
+        await expect(contactBtn).toContainText('Contact Me');
+    });
 });
