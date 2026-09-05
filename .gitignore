@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+test-results/
+playwright-report/
+
+# Subproject & Exercises (FitAI web application)
+exercise/
+
+# Backup files
+*.backup.*
+index.phase3-final.html
+
+# Environment & Logs
+.env
+.env.*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

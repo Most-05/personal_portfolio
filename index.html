@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidtisak Hanthongchai - Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"LINE Seed Sans TH"', 'Outfit', 'sans-serif']
+                    },
+                    colors: {
+                        primary: {
+                            light: '#2563eb', // blue-600
+                            dark: '#60a5fa',  // blue-400
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Dark Mode Initializer -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    <style>
+        /* Base styles */
+        .section-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #3b82f6;
+        }
+
+        .dark .section-eyebrow {
+            color: #60a5fa;
+        }
+
+        /* 4.1 Glass Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .dark .glass-nav {
+            background: rgba(9, 9, 11, 0.82);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* 4.2 Aurora Blobs */
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -20px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.96);
+            }
+        }
+
+        .blob {
+            animation: blob 8s ease-in-out infinite;
+        }
+
+        .blob-d {
+            animation: blob 8s ease-in-out 3s infinite;
+        }
+
+        /* 4.3 Floating 3D Icons */
+        @keyframes floatA {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(-3deg) scale(1);
+            }
+
+            50% {
+                transform: translateY(-24px) rotate(3deg) scale(1.02);
+            }
+        }
+
+        @keyframes floatB {
+
+            0%,
+            100% {
+                transform: translateY(-10px) rotate(2deg) scale(1.01);
+            }
+
+            50% {
+                transform: translateY(16px) rotate(-3deg) scale(0.98);
+            }
+        }
+
+        @keyframes floatC {
+
+            0%,
+            100% {
+                transform: translateY(6px) rotate(4deg) scale(0.99);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(-2deg) scale(1.02);
+            }
+        }
+
+        .fi-a {
+            animation: floatA 6s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .fi-b {
+            animation: floatB 8.5s ease-in-out 1s infinite;
+            will-change: transform;
+        }
+
+        .fi-c {
+            animation: floatC 7s ease-in-out 2s infinite;
+            will-change: transform;
+        }
+
+        .fi-d {
+            animation: floatA 9s ease-in-out 0.5s infinite;
+            will-change: transform;
+        }
+
+        .fi-e {
+            animation: floatB 5.5s ease-in-out 1.5s infinite;
+            will-change: transform;
+        }
+
+        .fi-f {
+            animation: floatC 8s ease-in-out 3s infinite;
+            will-change: transform;
+        }
+
+        .hover-scale-wrapper {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+        }
+
+        .hover-scale-wrapper:hover {
+            transform: scale(1.12) rotate(5deg);
+            filter: drop-shadow(0 20px 30px rgba(59, 130, 246, 0.25));
+        }
+
+        /* 4.5 Custom Cursor */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.15s, height 0.15s, background-color 0.15s;
+        }
+
+        .custom-cursor-ring {
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid rgba(59, 130, 246, 0.45);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9998;
+            will-change: transform;
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s;
+        }
+
+        .custom-cursor.hovered {
+            width: 0;
+            height: 0;
+        }
+
+        .custom-cursor-ring.hovered {
+            width: 52px;
+            height: 52px;
+            border-color: rgba(59, 130, 246, 0.8);
+            background-color: rgba(59, 130, 246, 0.08);
+        }
+
+        /* 4.6 Interactive Grid */
+        .interactive-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(350px circle at var(--mouse-x, 0) var(--mouse-y, 0), black 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(350px circle at var(--mouse-x, 0) var(--mouse-y, 0), black 30%, transparent 100%);
+            transition: opacity 0.6s ease;
+            opacity: 0;
+        }
+
+        .dark .interactive-grid {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        }
+
+        .interactive-grid.active {
+            opacity: 1;
+        }
+
+        /* 4.7 Glow Card */
+        .glow-card {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: radial-gradient(220px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(59, 130, 246, 0.25), transparent 70%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 10;
+        }
+
+        .glow-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* 4.10 Fade Up (Hero) */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.7s cubic-bezier(.16, 1, .3, 1) forwards;
+        }
+
+        /* Marquee for Brand Logos */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            ::before,
+            ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#f8fafc] dark:bg-[#050508] text-gray-900 dark:text-zinc-100 font-sans antialiased overflow-x-hidden transition-colors duration-300" data-aos-easing="ease-out-cubic" data-aos-duration="700" data-aos-delay="0">
+
+    <!-- Custom Cursor (Dot & Ring) -->
+    <div id="cursor-dot" class="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block"></div>
+    <div id="cursor-ring" class="fixed top-0 left-0 w-8 h-8 border-2 border-blue-400 rounded-full pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block"></div>
+
+    <!-- Animated Dot Background (Full Page) -->
+    <div id="dot-background" class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true"></div>
+
+    <!-- Skeleton Loading -->
+    <div id="skeleton-loading"
+        class="fixed inset-0 z-[1000] bg-white dark:bg-[#0a0a0f] flex items-center justify-center transition-opacity duration-500">
+        <div class="animate-pulse flex flex-col items-center">
+            <div class="w-16 h-16 bg-gray-200 dark:bg-zinc-800 rounded-full mb-4"></div>
+            <div class="w-48 h-5 bg-gray-200 dark:bg-zinc-800 rounded mb-3"></div>
+            <div class="w-32 h-4 bg-gray-200 dark:bg-zinc-800 rounded"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor (Hidden on touch devices) -->
+    <div id="custom-cursor" class="custom-cursor hidden md:block" aria-hidden="true"></div>
+    <div id="custom-cursor-ring" class="custom-cursor-ring hidden md:block" aria-hidden="true"></div>
+
+    <!-- Interactive Grid -->
+    <div id="interactive-grid" class="interactive-grid hidden md:block" aria-hidden="true"></div>
+
+    <main id="main-content" class="opacity-0 transition-opacity duration-500">
+        <!-- 1. Navbar -->
+        <nav class="glass-nav sticky top-0 z-50 w-full transition-colors duration-300">
+            <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400"></div>
+                    <a href="#hero" class="font-bold text-lg tracking-tight cursor-hover">Sidtisak<span
+                            class="text-gray-400 dark:text-zinc-500 font-normal">.dev</span></a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about"
+                        class="text-sm font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors cursor-hover">About</a>
+                    <a href="#skills"
+                        class="text-sm font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors cursor-hover">Skills</a>
+                    <a href="#services"
+                        class="text-sm font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors cursor-hover">Services</a>
+                    <a href="#projects"
+                        class="text-sm font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors cursor-hover">Projects</a>
+                    <a href="#experience"
+                        class="text-sm font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors cursor-hover">Experience</a>
+                    <a href="#contact"
+                        class="cursor-hover inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2.5 text-sm font-semibold shadow-sm shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-500/25">ติดต่อผม</a>
+                    <button id="theme-toggle"
+                        class="cursor-hover text-gray-500 dark:text-zinc-400 hover:bg-gray-100 dark:hover:bg-zinc-800 p-2 rounded-full transition-colors"
+                        aria-label="Toggle Dark Mode">
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="text-gray-500 p-2 cursor-hover">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 2. Hero Section -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center pt-12 md:pt-0 overflow-hidden">
+            <!-- Aurora Blobs -->
+            <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+                <div class="blob absolute -top-24 -left-24 w-[650px] h-[650px] rounded-full bg-blue-100/50 dark:bg-blue-900/15 blur-[140px] mix-blend-multiply dark:mix-blend-lighten"
+                    data-depth="0.8"></div>
+                <div class="blob-d absolute top-12 -right-32 w-[550px] h-[550px] rounded-full bg-violet-100/40 dark:bg-violet-900/10 blur-[120px] mix-blend-multiply dark:mix-blend-lighten"
+                    data-depth="1.2"></div>
+            </div>
+
+            <!-- Floating 3D Icons (Desktop only) -->
+            <div class="pointer-events-none absolute inset-0 hidden md:block z-0" aria-hidden="true">
+                <!-- Icon 1 -->
+                <div class="absolute top-[20%] right-[15%] w-24 opacity-80" data-depth="1.5">
+                    <div class="fi-a hover-scale-wrapper pointer-events-auto cursor-hover"><img
+                            src="assets/images/image-OCOBC6DjtnQdnSysIzLVNNUcJ69u4a.png" alt=""
+                            class="w-full h-auto drop-shadow-xl" loading="lazy"></div>
+                </div>
+                <!-- Icon 2 -->
+                <div class="absolute top-[60%] right-[10%] w-32 opacity-90" data-depth="2.4">
+                    <div class="fi-b hover-scale-wrapper pointer-events-auto cursor-hover"><img
+                            src="assets/images/image-rczvL6X4Cf39WT1qCAcFuw53inEVE6 (1).png" alt=""
+                            class="w-full h-auto drop-shadow-2xl" loading="lazy"></div>
+                </div>
+                <!-- Icon 3 -->
+                <div class="absolute bottom-[20%] right-[30%] w-16 opacity-60" data-depth="1.1">
+                    <div class="fi-c hover-scale-wrapper pointer-events-auto cursor-hover"><img
+                            src="assets/images/image-SzCpqAVVPNUni8OBmjtA51bicr7Mwd.png" alt=""
+                            class="w-full h-auto drop-shadow-lg" loading="lazy"></div>
+                </div>
+                <!-- Icon 4 -->
+                <div class="absolute top-[30%] left-[5%] w-20 opacity-70" data-depth="0.9">
+                    <div class="fi-d hover-scale-wrapper pointer-events-auto cursor-hover"><img
+                            src="assets/images/image-TjQb1FVgGzOR3qe2k4agfHTY0AWvT4.png" alt=""
+                            class="w-full h-auto drop-shadow-xl" loading="lazy"></div>
+                </div>
+                <!-- Icon 5 -->
+                <div class="absolute bottom-[15%] left-[10%] w-24 opacity-85" data-depth="1.8">
+                    <div class="fi-e hover-scale-wrapper pointer-events-auto cursor-hover"><img
+                            src="assets/images/image-UttoQMjhDWWYeDFrYWzyFxQECoJI14.png" alt=""
+                            class="w-full h-auto drop-shadow-xl" loading="lazy"></div>
+                </div>
+                <!-- Icon 6 -->
+                <div class="absolute top-[10%] right-[40%] w-14 opacity-50" data-depth="0.5">
+                    <div class="fi-f hover-scale-wrapper pointer-events-auto cursor-hover"><img
+                            src="assets/images/image-rczvL6X4Cf39WT1qCAcFuw53inEVE6.png" alt=""
+                            class="w-full h-auto drop-shadow-md" loading="lazy"></div>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 w-full text-center md:text-left grid md:grid-cols-2 gap-12 items-center relative z-10"
+                data-depth="0.3">
+                <!-- Content Left -->
+                <div class="flex flex-col items-center md:items-start fade-up" style="animation-delay: 0.2s;">
+                    <!-- Avatar on Mobile -->
+                    <div
+                        class="md:hidden w-32 h-32 rounded-full bg-gray-200 dark:bg-zinc-800 border-4 border-white dark:border-zinc-900 shadow-lg overflow-hidden mb-8 flex items-center justify-center">
+                        <span class="text-xs text-gray-500">[รูปโปรไฟล์]</span>
+                    </div>
+
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 rounded-full px-4 py-1.5 mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span class="text-xs font-semibold text-blue-700 dark:text-blue-300">พร้อมรับตำแหน่ง Full Stack
+                            Developer</span>
+                    </div>
+
+                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-2 text-outline uppercase">
+                        Sidtisak
+                    </h1>
+                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none text-gray-900 dark:text-zinc-100 mb-4 uppercase drop-shadow-lg">
+                        Hanthongchai
+                    </h1>
+                    <p class="text-lg text-gray-500 dark:text-zinc-400 mb-4 font-mono-custom tracking-widest text-sm">สิทธิศักดิ์ หาญธงชัย</p>
+
+                    <h2 class="text-xl md:text-2xl font-mono-custom font-semibold text-blue-600 dark:text-blue-400 mb-6">
+                        > Full Stack Developer_
+                    </h2>
+
+                    <p class="text-gray-600 dark:text-zinc-400 max-w-lg mx-auto md:mx-0 mb-4 text-base md:text-lg">
+                        Fourth-year ICT student at Prince of Songkla University. Passionate about building robust
+                        applications with modern web technologies.
+                    </p>
+
+                    <p class="text-xs text-gray-400 dark:text-zinc-500 mb-8 uppercase tracking-wider font-semibold">
+                        📍 Hat Yai, Songkhla, Thailand
+                    </p>
+
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#projects"
+                            class="cursor-hover inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2.5 text-sm font-semibold shadow-sm shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-500/25">
+                            ดูผลงาน
+                        </a>
+                        <a href="#contact"
+                            class="cursor-hover inline-flex items-center border border-gray-200 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-900 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5">
+                            ติดต่อผม
+                        </a>
+                        <a href="assets/Full Stack-Sidtisak Hanthongchai.pdf" target="_blank"
+                            class="cursor-hover inline-flex items-center border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5">
+                            Resume CV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Avatar Right -->
+                <div class="hidden md:flex justify-end items-center relative z-10 fade-up"
+                    style="animation-delay: 0.4s;">
+                    <div
+                        class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gray-200 dark:bg-zinc-800 border-[8px] border-white dark:border-zinc-900 shadow-xl overflow-hidden flex items-center justify-center relative cursor-hover">
+                        <span class="text-sm text-gray-500">[รูปโปรไฟล์ขนาดใหญ่]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Brand Logos -->
+        <section
+            class="py-8 border-t border-gray-100/50 dark:border-white/[0.05] bg-transparent overflow-hidden relative z-10">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <p class="text-xs text-gray-400 dark:text-zinc-500 mb-6 uppercase tracking-wider font-semibold"
+                    data-aos="fade-up">Technologies I Work With</p>
+                <div class="marquee-container w-full overflow-hidden whitespace-nowrap relative">
+                    <div
+                        class="animate-marquee inline-block opacity-60 dark:opacity-40 hover:opacity-100 transition-opacity duration-300">
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Next.js</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">React</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Flutter</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Node.js</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Express.js</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">PostgreSQL</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Tailwind
+                            CSS</span>
+
+                        <!-- Duplicate for infinite effect -->
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Next.js</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">React</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Flutter</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Node.js</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Express.js</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">PostgreSQL</span>
+                        <span
+                            class="font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all cursor-hover inline-block">Tailwind
+                            CSS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid: About, Stats, Skills, Services -->
+        <section id="about-bento" class="py-12 md:py-24 relative z-10">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="section-eyebrow font-mono-custom">> PROFILE_</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-2 text-outline uppercase tracking-widest">BENTO GRID</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 focus-group" data-aos="fade-up" data-aos-delay="80">
+                    
+                    <!-- About (Span 2x2) -->
+                    <div class="md:col-span-2 lg:col-span-2 row-span-2 focus-item border-beam glow-card cursor-hover p-8 md:p-10 rounded-3xl flex flex-col justify-between bg-white/60 dark:bg-white/[0.03]">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4 font-mono-custom">> About Me</h3>
+                            <p class="text-gray-400 leading-relaxed text-lg mb-6">
+                                นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่ ที่มีความหลงใหลในการพัฒนา Web Application และ Mobile Application
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <span class="font-mono-custom text-xs bg-black/20 px-4 py-2 rounded-lg border border-white/10">Clean Code</span>
+                            <span class="font-mono-custom text-xs bg-black/20 px-4 py-2 rounded-lg border border-white/10">Problem Solving</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 1 -->
+                    <div class="focus-item border-beam glow-card cursor-hover p-6 rounded-3xl flex flex-col items-center justify-center text-center bg-white/60 dark:bg-white/[0.03]">
+                        <div class="text-6xl font-mono-custom font-extrabold text-blue-400 tabular-nums mb-2" data-count="4">0</div>
+                        <div class="text-sm font-semibold uppercase tracking-widest text-gray-500">Projects<br/>Completed</div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="focus-item border-beam glow-card cursor-hover p-6 rounded-3xl flex flex-col items-center justify-center text-center bg-white/60 dark:bg-white/[0.03]">
+                        <div class="flex items-center text-6xl font-mono-custom font-extrabold text-purple-400 tabular-nums mb-2">
+                            <span data-count="2">0</span><span>+</span>
+                        </div>
+                        <div class="text-sm font-semibold uppercase tracking-widest text-gray-500">Years<br/>Coding</div>
+                    </div>
+
+                    <!-- Services (Span 2 horizontal) -->
+                    <div class="md:col-span-2 focus-item border-beam glow-card cursor-hover p-8 rounded-3xl flex flex-col justify-center bg-white/60 dark:bg-white/[0.03]">
+                        <h3 class="text-xl font-bold mb-4 font-mono-custom">> Services</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-bold text-blue-400 mb-1 font-mono-custom">> Full Stack</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed">React, Next.js, Node.js, SQL</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-purple-400 mb-1 font-mono-custom">> Mobile Dev</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed">Flutter Cross-platform</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills (Span Full Width) -->
+                    <div class="md:col-span-3 lg:col-span-4 focus-item border-beam glow-card cursor-hover p-8 rounded-3xl bg-white/60 dark:bg-white/[0.03]">
+                        <h3 class="text-xl font-bold mb-6 font-mono-custom">> SKILLS_STACK</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-blue-500 transition-colors">React 19</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-blue-500 transition-colors">Next.js 16</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-blue-500 transition-colors">Tailwind CSS</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-blue-500 transition-colors">Flutter</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-purple-500 transition-colors">Node.js</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-purple-500 transition-colors">Express.js</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-purple-500 transition-colors">Prisma</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-purple-500 transition-colors">PostgreSQL</span>
+                            <span class="bg-black/50 border border-zinc-700 px-4 py-2 rounded-lg text-sm font-mono-custom text-zinc-300 hover:text-white hover:border-purple-500 transition-colors">MySQL</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Projects -->
+        <section id="projects"
+            class="py-12 md:py-20 border-t border-gray-100/50 dark:border-white/[0.05] bg-transparent relative z-10">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="section-eyebrow font-mono-custom">> WORKS_</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-8 text-outline uppercase tracking-widest">PROJECTS</h2>
+
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button
+                            class="project-filter-btn active cursor-hover px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 bg-blue-600 text-white shadow-sm shadow-blue-500/20"
+                            data-filter="all">ทั้งหมด</button>
+                        <button
+                            class="project-filter-btn cursor-hover px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-blue-300 dark:hover:border-blue-700"
+                            data-filter="webapp">Web App</button>
+                        <button
+                            class="project-filter-btn cursor-hover px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 hover:border-blue-300 dark:hover:border-blue-700"
+                            data-filter="mobile">Mobile App</button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 focus-group" id="projects-grid" data-aos="fade-up"
+                    data-aos-delay="80">
+                    <!-- Project 1 -->
+                    <div class="project-card focus-item border-beam glow-card cursor-hover bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border-white/50 dark:border-white/10 flex flex-col h-full"
+                        data-category="webapp">
+                        <div
+                            class="h-48 bg-gray-200 dark:bg-zinc-800 w-full flex items-center justify-center shrink-0 relative overflow-hidden group">
+                            <span class="text-gray-500 dark:text-zinc-500 text-sm z-10">[รูปโปรเจกต์ 1]</span>
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Srichai Property</h3>
+                            <p class="text-gray-500 dark:text-zinc-400 text-sm mb-4 line-clamp-3">Capstone project real
+                                estate platform. Designed database schema and DFD. Built API access control,
+                                cross-property conflict detection, and agent double-booking checks.</p>
+                            <div class="flex flex-wrap gap-2 mb-auto pb-4">
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Next.js</span>
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Prisma</span>
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">PostgreSQL</span>
+                            </div>
+                            <a href="https://github.com/PHmeen/SrichaiProperty" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline mt-2 cursor-hover group">
+                                View Project <span
+                                    class="ml-1 transition-transform group-hover:translate-x-1">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card focus-item border-beam glow-card cursor-hover bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border-white/50 dark:border-white/10 flex flex-col h-full"
+                        data-category="webapp">
+                        <div
+                            class="h-48 bg-gray-200 dark:bg-zinc-800 w-full flex items-center justify-center shrink-0 relative overflow-hidden group">
+                            <span class="text-gray-500 dark:text-zinc-500 text-sm z-10">[รูปโปรเจกต์ 2]</span>
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">GameStore</h3>
+                            <p class="text-gray-500 dark:text-zinc-400 text-sm mb-4 line-clamp-3">React Storefront with
+                                an End-to-End Test Suite. Wrote an 81-case Playwright suite covering all routes,
+                                catching bugs missed in visual review. Rebuilt backend as a mock server.</p>
+                            <div class="flex flex-wrap gap-2 mb-auto pb-4">
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">React</span>
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Playwright</span>
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Node.js</span>
+                            </div>
+                            <a href="https://github.com/Most-05/game-store" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline mt-2 cursor-hover group">
+                                View Project <span
+                                    class="ml-1 transition-transform group-hover:translate-x-1">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card focus-item border-beam glow-card cursor-hover bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border-white/50 dark:border-white/10 flex flex-col h-full"
+                        data-category="mobile">
+                        <div
+                            class="h-48 bg-gray-200 dark:bg-zinc-800 w-full flex items-center justify-center shrink-0 relative overflow-hidden group">
+                            <span class="text-gray-500 dark:text-zinc-500 text-sm z-10">[รูปโปรเจกต์ 3]</span>
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Property Viewing App</h3>
+                            <p class="text-gray-500 dark:text-zinc-400 text-sm mb-4 line-clamp-3">Flutter Mobile App.
+                                Built booking feature end to end. Guarded endpoints with checkAccessToken middleware and
+                                covered the booking flow with Flutter integration tests.</p>
+                            <div class="flex flex-wrap gap-2 mb-auto pb-4">
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Flutter</span>
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Express.js</span>
+                                <span
+                                    class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">MariaDB</span>
+                            </div>
+                            <a href="#"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline mt-2 cursor-hover group">
+                                View Project <span
+                                    class="ml-1 transition-transform group-hover:translate-x-1">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Experience -->
+        <section id="experience" class="py-12 md:py-20 border-t border-gray-100 dark:border-zinc-800/60">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-1" data-aos="fade-right">
+                    <span class="section-eyebrow">Experience</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-6">ประวัติการทำงาน</h2>
+                </div>
+                <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="80">
+                    <div class="relative border-l-2 border-gray-200 dark:border-zinc-800 pl-8 ml-3 space-y-12">
+                        <!-- Job 1 -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[41px] flex items-center justify-center w-8 h-8 bg-white dark:bg-[#0a0a0f] rounded-full">
+                                <div class="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                            </span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                <h3 class="text-lg font-bold">Data Analyst Intern</h3>
+                                <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">16 Apr – 12 Jun
+                                    2026</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900 dark:text-zinc-300 mb-3">Khunying Long
+                                Athakravisunthorn Learning Resources Center, PSU</p>
+                            <ul class="list-disc list-inside text-gray-500 dark:text-zinc-400 text-sm space-y-2">
+                                <li>Cleaned and restructured five years of library statistics for five universities in
+                                    Excel and Power Query.</li>
+                                <li>Built a five-page Power BI dashboard whose findings management acted on.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[41px] flex items-center justify-center w-8 h-8 bg-white dark:bg-[#0a0a0f] rounded-full">
+                                <div class="w-3 h-3 bg-gray-300 dark:bg-zinc-600 rounded-full"></div>
+                            </span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                <h3 class="text-lg font-bold">B.Sc. in ICT</h3>
+                                <span class="text-sm font-semibold text-gray-500 dark:text-zinc-400">2023 - Expected
+                                    2027</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900 dark:text-zinc-300 mb-3">Prince of Songkla
+                                University, Hat Yai Campus</p>
+                            <ul class="list-disc list-inside text-gray-500 dark:text-zinc-400 text-sm space-y-2">
+                                <li>Fourth-year ICT student, Faculty of Science.</li>
+                                <li>Mobile App Development with Flutter workshop, PSU ICT club (Aug 2025).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Testimonials -->
+        <section id="testimonials"
+            class="py-12 md:py-20 border-t border-gray-100/50 dark:border-white/[0.05] bg-transparent relative z-10">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="section-eyebrow">Testimonials</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mt-4">เสียงจากผู้ร่วมงาน</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 opacity-50" data-aos="fade-up" data-aos-delay="80">
+                    <div
+                        class="glow-card cursor-hover p-6 rounded-2xl bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border border-white/50 dark:border-white/10">
+                        <p class="italic text-gray-500 dark:text-zinc-400 mb-4">"[ข้อความตัวอย่าง
+                            ความประทับใจจากเพื่อนร่วมทีม หรืออาจารย์]"</p>
+                        <p class="font-bold text-sm">- [ชื่อบุคคล]</p>
+                    </div>
+                    <div
+                        class="glow-card cursor-hover p-6 rounded-2xl bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border border-white/50 dark:border-white/10">
+                        <p class="italic text-gray-500 dark:text-zinc-400 mb-4">"[ข้อความตัวอย่าง การทำงานเป็นทีมที่ดี]"
+                        </p>
+                        <p class="font-bold text-sm">- [ชื่อบุคคล]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Contact -->
+        <section id="contact" class="py-12 md:py-20 border-t border-gray-100 dark:border-zinc-800/60">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <span class="section-eyebrow">Contact</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-6">สนใจติดต่อร่วมงาน?</h2>
+                    <p class="text-gray-500 dark:text-zinc-400 mb-8">สามารถส่งอีเมลมาหาผมโดยตรง
+                        หรือฝากข้อความไว้ในฟอร์มด้านขวาได้เลยครับ</p>
+
+                    <div class="space-y-6">
+                        <a href="mailto:sidtisakm@gmail.com" class="flex items-center gap-4 group cursor-hover w-fit">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40">
+                                📧
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-400 uppercase">Email</p>
+                                <span
+                                    class="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">sidtisakm@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:0928710457" class="flex items-center gap-4 group cursor-hover w-fit">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40">
+                                📞
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-400 uppercase">Phone</p>
+                                <span
+                                    class="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">092-871-0457</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Most-05" target="_blank"
+                            class="flex items-center gap-4 group cursor-hover w-fit">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40">
+                                💻
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-400 uppercase">GitHub</p>
+                                <span
+                                    class="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Most-05</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left" data-aos-delay="100">
+                    <form data-netlify="true" name="contact" method="POST" class="space-y-4">
+                        <div>
+                            <label
+                                class="block text-xs font-semibold text-gray-400 dark:text-zinc-500 uppercase tracking-wider mb-2">Name</label>
+                            <input type="text" name="name" required
+                                class="cursor-hover w-full border border-gray-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:bg-zinc-900 dark:text-zinc-100 transition-shadow">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold text-gray-400 dark:text-zinc-500 uppercase tracking-wider mb-2">Email</label>
+                            <input type="email" name="email" required
+                                class="cursor-hover w-full border border-gray-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:bg-zinc-900 dark:text-zinc-100 transition-shadow">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold text-gray-400 dark:text-zinc-500 uppercase tracking-wider mb-2">Message</label>
+                            <textarea name="message" rows="4" required
+                                class="cursor-hover w-full border border-gray-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:bg-zinc-900 dark:text-zinc-100 transition-shadow"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="cursor-hover w-full inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 text-sm font-semibold shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-500/25">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. Footer -->
+    <footer class="py-8 border-t border-gray-100 dark:border-zinc-800/60 text-center">
+        <p class="text-sm text-gray-500 dark:text-zinc-500">
+            &copy; <span id="current-year"></span> Sidtisak Hanthongchai. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Set Current Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Detect touch device early
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+        // -------------------------
+        // Skeleton Loading & Init
+        // -------------------------
+        window.addEventListener('load', () => {
+            const skeleton = document.getElementById('skeleton-loading');
+            const mainContent = document.getElementById('main-content');
+
+            setTimeout(() => {
+                skeleton.classList.add('opacity-0');
+                mainContent.classList.remove('opacity-0');
+
+                setTimeout(() => {
+                    skeleton.classList.add('hidden');
+
+                    // Custom Cursor Logic
+                    const cursorDot = document.getElementById('cursor-dot');
+                    const cursorRing = document.getElementById('cursor-ring');
+                    let mouseX = 0;
+                    let mouseY = 0;
+                    let ringX = 0;
+                    let ringY = 0;
+
+                    if (window.innerWidth >= 768) {
+                        document.body.style.cursor = 'none';
+                        
+                        document.addEventListener('mousemove', (e) => {
+                            mouseX = e.clientX;
+                            mouseY = e.clientY;
+                            cursorDot.style.left = `${mouseX}px`;
+                            cursorDot.style.top = `${mouseY}px`;
+                        });
+
+                        function animateRing() {
+                            ringX += (mouseX - ringX) * 0.15;
+                            ringY += (mouseY - ringY) * 0.15;
+                            cursorRing.style.left = `${ringX}px`;
+                            cursorRing.style.top = `${ringY}px`;
+                            requestAnimationFrame(animateRing);
+                        }
+                        animateRing();
+
+                        // Hover effects for interactables
+                        const initCursorHovers = () => {
+                            const interactables = document.querySelectorAll('a, button, .cursor-hover');
+                            interactables.forEach(el => {
+                                el.style.cursor = 'none'; // Ensure no default pointer
+                                
+                                // Prevent duplicate event listeners
+                                if (el.dataset.cursorBound) return;
+                                el.dataset.cursorBound = "true";
+
+                                el.addEventListener('mouseenter', () => {
+                                    cursorRing.classList.add('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
+                                    cursorDot.classList.add('scale-[2]');
+                                });
+                                el.addEventListener('mouseleave', () => {
+                                    cursorRing.classList.remove('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
+                                    cursorDot.classList.remove('scale-[2]');
+                                });
+                            });
+                        };
+                        initCursorHovers();
+
+                        // Click effect
+                        document.addEventListener('mousedown', () => {
+                            cursorRing.classList.add('scale-75', 'bg-blue-500/40');
+                            cursorDot.classList.add('scale-50');
+                        });
+                        document.addEventListener('mouseup', () => {
+                            cursorRing.classList.remove('scale-75', 'bg-blue-500/40');
+                            cursorDot.classList.remove('scale-50');
+                        });
+                    }
+
+                    // Init AOS
+                    AOS.init({
+                        once: true,
+                        offset: 50,
+                    });
+
+                    // Trigger Count-up after load
+                    initCountUp();
+                }, 500);
+            }, 600); // 600ms artificial load time for effect
+        });
+
+        // -------------------------
+        // Dark Mode Toggle
+        // -------------------------
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            } else {
+                lightIcon.classList.add('hidden');
+                darkIcon.classList.remove('hidden');
+            }
+        }
+        updateIcons();
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            updateIcons();
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+        // -------------------------
+        // Interactive Grid & Glow Card
+        // -------------------------
+        const grid = document.getElementById('interactive-grid');
+        const glowCards = document.querySelectorAll('.glow-card');
+
+        let mouseX = 0, mouseY = 0;
+
+        if (!isTouchDevice) {
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                // Update Grid
+                if (grid) {
+                    grid.classList.add('active');
+                    grid.style.setProperty('--mouse-x', `${mouseX}px`);
+                    grid.style.setProperty('--mouse-y', `${mouseY}px`);
+                }
+
+                // Update Glow Cards
+                glowCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = mouseX - rect.left;
+                    const y = mouseY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        }
+
+        // -------------------------
+        // Mouse Parallax (Hero)
+        // -------------------------
+        const parallaxElements = document.querySelectorAll('[data-depth]');
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+
+        if (!isTouchDevice && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            window.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth - 0.5;
+                const y = e.clientY / window.innerHeight - 0.5;
+
+                targetX = x * 100;
+                targetY = y * 100;
+            });
+
+            function renderParallax() {
+                currentX += (targetX - currentX) * 0.05;
+                currentY += (targetY - currentY) * 0.05;
+
+                parallaxElements.forEach(el => {
+                    const depth = parseFloat(el.getAttribute('data-depth')) || 0.5;
+                    const moveX = currentX * depth;
+                    const moveY = currentY * depth;
+
+                    if (el.classList.contains('blob') || el.classList.contains('blob-d')) {
+                        el.style.transform = `translate(${moveX}px, ${moveY}px) scale(${el.classList.contains('blob-d') ? 0.96 : 1})`;
+                    } else {
+                        el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                    }
+                });
+
+                requestAnimationFrame(renderParallax);
+            }
+            renderParallax();
+        }
+
+        // -------------------------
+        // Custom Cursor
+        // -------------------------
+        const cursor = document.getElementById('custom-cursor');
+        const cursorRing = document.getElementById('custom-cursor-ring');
+
+        if (!isTouchDevice) {
+            let cx = 0, cy = 0;
+            let rx = 0, ry = 0;
+
+            window.addEventListener('mousemove', (e) => {
+                cx = e.clientX; cy = e.clientY;
+                cursor.style.transform = `translate(calc(${cx}px - 50%), calc(${cy}px - 50%))`;
+            });
+
+            function renderCursorRing() {
+                rx += (cx - rx) * 0.12;
+                ry += (cy - ry) * 0.12;
+                cursorRing.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
+                requestAnimationFrame(renderCursorRing);
+            }
+            renderCursorRing();
+
+            // Hover state mapping
+            const hoverTargets = document.querySelectorAll('a, button, input, textarea, .cursor-hover');
+            hoverTargets.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hovered');
+                    cursorRing.classList.add('hovered');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hovered');
+                    cursorRing.classList.remove('hovered');
+                });
+            });
+        }
+
+        // -------------------------
+        // Count Up Animation
+        // -------------------------
+        function initCountUp() {
+            const counters = document.querySelectorAll('[data-count]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const endValue = parseInt(target.getAttribute('data-count'), 10);
+                        animateValue(target, 0, endValue, 2000);
+                        observer.unobserve(target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const easeProgress = 1 - Math.pow(1 - progress, 4);
+                obj.innerHTML = Math.floor(easeProgress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    obj.innerHTML = end;
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // -------------------------
+        // Project Filtering
+        // -------------------------
+        const filterBtns = document.querySelectorAll('.project-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-500/20');
+                    b.classList.add('bg-white', 'dark:bg-zinc-800', 'border', 'border-gray-200', 'dark:border-zinc-700', 'text-gray-600', 'dark:text-zinc-400');
+                });
+
+                // Add active styling to clicked button
+                btn.classList.remove('bg-white', 'dark:bg-zinc-800', 'border', 'border-gray-200', 'dark:border-zinc-700', 'text-gray-600', 'dark:text-zinc-400');
+                btn.classList.add('bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-500/20');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                        // Small delay to allow display:flex to apply before animating opacity
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+
+</html>
