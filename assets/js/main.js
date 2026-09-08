@@ -90,6 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_act_b2: "Flood Relief Assistance Centre volunteer — Student Development and Alumni Relations, Hat Yai Campus (Nov 2025).",
             exp_act_b3: "Volunteer Leadership for Sustainable Community Development course — PSU Volunteer Center (Nov 2024, 3 credits).",
 
+            exp_lead_title: "University Leadership & Certified Activities",
+            exp_lead_date: "2023 – 2026",
+            exp_lead_school: "Prince of Songkla University, Hat Yai Campus",
+            exp_lead_b1: "136 Total Activity Hours certified by PSU Student Development Division (81 hrs Competency + 55 hrs General Interest).",
+            exp_lead_b2: "Project Leader — ICT Curriculum Orientation 2024 (Lead organizer for ICT branch student activities, Dec 2024).",
+            exp_lead_b3: "Co-organizer — National Science Week Exhibition 2023 (12 hours, event operations and leadership).",
+            exp_lead_b4: "Co-op Readiness Training — Completed Faculty of Science Cooperative Education modules (Sci Festival 2026 & Road Map to Get Your Job).",
+
             // Contact Section
             contact_eyebrow: "Contact",
             contact_heading: "Interested in working together?",
@@ -193,6 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_act_b1: "โครงการอบรมเชิงปฏิบัติการ Mobile App Development with Flutter — คณะวิทยาศาสตร์ / ชุมนุม ICT ม.อ. (ส.ค. 2568) ซึ่งต่อยอดเป็นแอปที่ส่งจริง",
             exp_act_b2: "จิตอาสาศูนย์ช่วยเหลือผู้ประสบอุทกภัย — กองพัฒนานักศึกษาและศิษย์เก่าสัมพันธ์ วิทยาเขตหาดใหญ่ (พ.ย. 2568)",
             exp_act_b3: "รายวิชาผู้นำจิตอาสาเพื่อการพัฒนาชุมชนอย่างยั่งยืน — ศูนย์อาสาสมัคร ม.สงขลานครินทร์ (พ.ย. 2567, 3 หน่วยกิต)",
+
+            exp_lead_title: "กิจกรรมมหาวิทยาลัยและภาวะผู้นำ",
+            exp_lead_date: "2566 – 2569",
+            exp_lead_school: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่",
+            exp_lead_b1: "ผ่านกิจกรรมเสริมหลักสูตรรับรองโดยกองพัฒนานักศึกษา ม.อ. รวม 136 ชั่วโมง (สมรรถนะ 81 ชม. + ความสนใจ 55 ชม.)",
+            exp_lead_b2: "ผู้รับผิดชอบโครงการ — กิจกรรมรับน้องหลักสูตร ICT 2024 (ผู้นำจัดกิจกรรมนักศึกษาหลักสูตรเทคโนโลยีสารสนเทศและการสื่อสาร, ธ.ค. 2567)",
+            exp_lead_b3: "ผู้ร่วมจัด — สัปดาห์วิทยาศาสตร์แห่งชาติ ประจำปี 2566 (12 ชั่วโมง ด้านภาวะผู้นำและการทำงานเป็นทีม)",
+            exp_lead_b4: "การอบรมเตรียมความพร้อมสหกิจศึกษา คณะวิทยาศาสตร์ ม.อ. (Sci Festival 2026 & Road Map to Get Your Job)",
 
             // Contact Section
             contact_eyebrow: "ติดต่อ",
