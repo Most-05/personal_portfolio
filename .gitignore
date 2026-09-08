@@ -15,6 +15,9 @@ index.phase3-final.html
 .env.*
 *.log
 
-# OS files
+# OS & Editor files
 .DS_Store
 Thumbs.db
+*.code-workspace
+Screenshot*.png
+Portfolio_Sidtisak.pdf

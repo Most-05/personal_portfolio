@@ -14,15 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_contact: "Contact Me",
 
             // Hero Section
-            hero_status: "Available for Full Stack Developer roles",
-            hero_th_name: "Sidtisak Hanthongchai",
+            hero_status: "Cooperative Education Candidate (16 Nov 2026 – 7 Mar 2027)",
+            hero_th_name: "Sidtisak Hanthongchai (สิทธิศักดิ์ หาญธงชัย)",
             hero_role: "> Full Stack Developer_",
-            hero_desc: "Fourth-year ICT student at Prince of Songkla University. Passionate about building robust applications with modern web and mobile technologies.",
+            hero_desc: "Fourth-year ICT student at Prince of Songkla University. 289 commits across 3 codebases (Web, Web App, Mobile). Specialized in Next.js, React, Node.js, and Flutter with an emphasis on clean architecture and automated testing.",
             hero_location: "📍 Hat Yai, Songkhla, Thailand",
             hero_btn_works: "View Projects",
             hero_btn_contact: "Contact Me",
             hero_btn_cv: "Resume CV",
-            hero_avatar_label: "[Profile Photo]",
 
             // Tech Marquee
             tech_heading: "Technologies I Work With",
@@ -31,16 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
             bento_eyebrow: "> PROFILE_",
             bento_heading: "BENTO GRID",
             bento_about_title: "> About Me",
-            bento_about_desc: "Fourth-year Information and Communication Technology (ICT) student at Prince of Songkla University, Hat Yai Campus. Passionate about Full Stack Web and Mobile Application development, with a focus on writing clean, efficient, and maintainable code.",
+            bento_about_desc: "Fourth-year Information and Communication Technology (ICT) student at Prince of Songkla University, Hat Yai Campus. Experienced in full-lifecycle system design (Context Diagrams, DFD, ER Models) to production deployment, owning core subsystems with verified Git commits and automated testing.",
             bento_tag_clean: "Clean Code",
             bento_tag_problem: "Problem Solving",
-            bento_stat_projects: "Projects<br/>Completed",
-            bento_stat_years: "Years<br/>Coding",
+            bento_tag_pr: "15 Merged PRs",
+            bento_tag_codebases: "3 Codebases",
+            bento_tag_verified: "Git Log Verified",
+            bento_stat_commits: "Commits Written<br/>across 3 Projects",
+            bento_stat_tests: "E2E Tests<br/>Playwright Suite",
             bento_services_title: "> Services",
             bento_service_fullstack: "> Full Stack",
-            bento_service_fullstack_desc: "React, Next.js, Node.js, SQL",
+            bento_service_fullstack_desc: "Next.js 16, React 19, Node.js, Prisma, PostgreSQL",
             bento_service_mobile: "> Mobile Dev",
-            bento_service_mobile_desc: "Flutter Cross-platform",
+            bento_service_mobile_desc: "Flutter, Dart, Express.js, MariaDB, REST API",
             bento_skills_title: "> SKILLS_STACK",
 
             // Projects Section
@@ -53,30 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Project 1: Srichai Property
             p1_title: "Srichai Property",
-            p1_desc: "Capstone project real estate platform. Designed database schema and DFD. Built API access control, cross-property conflict detection, and agent double-booking checks.",
+            p1_desc: "Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict to prevent overlapping client viewings.",
+            p1_meta: "85 Commits · 15 PRs · 32 Tables · 32 APIs",
 
             // Project 2: GameStore
             p2_title: "GameStore",
-            p2_desc: "React Storefront with an End-to-End Test Suite. Wrote an 81-case Playwright suite covering all routes, catching bugs missed in visual review. Rebuilt backend as a mock server.",
+            p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt lost backend as a dependency-free Node.js mock server. Optimized page assets reducing bundle size from 8.4MB to 1.25MB.",
+            p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
             // Project 3: Property Viewing App
             p3_title: "Property Viewing App",
-            p3_desc: "Flutter Mobile App. Built booking feature end to end. Guarded endpoints with checkAccessToken middleware and covered the booking flow with Flutter integration tests.",
+            p3_desc: "Flutter mobile booking application. Built end-to-end booking flow across 5 API routes. Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model classes with fromJson, and covered with Flutter integration_test.",
+            p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // Experience Section
             exp_eyebrow: "Experience",
-            exp_heading: "Work & Education",
+            exp_heading: "Work, Education & Volunteering",
             exp_job1_title: "Data Analyst Intern",
             exp_job1_date: "16 Apr – 12 Jun 2026",
             exp_job1_company: "Khunying Long Athakravisunthorn Learning Resources Center, PSU",
-            exp_job1_b1: "Cleaned and restructured five years of library statistics for five universities in Excel and Power Query.",
-            exp_job1_b2: "Built a five-page Power BI dashboard whose findings management acted on.",
+            exp_job1_b1: "Cleaned and restructured 5 years of library statistics for 5 universities in Excel and Power Query, then created a 5-page Power BI dashboard with a written handover manual for successors.",
+            exp_job1_b2: "Key management insight: PSU operated 48 IT systems (peer avg <25) on a 6x smaller IT budget, correlating with the group's highest average downtime.",
 
-            exp_edu_title: "B.Sc. in ICT",
+            exp_edu_title: "B.Sc. in ICT (Information & Communication Technology)",
             exp_edu_date: "2023 - Expected 2027",
             exp_edu_school: "Prince of Songkla University, Hat Yai Campus",
-            exp_edu_b1: "Fourth-year ICT student, Faculty of Science.",
-            exp_edu_b2: "Mobile App Development with Flutter workshop, PSU ICT club (Aug 2025).",
+            exp_edu_b1: "Faculty of Science. Relevant Software Coursework: Software Engineering, ICT Project I, IT Governance, Software Service & Quality Management, Interaction Design, Database Systems, Systems Analysis & Design.",
+            exp_edu_b2: "Cooperative Education: Course 308-497 (6 Credits, 40 hrs/week, 16 Nov 2026 – 7 Mar 2027).",
+
+            exp_act_title: "Training & Community Leadership",
+            exp_act_date: "2024 – 2025",
+            exp_act_school: "Prince of Songkla University, Hat Yai Campus",
+            exp_act_b1: "Mobile App Development with Flutter workshop — Faculty of Science / PSU ICT Club (Aug 2025), later scaled into a production coursework mobile app.",
+            exp_act_b2: "Flood Relief Assistance Centre volunteer — Student Development and Alumni Relations, Hat Yai Campus (Nov 2025).",
+            exp_act_b3: "Volunteer Leadership for Sustainable Community Development course — PSU Volunteer Center (Nov 2024, 3 credits).",
 
             // Contact Section
             contact_eyebrow: "Contact",
@@ -106,15 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_contact: "ติดต่อผม",
 
             // Hero Section
-            hero_status: "พร้อมรับตำแหน่ง Full Stack Developer",
+            hero_status: "ผู้สมัครฝึกสหกิจศึกษา (16 พ.ย. 2569 – 7 มี.ค. 2570)",
             hero_th_name: "สิทธิศักดิ์ หาญธงชัย",
             hero_role: "> Full Stack Developer_",
-            hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ มุ่งมั่นและหลงใหลในการพัฒนา Web และ Mobile Application ด้วยเทคโนโลยีสมัยใหม่",
+            hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ เจ้าของ 289 Commits ใน 3 โปรเจกต์จริง (เว็บ, เว็บแอป, มือถือ) เชี่ยวชาญ Next.js, React, Node.js และ Flutter มุ่งเน้นสถาปัตยกรรมโค้ดที่สะอาดและการทดสอบอัตโนมัติ",
             hero_location: "📍 หาดใหญ่, สงขลา, ประเทศไทย",
             hero_btn_works: "ดูผลงาน",
             hero_btn_contact: "ติดต่อผม",
             hero_btn_cv: "เรซูเม CV",
-            hero_avatar_label: "[รูปโปรไฟล์ขนาดใหญ่]",
 
             // Tech Marquee
             tech_heading: "เทคโนโลยีและเครื่องมือที่เชี่ยวชาญ",
@@ -123,16 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
             bento_eyebrow: "> ข้อมูลส่วนตัว_",
             bento_heading: "BENTO GRID",
             bento_about_title: "> เกี่ยวกับฉัน",
-            bento_about_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่ ที่มีความหลงใหลในการพัฒนา Web Application และ Mobile Application มุ่งเน้นการเขียนโค้ดที่สะอาด สวยงาม และมีประสิทธิภาพสูงสุด",
+            bento_about_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) ม.สงขลานครินทร์ วิทยาเขตหาดใหญ่ มีประสบการณ์ออกแบบระบบตั้งแต่ต้นน้ำ (Context Diagram, DFD, ER Model) สู่โค้ดที่รันจริง รับผิดชอบระบบหลักพร้อมตัวเลขสถิติ Git และชุดทดสอบอัตโนมัติที่ตรวจสอบย้อนกลับได้จริง",
             bento_tag_clean: "Clean Code",
             bento_tag_problem: "Problem Solving",
-            bento_stat_projects: "โปรเจกต์<br/>ที่สำเร็จ",
-            bento_stat_years: "ปีแห่งการ<br/>เขียนโค้ด",
+            bento_tag_pr: "15 Merged PRs",
+            bento_tag_codebases: "3 Codebases",
+            bento_tag_verified: "ตรวจจาก Git Log จริง",
+            bento_stat_commits: "Commits ที่เขียนเอง<br/>ใน 3 โปรเจกต์",
+            bento_stat_tests: "ชุดทดสอบ E2E<br/>ด้วย Playwright",
             bento_services_title: "> บริการที่เชี่ยวชาญ",
             bento_service_fullstack: "> Full Stack",
-            bento_service_fullstack_desc: "React, Next.js, Node.js, SQL",
+            bento_service_fullstack_desc: "Next.js 16, React 19, Node.js, Prisma, PostgreSQL",
             bento_service_mobile: "> Mobile Dev",
-            bento_service_mobile_desc: "Flutter Cross-platform",
+            bento_service_mobile_desc: "Flutter, Dart, Express.js, MariaDB, REST API",
             bento_skills_title: "> SKILLS_STACK",
 
             // Projects Section
@@ -145,30 +159,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Project 1: Srichai Property
             p1_title: "Srichai Property",
-            p1_desc: "Capstone Project แพลตฟอร์มอสังหาริมทรัพย์ ออกแบบโครงสร้างฐานข้อมูลและ DFD พัฒนาระบบตรวจสอบสิทธิ์ API ตรวจจับข้อขัดแย้งข้ามอสังหาฯ และป้องกันการจองคิวซ้ำซ้อนของนายหน้า",
+            p1_desc: "โปรเจกต์จบการศึกษาแพลตฟอร์มอสังหาริมทรัพย์ ออกแบบ 32 ตารางฐานข้อมูล & 8 กระบวนการ DFD พัฒนาระบบคุมสิทธิ์ API, ระบบนับถอยหลัง SLA, แดชบอร์ด Recharts, และรื้อระบบกันนายหน้ารับนัดชนกัน hasAgentBookingConflict",
+            p1_meta: "85 Commits · 15 PRs · 32 ตาราง · 32 APIs",
 
             // Project 2: GameStore
             p2_title: "GameStore",
-            p2_desc: "หน้าร้านขายเกมด้วย React พร้อมชุดทดสอบ End-to-End ด้วย Playwright ครอบคลุม 81 เทสเคส ดักจับข้อผิดพลาดทั้งหมดอย่างละเอียด พร้อมจำลอง Mock Server หลังบ้าน",
+            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และย่อขนาดหน้าเว็บจาก 8.4MB เหลือ 1.25MB ต่อหน้า",
+            p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
             // Project 3: Property Viewing App
             p3_title: "Property Viewing App",
-            p3_desc: "แอปพลิเคชันมือถือด้วย Flutter พัฒนาระบบจองคิวครบวงจร มี Middleware ป้องกันเส้นทาง API ด้วย Access Token และครอบคลุมโฟลว์ด้วย Integration Tests",
+            p3_desc: "แอปจองดูบ้านด้วย Flutter พัฒนาระบบจองครบวงจร 5 เส้นทาง API คุม 11 endpoints ด้วย checkAccessToken middleware ออกแบบ 5 คลาส Model แบบ Type-Safe พร้อม factory fromJson และครอบคลุมด้วย Flutter integration_test",
+            p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // Experience Section
             exp_eyebrow: "ประสบการณ์",
-            exp_heading: "ประวัติการทำงานและการศึกษา",
+            exp_heading: "ประวัติการทำงาน การศึกษา และกิจกรรมจิตอาสา",
             exp_job1_title: "Data Analyst Intern (นักศึกษาฝึกงาน)",
             exp_job1_date: "16 เม.ย. – 12 มิ.ย. 2026",
             exp_job1_company: "สำนักทรัพยากรการเรียนรู้คุณหญิงหลง อรรถกระวีสุนทร ม.อ.",
-            exp_job1_b1: "ทำความสะอาดและจัดโครงสร้างสถิติห้องสมุด 5 ปีย้อนหลังสำหรับ 5 มหาวิทยาลัย ด้วย Excel และ Power Query",
-            exp_job1_b2: "สร้างแดชบอร์ด Power BI จำนวน 5 หน้า สำหรับผู้บริหารใช้ตัดสินใจเชิงนโยบาย",
+            exp_job1_b1: "ทำความสะอาดข้อมูลสถิติห้องสมุด 5 ปีของ 5 มหาวิทยาลัยด้วย Excel และ Power Query แล้วสร้าง Dashboard บน Power BI 5 หน้า พร้อมจัดทำคู่มือปฏิบัติงานส่งต่อให้รุ่นถัดไป",
+            exp_job1_b2: "ข้อค้นพบสำคัญที่ฝ่ายบริหารนำไปใช้: ม.อ. มีระบบสารสนเทศมากที่สุด 48 ระบบ แต่งบ IT น้อยกว่าคู่เทียบ 6 เท่า สอดคล้องกับค่า Downtime เฉลี่ยที่สูงที่สุด",
 
             exp_edu_title: "วิทยาศาสตรบัณฑิต (วท.บ.) ICT",
             exp_edu_date: "2566 - คาดว่าจะจบ 2570",
             exp_edu_school: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่",
-            exp_edu_b1: "นักศึกษาชั้นปีที่ 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร คณะวิทยาศาสตร์",
-            exp_edu_b2: "เวิร์กช็อปการพัฒนา Mobile Application ด้วย Flutter, PSU ICT club (ส.ค. 2568)",
+            exp_edu_b1: "คณะวิทยาศาสตร์ รายวิชาซอฟต์แวร์: วิศวกรรมซอฟต์แวร์, โครงงาน ICT I, การจัดการ IT องค์กร, การบริการซอฟต์แวร์และประกันคุณภาพ, การออกแบบเชิงปฏิสัมพันธ์, ระบบฐานข้อมูล, การวิเคราะห์และออกแบบระบบสารสนเทศ",
+            exp_edu_b2: "สหกิจศึกษา: รายวิชา 308-497 (6 หน่วยกิต, 40 ชม./สัปดาห์, 16 พ.ย. 2569 – 7 มี.ค. 2570)",
+
+            exp_act_title: "การอบรมและกิจกรรมจิตอาสา",
+            exp_act_date: "2567 – 2568",
+            exp_act_school: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่",
+            exp_act_b1: "โครงการอบรมเชิงปฏิบัติการ Mobile App Development with Flutter — คณะวิทยาศาสตร์ / ชุมนุม ICT ม.อ. (ส.ค. 2568) ซึ่งต่อยอดเป็นแอปที่ส่งจริง",
+            exp_act_b2: "จิตอาสาศูนย์ช่วยเหลือผู้ประสบอุทกภัย — กองพัฒนานักศึกษาและศิษย์เก่าสัมพันธ์ วิทยาเขตหาดใหญ่ (พ.ย. 2568)",
+            exp_act_b3: "รายวิชาผู้นำจิตอาสาเพื่อการพัฒนาชุมชนอย่างยั่งยืน — ศูนย์อาสาสมัคร ม.สงขลานครินทร์ (พ.ย. 2567, 3 หน่วยกิต)",
 
             // Contact Section
             contact_eyebrow: "ติดต่อ",
