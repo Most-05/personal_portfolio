@@ -178,3 +178,80 @@
     background: rgba(156, 163, 175, 0.5);
 }
 
+/* 
+  3D Tactile Capsule Badges (Style #1 - Thiings.co inspired)
+  Gives tactile physical depth with soft bottom bevel, top highlight, and active press
+*/
+.tag-tactile-3d {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    border-bottom: 2px solid #cbd5e1;
+    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.tag-tactile-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.12), 0 3px 6px -1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: #94a3b8;
+}
+
+.tag-tactile-3d:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .tag-tactile-3d {
+    background: linear-gradient(180deg, #27272a 0%, #18181b 100%);
+    color: #f4f4f5;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid #09090b;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.dark .tag-tactile-3d:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dark .tag-tactile-3d:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.tag-tactile-3d img,
+.tag-tactile-3d svg {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.tag-tactile-3d:hover img,
+.tag-tactile-3d:hover svg {
+    transform: scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tag-tactile-3d,
+    .tag-tactile-3d img,
+    .tag-tactile-3d svg {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+

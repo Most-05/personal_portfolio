@@ -679,6 +679,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Helper: Map tech tag names to crisp vector logo icons (Style #1: 3D Tactile Capsule)
+    function getTechTagIcon(tag) {
+        const t = tag.toLowerCase().trim();
+        if (t.includes('next.js')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="dark:invert" loading="lazy">';
+        }
+        if (t.includes('react router')) {
+            return '<img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/reactrouter.svg" alt="React Router" class="dark:invert" loading="lazy">';
+        }
+        if (t.includes('bootstrap')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="lazy">';
+        }
+        if (t.includes('react')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy">';
+        }
+        if (t.includes('typescript')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy">';
+        }
+        if (t.includes('prisma')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" class="dark:invert" loading="lazy">';
+        }
+        if (t.includes('postgres')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" loading="lazy">';
+        }
+        if (t.includes('tailwind')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" loading="lazy">';
+        }
+        if (t.includes('flutter')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" loading="lazy">';
+        }
+        if (t.includes('dart')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" loading="lazy">';
+        }
+        if (t.includes('express')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="dark:invert" loading="lazy">';
+        }
+        if (t.includes('mariadb')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" alt="MariaDB" loading="lazy">';
+        }
+        if (t.includes('playwright')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" alt="Playwright" loading="lazy">';
+        }
+        if (t.includes('node')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy">';
+        }
+        if (t.includes('pusher')) {
+            return '<img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pusher.svg" alt="Pusher" class="dark:invert" loading="lazy">';
+        }
+        if (t.includes('google')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" loading="lazy">';
+        }
+        if (t.includes('jwt')) {
+            return '<img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/jsonwebtokens.svg" alt="JWT" class="dark:invert" loading="lazy">';
+        }
+        if (t.includes('nextauth') || t.includes('auth')) {
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>';
+        }
+        if (t.includes('recharts') || t.includes('chart')) {
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-teal-500"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>';
+        }
+        if (t.includes('test')) {
+            return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.942A4.5 4.5 0 0115.91 16.5H8.09a4.5 4.5 0 01-2.32-.658L4.2 15.3M19.8 15.3A2.25 2.25 0 0121 17.25v.75a3 3 0 01-3 3H6a3 3 0 01-3-3v-.75a2.25 2.25 0 011.2-1.95" /></svg>';
+        }
+        if (t.includes('git')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy">';
+        }
+        if (t.includes('figma')) {
+            return '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" loading="lazy">';
+        }
+        return '<span class="w-1.5 h-1.5 rounded-full bg-blue-500 inline-block"></span>';
+    }
+
     function renderCaseStudyModal(projectId, lang) {
         const project = caseStudyData[projectId];
         if (!project) return;
@@ -708,11 +780,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bodyEl) {
             let html = '';
 
-            // Tech Stack Badges
+            // Tech Stack Badges (3D Tactile Capsule - Style #1)
             if (data.tags && data.tags.length > 0) {
-                html += '<div class="flex flex-wrap gap-1.5 pb-2 border-b border-gray-100 dark:border-white/5">';
+                html += '<div class="flex flex-wrap gap-2 pb-4 border-b border-gray-100 dark:border-white/5">';
                 data.tags.forEach(tag => {
-                    html += `<span class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold font-mono-custom">${tag}</span>`;
+                    const iconHtml = getTechTagIcon(tag);
+                    html += `<span class="tag-tactile-3d">${iconHtml}<span>${tag}</span></span>`;
                 });
                 html += '</div>';
             }
