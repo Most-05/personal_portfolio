@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidtisak Hanthongchai - Portfolio</title>
 
-    <!-- Fonts -->
+    <!-- 📍 ตัวอักษรและฟอนต์ (Google Fonts: Outfit และ Stylesheet: style.css) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=10">
+    <link rel="stylesheet" href="assets/css/style.css?v=11">
 
-    <!-- AOS CSS -->
+    <!-- 📍 สไตล์สำหรับเอฟเฟกต์เลื่อนหน้าจอ (AOS CSS: Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
+    <!-- 📍 การกำหนดค่าระบบคลาส Tailwind CSS CDN (กำหนดฟอนต์ LINE Seed Sans TH และชุดสีหลัก) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,7 +37,7 @@
         }
     </script>
 
-    <!-- Dark Mode Initializer -->
+    <!-- 📍 สคริปต์ตั้งค่าธีมเริ่มต้น (Dark/Light Mode Initializer: ตรวจสอบจาก localStorage หรือระบบของผู้ใช้) -->
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
@@ -331,10 +331,14 @@
     data-aos-easing="ease-out-cubic" data-aos-duration="700" data-aos-delay="0">
 
 
-    <!-- Animated Dot Background (Full Page) -->
+    <!-- ==========================================================================
+         📍 ตำแหน่งบนหน้าเว็บ: เลเยอร์พื้นหลังด้านหลังสุดของเว็บไซต์ (#dot-background)
+         ========================================================================== -->
     <div id="dot-background" class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true"></div>
 
-    <!-- Skeleton Loading -->
+    <!-- ==========================================================================
+         📍 ตำแหน่งบนหน้าเว็บ: หน้าจอแสดงภาพจำลองการโหลดขณะเปิดเว็บครั้งแรก (#skeleton-loading)
+         ========================================================================== -->
     <div id="skeleton-loading"
         class="fixed inset-0 z-[1000] bg-white dark:bg-[#0a0a0f] flex items-center justify-center transition-opacity duration-500">
         <div class="animate-pulse flex flex-col items-center">
@@ -344,7 +348,9 @@
         </div>
     </div>
 
-    <!-- Custom Cursor (Dot & Ring - Horizontal Capsule on Hover) -->
+    <!-- ==========================================================================
+         📍 ตำแหน่งบนหน้าเว็บ: ตัวชี้เมาส์แบบกำหนดเองบนหน้าจอคอมพิวเตอร์ (Custom Cursor: จุดกึ่งกลางและวงแหวน)
+         ========================================================================== -->
     <div id="cursor-dot"
         class="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 hidden md:block opacity-0">
     </div>
@@ -352,11 +358,16 @@
         class="fixed top-0 left-0 pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 hidden md:block opacity-0">
     </div>
 
-    <!-- Interactive Grid -->
+    <!-- ==========================================================================
+         📍 ตำแหน่งบนหน้าเว็บ: ลวดลายเส้นตารางเรืองแสงตามเมาส์บน Desktop (#interactive-grid)
+         ========================================================================== -->
     <div id="interactive-grid" class="interactive-grid hidden md:block" aria-hidden="true"></div>
 
     <main id="main-content" class="opacity-0 transition-opacity duration-500">
-        <!-- 1. Navbar -->
+        <!-- ==========================================================================
+             📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบนสุดของเว็บไซต์ (Section 1: Sticky Glass Navbar)
+             โครงสร้าง: โลโก้ Sidtisak.dev, ลิงก์นำทาง, ปุ่มสลับภาษา (EN/TH), และปุ่มสลับธีม (Light/Dark)
+             ========================================================================== -->
         <nav class="glass-nav sticky top-0 z-50 w-full transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-2">
@@ -380,7 +391,7 @@
                         class="cursor-hover inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-2 text-sm font-semibold shadow-sm shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-500/25">Contact
                         Me</a>
 
-                    <!-- Language Switcher Desktop -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มสลับภาษาบนหน้าจอคอมพิวเตอร์ (Desktop Language Switcher: #lang-toggle) -->
                     <button id="lang-toggle"
                         class="cursor-hover inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-full border border-gray-200 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all duration-200 text-gray-700 dark:text-zinc-300"
                         aria-label="Toggle Language">
@@ -390,7 +401,7 @@
                         <span class="text-gray-400 dark:text-zinc-500 font-normal">TH</span>
                     </button>
 
-                    <!-- Dark Mode Toggle Desktop -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มสลับโหมดมืด/สว่างบนหน้าจอคอมพิวเตอร์ (Desktop Theme Toggle: #theme-toggle) -->
                     <button id="theme-toggle"
                         class="cursor-hover text-gray-500 dark:text-zinc-400 hover:bg-gray-100 dark:hover:bg-zinc-800 p-2 rounded-full transition-colors"
                         aria-label="Toggle Dark Mode">
@@ -406,9 +417,9 @@
                         </svg>
                     </button>
                 </div>
-                <!-- Mobile Actions (Lang, Theme, Menu) -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: แผงปุ่มควบคุมบนจอมือถือ (Mobile Actions: ภาษา, ธีม, และ Hamburger) -->
                 <div class="md:hidden flex items-center gap-2">
-                    <!-- Language Switcher Mobile -->
+                    <!-- 📍 ปุ่มสลับภาษาบนมือถือ (#lang-toggle-mobile) -->
                     <button id="lang-toggle-mobile"
                         class="cursor-hover inline-flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full border border-gray-200 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all duration-200 text-gray-700 dark:text-zinc-300"
                         aria-label="Toggle Language">
@@ -418,7 +429,7 @@
                         <span class="text-gray-400 dark:text-zinc-500 font-normal">TH</span>
                     </button>
 
-                    <!-- Theme Toggle Mobile -->
+                    <!-- 📍 ปุ่มสลับโหมดมืด/สว่างบนมือถือ (#theme-toggle-mobile) -->
                     <button id="theme-toggle-mobile"
                         class="text-gray-500 dark:text-zinc-400 p-2 cursor-hover rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800"
                         aria-label="Toggle Dark Mode">
@@ -429,7 +440,7 @@
                         </svg>
                     </button>
 
-                    <!-- Hamburger Menu Button -->
+                    <!-- 📍 ปุ่มเปิดเมนู Hamburger บนมือถือ (#mobile-menu-btn) -->
                     <button id="mobile-menu-btn"
                         class="text-gray-500 dark:text-zinc-400 p-2 cursor-hover rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800"
                         aria-label="Open Menu">
@@ -441,7 +452,7 @@
                 </div>
             </div>
 
-            <!-- Mobile Drawer Menu Dropdown -->
+            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูแบบเลื่อนลงมาบนหน้าจอมือถือ (#mobile-menu) -->
             <div id="mobile-menu"
                 class="hidden md:hidden px-6 pt-2 pb-6 border-b border-gray-200 dark:border-zinc-800 bg-white/95 dark:bg-[#0a0a0f]/95 backdrop-blur-xl transition-all">
                 <div class="flex flex-col space-y-4 pt-2">
@@ -462,9 +473,9 @@
             </div>
         </nav>
 
-        <!-- 2. Hero Section -->
+        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนหัวหลักของเว็บไซต์ (Section 2: Hero Section) แสดงสถานะสหกิจ, ชื่อ-นามสกุล, สรุปผลงานสำคัญ และรูปภาพโปรไฟล์ -->
         <section id="hero" class="relative min-h-[90vh] flex items-center pt-12 md:pt-0 overflow-hidden">
-            <!-- Aurora Blobs -->
+            <!-- 📍 ตำแหน่งบนหน้าเว็บ: เลเยอร์แสงออโรราด้านหลัง Hero (Aurora Blobs) ฟุ้งกระจายเพื่อเพิ่มมิติความลึก (Parallax) แบบไม่รบกวนสายตา -->
             <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
                 <div class="blob absolute -top-24 -left-24 w-[650px] h-[650px] rounded-full bg-blue-100/50 dark:bg-blue-900/15 blur-[140px] mix-blend-multiply dark:mix-blend-lighten"
                     data-depth="0.8"></div>
@@ -472,39 +483,39 @@
                     data-depth="1.2"></div>
             </div>
 
-            <!-- Floating 3D Icons (Desktop only) -->
+            <!-- 📍 ตำแหน่งบนหน้าเว็บ: กลุ่มไอคอนเทคโนโลยี 3D แบบลอยอิสระ (Floating 3D Icons - แสดงเฉพาะบนคอมพิวเตอร์ Desktop) มี data-depth สำหรับ Parallax -->
             <div class="pointer-events-none absolute inset-0 hidden md:block z-0" aria-hidden="true">
-                <!-- Icon 1 -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไอคอน 3D จุดที่ 1 (บนขวา) -->
                 <div class="absolute top-[20%] right-[15%] w-24 opacity-80" data-depth="1.5">
                     <div class="fi-a hover-scale-wrapper pointer-events-auto cursor-hover"><img
                             src="assets/images/image-OCOBC6DjtnQdnSysIzLVNNUcJ69u4a.png" alt=""
                             class="w-full h-auto drop-shadow-xl" loading="lazy"></div>
                 </div>
-                <!-- Icon 2 -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไอคอน 3D จุดที่ 2 (กลางขวา) -->
                 <div class="absolute top-[60%] right-[10%] w-32 opacity-90" data-depth="2.4">
                     <div class="fi-b hover-scale-wrapper pointer-events-auto cursor-hover"><img
                             src="assets/images/image-rczvL6X4Cf39WT1qCAcFuw53inEVE6 (1).png" alt=""
                             class="w-full h-auto drop-shadow-2xl" loading="lazy"></div>
                 </div>
-                <!-- Icon 3 -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไอคอน 3D จุดที่ 3 (ล่างขวา) -->
                 <div class="absolute bottom-[20%] right-[30%] w-16 opacity-60" data-depth="1.1">
                     <div class="fi-c hover-scale-wrapper pointer-events-auto cursor-hover"><img
                             src="assets/images/image-SzCpqAVVPNUni8OBmjtA51bicr7Mwd.png" alt=""
                             class="w-full h-auto drop-shadow-lg" loading="lazy"></div>
                 </div>
-                <!-- Icon 4 -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไอคอน 3D จุดที่ 4 (กลางซ้าย) -->
                 <div class="absolute top-[30%] left-[5%] w-20 opacity-70" data-depth="0.9">
                     <div class="fi-d hover-scale-wrapper pointer-events-auto cursor-hover"><img
                             src="assets/images/image-TjQb1FVgGzOR3qe2k4agfHTY0AWvT4.png" alt=""
                             class="w-full h-auto drop-shadow-xl" loading="lazy"></div>
                 </div>
-                <!-- Icon 5 -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไอคอน 3D จุดที่ 5 (ล่างซ้าย) -->
                 <div class="absolute bottom-[15%] left-[10%] w-24 opacity-85" data-depth="1.8">
                     <div class="fi-e hover-scale-wrapper pointer-events-auto cursor-hover"><img
                             src="assets/images/image-UttoQMjhDWWYeDFrYWzyFxQECoJI14.png" alt=""
                             class="w-full h-auto drop-shadow-xl" loading="lazy"></div>
                 </div>
-                <!-- Icon 6 -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไอคอน 3D จุดที่ 6 (บนกลาง) -->
                 <div class="absolute top-[10%] right-[40%] w-14 opacity-50" data-depth="0.5">
                     <div class="fi-f hover-scale-wrapper pointer-events-auto cursor-hover"><img
                             src="assets/images/image-rczvL6X4Cf39WT1qCAcFuw53inEVE6.png" alt=""
@@ -514,15 +525,16 @@
 
             <div class="max-w-6xl mx-auto px-6 w-full text-center md:text-left grid md:grid-cols-2 gap-12 items-center relative z-10"
                 data-depth="0.3">
-                <!-- Content Left -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ฝั่งซ้ายของ Hero - สรุปประวัติย่อ ป้ายสถานะ และปุ่ม Action -->
                 <div class="flex flex-col items-center md:items-start fade-up" style="animation-delay: 0.2s;">
-                    <!-- Avatar on Mobile -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: รูปโปรไฟล์แบบวงกลมสำหรับหน้าจอมือถือ (ซ่อนบนหน้าจอคอม) -->
                     <div
                         class="md:hidden w-32 h-32 rounded-full bg-gray-200 dark:bg-zinc-800 border-4 border-white dark:border-zinc-900 shadow-lg overflow-hidden mb-8 flex items-center justify-center">
                         <img src="assets/images/profile.jpeg" alt="Mr. Sidtisak Hanthongchai"
                             class="w-full h-full object-cover object-top">
                     </div>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ป้ายไฟสถานะพร้อมเริ่มงานสหกิจศึกษา (มีจุดสีเขียวกระพริบ ping animation) -->
                     <div
                         class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-900/60 rounded-full px-4 py-1.5 mb-6">
                         <span class="relative flex h-2 w-2">
@@ -534,22 +546,27 @@
                             data-i18n="hero_status">Cooperative Education Candidate (16 Nov 2026 – 7 Mar 2027)</span>
                     </div>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อภาษาอังกฤษขนาดใหญ่ สไตล์ตัวหนังสือกลวง (Text-Outline) นีออน -->
                     <h1
                         class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-2 text-outline uppercase">
                         Sidtisak
                     </h1>
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: นามสกุลภาษาอังกฤษขนาดใหญ่ สีทึบมีเงาซอฟต์แวร์ (Drop Shadow) -->
                     <h1
                         class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none text-gray-900 dark:text-zinc-100 mb-4 uppercase drop-shadow-lg">
                         Hanthongchai
                     </h1>
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อ-นามสกุลภาษาไทย พร้อมฟอนต์ JetBrains Mono สไตล์โค้ดเดอร์ -->
                     <p class="text-lg text-gray-500 dark:text-zinc-400 mb-4 font-mono-custom tracking-widest text-sm"
                         data-i18n="hero_th_name">Sidtisak Hanthongchai (สิทธิศักดิ์ หาญธงไชย)</p>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ตำแหน่งงานหลัก (> Full Stack Developer_) -->
                     <h2 class="text-xl md:text-2xl font-mono-custom font-semibold text-blue-600 dark:text-blue-400 mb-6"
                         data-i18n="hero_role">
                         > Full Stack Developer_
                     </h2>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ย่อหน้าสรุปประวัติย่อ ทักษะหลัก และจำนวนผลงาน (289 commits / 3 codebases) -->
                     <p class="text-gray-600 dark:text-zinc-400 max-w-lg mx-auto md:mx-0 mb-4 text-base md:text-lg"
                         data-i18n="hero_desc">
                         Fourth-year ICT student at Prince of Songkla University. 289 commits across 3 codebases (Web,
@@ -557,11 +574,13 @@
                         architecture and automated testing.
                     </p>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ข้อมูลที่ตั้งปัจจุบัน (หาดใหญ่ สงขลา) -->
                     <p class="text-xs text-gray-400 dark:text-zinc-500 mb-8 uppercase tracking-wider font-semibold"
                         data-i18n="hero_location">
                         📍 Hat Yai, Songkhla, Thailand
                     </p>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: กลุ่มปุ่ม Action หลัก (ดูผลงาน #projects, ติดต่อ #contact, เปิดดาวน์โหลด Resume CV) -->
                     <div class="flex flex-wrap justify-center md:justify-start gap-4">
                         <a href="#projects" data-i18n="hero_btn_works"
                             class="cursor-hover inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2.5 text-sm font-semibold shadow-sm shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-500/25">
@@ -578,7 +597,7 @@
                     </div>
                 </div>
 
-                <!-- Desktop Avatar Right -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: รูปโปรไฟล์ทางการฝั่งขวาสำหรับหน้าจอคอมพิวเตอร์ (Desktop Avatar) พร้อมเอฟเฟกต์ Fade-up -->
                 <div class="hidden md:flex justify-end items-center relative z-10 fade-up"
                     style="animation-delay: 0.4s;">
                     <div
@@ -590,13 +609,15 @@
             </div>
         </section>
 
-        <!-- 3. Brand Logos -->
+        <!-- 📍 ตำแหน่งบนหน้าเว็บ: แถบโลโก้เทคโนโลยีวิ่งวนไม่รู้จบ (Section 3: Infinite Tech Marquee) คั่นระหว่างส่วน Hero กับ Bento Grid -->
         <section
             class="py-8 border-t border-gray-100/50 dark:border-white/[0.05] bg-transparent overflow-hidden relative z-10">
             <div class="max-w-6xl mx-auto px-6 text-center">
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ข้อความหัวข้อเล็กนำทาง (Technologies I Work With) -->
                 <p class="text-xs text-gray-400 dark:text-zinc-500 mb-6 uppercase tracking-wider font-semibold"
                     data-aos="fade-up" data-i18n="tech_heading">Technologies I Work With</p>
                 <div class="marquee-container w-full overflow-hidden whitespace-nowrap relative">
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: รางเลื่อนโลโก้เทคโนโลยีแบบต่อเนื่อง (อนิเมชัน CSS animate-marquee ความเร็ว 25s) -->
                     <div
                         class="animate-marquee inline-block opacity-70 dark:opacity-50 hover:opacity-100 transition-opacity duration-300">
                         <span
@@ -640,7 +661,7 @@
                             <span>Figma</span>
                         </span>
 
-                        <!-- Duplicate for infinite effect -->
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชุดโลโก้สำเนาซ้ำ (Duplicate Track) เพื่อให้การเลื่อนแบบ Infinite Loop ไหลต่อเนื่องไร้รอยต่อ -->
                         <span
                             class="inline-flex items-center gap-2.5 font-bold text-lg mx-8 grayscale hover:grayscale-0 transition-all duration-200 cursor-hover">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-6 h-6 object-contain dark:invert" loading="lazy">
@@ -686,9 +707,10 @@
             </div>
         </section>
 
-        <!-- Bento Grid: About, Stats, Skills, Services -->
+        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วน Bento Grid รวมข้อมูลสรุป (#about-bento, #about, #skills, #services) ประกอบด้วย About Me, Stats, Services, Skills Stack -->
         <section id="about-bento" class="py-12 md:py-24 relative z-10">
             <div class="max-w-6xl mx-auto px-6">
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: หัวข้อหลักของ Bento Grid สไตล์ Terminal Monospace -->
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span class="section-eyebrow font-mono-custom" data-i18n="bento_eyebrow">> PROFILE_</span>
                     <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-2 text-outline uppercase tracking-widest"
@@ -698,7 +720,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 focus-group" data-aos="fade-up"
                     data-aos-delay="80">
 
-                    <!-- About (Span 2x2) -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดที่ 1 ใน Bento Grid (กินพื้นที่ 2x2 คอลัมน์) - สรุปประวัติการศึกษาและการออกแบบระบบจริง พร้อมแท็กสรุปคุณสมบัติ -->
                     <div
                         class="md:col-span-2 lg:col-span-2 row-span-2 focus-item border-beam glow-card cursor-hover p-8 md:p-10 rounded-3xl flex flex-col justify-between bg-white/60 dark:bg-white/[0.03]">
                         <div>
@@ -711,6 +733,7 @@
                                 Git commits and automated testing.
                             </p>
                         </div>
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: กลุ่มแท็ก Badge เล็กใต้ About Me สรุปตัวเลข 15 Merged PRs, 3 Codebases, 5 Figma Prototypes -->
                         <div class="flex flex-wrap items-center gap-2 mt-auto pt-4">
                             <span
                                 class="font-mono-custom text-xs bg-black/20 dark:bg-white/5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 text-gray-700 dark:text-zinc-300"
@@ -733,7 +756,7 @@
                         </div>
                     </div>
 
-                    <!-- Stat 1: 289 Commits -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดที่ 2 ใน Bento Grid - สถิติยอดรวม 289 Git Commits พร้อมระบบนับเลขวิ่ง Count-Up อัตโนมัติ -->
                     <div
                         class="focus-item border-beam glow-card cursor-hover p-6 rounded-3xl flex flex-col items-center justify-center text-center bg-white/60 dark:bg-white/[0.03]">
                         <div class="text-6xl font-mono-custom font-extrabold text-blue-400 tabular-nums mb-2"
@@ -742,7 +765,7 @@
                             data-i18n="bento_stat_commits">Commits Written<br />across 3 Projects</div>
                     </div>
 
-                    <!-- Stat 2: 81 E2E Tests -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดที่ 3 ใน Bento Grid - สถิติชุดทดสอบ 81 E2E Playwright Tests พร้อมระบบนับเลขวิ่ง Count-Up -->
                     <div
                         class="focus-item border-beam glow-card cursor-hover p-6 rounded-3xl flex flex-col items-center justify-center text-center bg-white/60 dark:bg-white/[0.03]">
                         <div class="text-6xl font-mono-custom font-extrabold text-purple-400 tabular-nums mb-2"
@@ -751,7 +774,7 @@
                             data-i18n="bento_stat_tests">E2E Tests<br />Playwright Suite</div>
                     </div>
 
-                    <!-- Services (Span 2 horizontal) -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดที่ 4 ใน Bento Grid (กินพื้นที่ 2 คอลัมน์) - รายการบริการความเชี่ยวชาญ (Full Stack และ Mobile Dev) -->
                     <div
                         class="md:col-span-2 focus-item border-beam glow-card cursor-hover p-8 rounded-3xl flex flex-col justify-center bg-white/60 dark:bg-white/[0.03]">
                         <h3 class="text-xl font-bold mb-4 font-mono-custom" data-i18n="bento_services_title">> Services
@@ -773,111 +796,111 @@
                         </div>
                     </div>
 
-                    <!-- Skills (Span Full Width) -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดที่ 5 ใน Bento Grid (กินพื้นที่เต็มแถว 4 คอลัมน์) - คลังเทคโนโลยีทั้งหมด (SKILLS_STACK) พร้อมไอคอนเวกเตอร์สีสันแท้และเอฟเฟกต์โฮเวอร์เรืองแสง -->
                     <div
                         class="md:col-span-3 lg:col-span-4 focus-item border-beam glow-card cursor-hover p-8 rounded-3xl bg-white/60 dark:bg-white/[0.03]">
                         <h3 class="text-xl font-bold mb-6 font-mono-custom" data-i18n="bento_skills_title">>
                             SKILLS_STACK</h3>
                         <div class="flex flex-wrap gap-3">
-                            <!-- Next.js -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Next.js 16 -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-zinc-300 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-4 h-4 object-contain dark:invert transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Next.js 16</span>
                             </span>
 
-                            <!-- React -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล React 19 -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>React 19</span>
                             </span>
 
-                            <!-- TypeScript -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล TypeScript -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>TypeScript</span>
                             </span>
 
-                            <!-- Playwright -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Playwright (E2E Automated Testing) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-emerald-400 hover:text-emerald-300 hover:shadow-[0_0_15px_rgba(52,211,153,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" alt="Playwright" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Playwright</span>
                             </span>
 
-                            <!-- Tailwind CSS -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Tailwind CSS -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-teal-400 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(45,212,191,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Tailwind CSS</span>
                             </span>
 
-                            <!-- Flutter -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Flutter (Mobile Dev) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-sky-400 hover:text-sky-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Flutter</span>
                             </span>
 
-                            <!-- Node.js -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Node.js (Backend Runtime) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-green-500 hover:text-green-400 hover:shadow-[0_0_15px_rgba(34,197,94,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Node.js</span>
                             </span>
 
-                            <!-- Express.js -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Express.js (REST API Server) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-zinc-400 hover:text-zinc-200 hover:shadow-[0_0_15px_rgba(161,161,170,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="w-4 h-4 object-contain dark:invert transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Express.js</span>
                             </span>
 
-                            <!-- Prisma ORM -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Prisma ORM (Type-Safe Database Client) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-200 hover:shadow-[0_0_15px_rgba(94,234,212,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma ORM" class="w-4 h-4 object-contain dark:invert transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Prisma ORM</span>
                             </span>
 
-                            <!-- PostgreSQL -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล PostgreSQL (Relational Database) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-blue-400 hover:text-blue-300 hover:shadow-[0_0_15px_rgba(96,165,250,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>PostgreSQL</span>
                             </span>
 
-                            <!-- pgAdmin -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล pgAdmin (Database Management Tool) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-indigo-400 hover:text-indigo-300 hover:shadow-[0_0_15px_rgba(129,140,248,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg" alt="pgAdmin" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>pgAdmin</span>
                             </span>
 
-                            <!-- MariaDB / MySQL -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล MariaDB / MySQL -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-amber-400 hover:text-amber-300 hover:shadow-[0_0_15px_rgba(251,191,36,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MariaDB / MySQL" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>MariaDB / MySQL</span>
                             </span>
 
-                            <!-- Claude Code CLI -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Claude Code CLI (AI Pair Programming Tool) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-orange-400 hover:text-orange-300 hover:shadow-[0_0_15px_rgba(251,146,60,0.25)]">
                                 <svg class="w-4 h-4 object-contain fill-[#CC785C] inline-block transition-transform duration-300 group-hover:scale-110" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Claude</title><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg>
                                 <span>Claude Code CLI</span>
                             </span>
 
-                            <!-- Git / GitHub -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Git / GitHub (Version Control & Team Workflow) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-red-500 hover:text-red-400 hover:shadow-[0_0_15px_rgba(239,68,68,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
                                 <span>Git / GitHub</span>
                             </span>
 
-                            <!-- Figma -->
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กสกิล Figma (Interactive UI/UX Prototyping) -->
                             <span
                                 class="inline-flex items-center gap-2.5 bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 px-4 py-2 rounded-xl text-sm font-mono-custom text-zinc-300 backdrop-blur-md transition-all duration-300 cursor-hover group hover:-translate-y-0.5 hover:border-pink-500 hover:text-pink-400 hover:shadow-[0_0_15px_rgba(236,72,153,0.25)]">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-4 h-4 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy">
@@ -890,16 +913,17 @@
             </div>
         </section>
 
-        <!-- 7. Projects -->
+        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแสดงผลงานโปรเจกต์ (Section 5: Projects Section #projects / #works) มีปุ่มกรองหมวดหมู่และการ์ดแสดงรายละเอียด -->
         <section id="projects"
             class="py-12 md:py-20 border-t border-gray-100/50 dark:border-white/[0.05] bg-transparent relative z-10">
             <div class="max-w-6xl mx-auto px-6">
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: หัวข้อหลักของ Projects พร้อมปุ่มกรองประเภทผลงาน (Filter Buttons: All, Web App, Mobile App) -->
                 <div class="text-center mb-12" data-aos="fade-up">
                     <span class="section-eyebrow font-mono-custom" data-i18n="projects_eyebrow">> WORKS_</span>
                     <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-8 text-outline uppercase tracking-widest"
                         data-i18n="projects_heading">PROJECTS</h2>
 
-                    <!-- Filter Buttons -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มเลือกกรองหมวดหมู่ผลงาน (All, Web App, Mobile App) ทำงานร่วมกับ script ด้านล่าง -->
                     <div class="flex flex-wrap justify-center gap-3">
                         <button
                             class="project-filter-btn active cursor-hover px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 bg-blue-600 text-white shadow-sm shadow-blue-500/20"
@@ -913,11 +937,13 @@
                     </div>
                 </div>
 
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: กริดแสดงการ์ดผลงานโปรเจกต์ทั้ง 3 งาน (#projects-grid) มีเอฟเฟกต์โฮเวอร์ขอบแสงหมุนวน border-beam -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 focus-group" id="projects-grid" data-aos="fade-up"
                     data-aos-delay="80">
-                    <!-- Project 1 -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดโปรเจกต์ที่ 1 - Srichai Property (เว็บแพลตฟอร์มอสังหาริมทรัพย์ Capstone Project) -->
                     <div class="project-card focus-item border-beam glow-card cursor-hover bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border-white/50 dark:border-white/10 flex flex-col h-full rounded-2xl overflow-hidden"
                         data-category="webapp">
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: รูปภาพหน้าจอพรีวิวโปรเจกต์ Srichai Property พร้อมเอฟเฟกต์ซูม 1.05 เท่าเมื่อโฮเวอร์ -->
                         <div
                             class="h-52 bg-gray-200 dark:bg-zinc-800 w-full flex items-center justify-center shrink-0 relative overflow-hidden group">
                             <img src="assets/images/project-srichai.png" alt="Srichai Property Real Estate Platform"
@@ -928,6 +954,7 @@
                             </div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อโปรเจกต์และแท็กสถิติ Git ยืนยัน (85 Commits · 15 PRs · 32 Tables) -->
                             <div class="flex items-center justify-between mb-2">
                                 <h3 class="text-xl font-bold" data-i18n="p1_title">Srichai Property</h3>
                                 <span
@@ -938,6 +965,7 @@
                                 Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access
                                 control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict
                                 to prevent overlapping client viewings.</p>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กแสดงสแต็กเทคโนโลยีที่ใช้ในโปรเจกต์ Srichai Property -->
                             <div class="flex flex-wrap gap-1.5 mb-auto pb-4">
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Next.js
@@ -952,6 +980,7 @@
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Recharts</span>
                             </div>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แถบปุ่มลิงก์ท้ายการ์ด (เปิดดู GitHub Repository และปุ่มเปิด Technical Case Study Modal) -->
                             <div class="mt-4 flex items-center justify-between">
                                 <a href="https://github.com/PHmeen/SrichaiProperty" target="_blank"
                                     rel="noopener noreferrer"
@@ -967,9 +996,10 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดโปรเจกต์ที่ 2 - GameStore (เว็บร้านค้าเกมออนไลน์ React + ระบบทดสอบ Playwright E2E 81 ชุด) -->
                     <div class="project-card focus-item border-beam glow-card cursor-hover bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border-white/50 dark:border-white/10 flex flex-col h-full rounded-2xl overflow-hidden"
                         data-category="webapp">
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: รูปภาพหน้าจอพรีวิวโปรเจกต์ GameStore Storefront -->
                         <div
                             class="h-52 bg-gray-200 dark:bg-zinc-800 w-full flex items-center justify-center shrink-0 relative overflow-hidden group">
                             <img src="assets/images/project-gamestore.png"
@@ -981,6 +1011,7 @@
                             </div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อโปรเจกต์และแท็กสถิติ Git ยืนยัน (144 Commits · 81 Tests · 8.4MB → 1.25MB) -->
                             <div class="flex items-center justify-between mb-2">
                                 <h3 class="text-xl font-bold" data-i18n="p2_title">GameStore</h3>
                                 <span
@@ -991,6 +1022,7 @@
                                 React storefront with 81 Playwright E2E tests covering every route and auth flow.
                                 Rebuilt lost backend as a dependency-free Node.js mock server. Optimized page assets
                                 reducing bundle size from 8.4MB to 1.25MB.</p>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กแสดงสแต็กเทคโนโลยีที่ใช้ในโปรเจกต์ GameStore -->
                             <div class="flex flex-wrap gap-1.5 mb-auto pb-4">
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">React
@@ -1004,6 +1036,7 @@
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">React
                                     Router 7</span>
                             </div>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แถบปุ่มลิงก์ท้ายการ์ด (เปิดดู GitHub Repository และปุ่มเปิด Technical Case Study Modal) -->
                             <div class="mt-4 flex items-center justify-between">
                                 <a href="https://github.com/Most-05/game-store" target="_blank" rel="noopener noreferrer"
                                     class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-hover group">
@@ -1018,9 +1051,10 @@
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดโปรเจกต์ที่ 3 - Property Viewing App (แอปพลิเคชันมือถือ Flutter + Express Backend) -->
                     <div class="project-card focus-item border-beam glow-card cursor-hover bg-white/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border-white/50 dark:border-white/10 flex flex-col h-full rounded-2xl overflow-hidden"
                         data-category="mobile">
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: แบนเนอร์ภาพ Mockup พรีวิวแอปพลิเคชันมือถือ Flutter (อัตราส่วน 16:9 สวยงาม) -->
                         <div
                             class="h-52 bg-gray-200 dark:bg-zinc-800 w-full flex items-center justify-center shrink-0 relative overflow-hidden group">
                             <img src="assets/images/project-property.png" alt="Property Viewing Mobile App (Flutter)"
@@ -1031,6 +1065,7 @@
                             </div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อโปรเจกต์และแท็กสถิติ Git ยืนยัน (60/78 Commits · 5 Models) -->
                             <div class="flex items-center justify-between mb-2">
                                 <h3 class="text-xl font-bold" data-i18n="p3_title">Property Viewing App</h3>
                                 <span
@@ -1041,6 +1076,7 @@
                                 Flutter mobile booking application. Built end-to-end booking flow across 5 API routes.
                                 Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model
                                 classes with fromJson, and covered with Flutter integration_test.</p>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: แท็กแสดงสแต็กเทคโนโลยีที่ใช้ในโปรเจกต์ Mobile App -->
                             <div class="flex flex-wrap gap-1.5 mb-auto pb-4">
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Flutter
@@ -1054,6 +1090,7 @@
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">integration_test</span>
                             </div>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ข้อมูลบริบทรายวิชา 308-493 และปุ่มเปิด Technical Case Study Modal เพื่อดูภาพขั้นตอน Mobile Flow 4 หน้าจอจริง -->
                             <div class="mt-4 flex items-center justify-between">
                                 <span class="text-xs text-gray-400 font-mono-custom">Coursework 308-493 · 2-person team</span>
                                 <button type="button" class="open-case-study-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all cursor-hover" data-project="propertyapp">
@@ -1067,17 +1104,19 @@
             </div>
         </section>
 
-        <!-- 8. Experience -->
+        <!-- 📍 ตำแหน่งบนหน้าเว็บ: เส้นทางประสบการณ์การทำงาน การศึกษา และกิจกรรมจิตอาสา (Section 6: Experience Timeline Section #experience) -->
         <section id="experience" class="py-12 md:py-20 border-t border-gray-100 dark:border-zinc-800/60">
             <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ซ้าย - หัวข้อ Experience พร้อมคำอธิบายย่อส่วนไทม์ไลน์ -->
                 <div class="md:col-span-1" data-aos="fade-right">
                     <span class="section-eyebrow" data-i18n="exp_eyebrow">Experience</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-6" data-i18n="exp_heading">Work, Education &
                         Volunteering</h2>
                 </div>
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ขวา - เส้นไทม์ไลน์แนวตั้งพร้อมจุด Bullet สีและข้อมูลประสบการณ์ 4 รายการ -->
                 <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="80">
                     <div class="relative border-l-2 border-gray-200 dark:border-zinc-800 pl-8 ml-3 space-y-12">
-                        <!-- Job 1 -->
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไทม์ไลน์จุดที่ 1 - ประสบการณ์ฝึกงาน Data Analyst ณ สำนักทรัพยากรการเรียนรู้คุณหญิงหลงฯ ม.อ. (16 เม.ย. - 12 มิ.ย. 2026) -->
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex items-center justify-center w-8 h-8 bg-white dark:bg-[#0a0a0f] rounded-full">
@@ -1101,6 +1140,7 @@
                                     &lt;25) on a 6x smaller IT budget, correlating with the group's highest average
                                     downtime.</li>
                             </ul>
+                            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มดูวิดีโอนำเสนอผลงานฝึกงานบน YouTube พร้อมไอคอน YouTube เวกเตอร์ -->
                             <div class="mt-3.5">
                                 <a href="https://youtu.be/JAZgZ50tfEY" target="_blank" rel="noopener noreferrer"
                                     class="cursor-hover inline-flex items-center gap-2 text-xs font-semibold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 hover:bg-red-100 dark:hover:bg-red-900/50 border border-red-200 dark:border-red-900/50 px-3.5 py-1.5 rounded-full transition-all duration-200 hover:-translate-y-0.5">
@@ -1112,7 +1152,7 @@
                             </div>
                         </div>
 
-                        <!-- Education -->
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไทม์ไลน์จุดที่ 2 - ประวัติการศึกษาระดับปริญญาตรี วท.บ. เทคโนโลยีสารสนเทศและการสื่อสาร (ICT) ม.อ. หาดใหญ่ -->
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex items-center justify-center w-8 h-8 bg-white dark:bg-[#0a0a0f] rounded-full">
@@ -1135,7 +1175,7 @@
                             </ul>
                         </div>
 
-                        <!-- Training & Activities -->
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไทม์ไลน์จุดที่ 3 - การอบรมเฉพาะทาง (AI Literacy, Git/CI-CD, Flutter Workshop) และกิจกรรมอาสาช่วยเหลือชุมชน -->
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex items-center justify-center w-8 h-8 bg-white dark:bg-[#0a0a0f] rounded-full">
@@ -1165,7 +1205,7 @@
                             </ul>
                         </div>
 
-                        <!-- University Leadership & Certified Activities -->
+                        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ไทม์ไลน์จุดที่ 4 - กิจกรรมผู้นำนักศึกษาและชั่วโมงกิจกรรมมหาวิทยาลัยที่ได้รับการรับรอง 136 ชั่วโมง -->
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex items-center justify-center w-8 h-8 bg-white dark:bg-[#0a0a0f] rounded-full">
@@ -1196,9 +1236,10 @@
         </section>
 
 
-        <!-- 10. Contact -->
+        <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนช่องทางการติดต่อและแบบฟอร์มส่งข้อความ (Section 7: Contact Section #contact) -->
         <section id="contact" class="py-12 md:py-20 border-t border-gray-100 dark:border-zinc-800/60">
             <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ซ้าย - ข้อมูลติดต่อส่วนบุคคล (Email, เบอร์โทรศัพท์, และบัญชี GitHub) -->
                 <div data-aos="fade-right">
                     <span class="section-eyebrow" data-i18n="contact_eyebrow">Contact</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-6" data-i18n="contact_heading">Interested in
@@ -1207,6 +1248,7 @@
                         me directly or leave a message in the form below. I will get back to you as soon as possible.
                     </p>
 
+                    <!-- 📍 ตำแหน่งบนหน้าเว็บ: รายการช่องทางติดต่อทางตรงพร้อมไอคอนและเอฟเฟกต์โฮเวอร์ -->
                     <div class="space-y-6">
                         <a href="mailto:sidtisakm@gmail.com" class="flex items-center gap-4 group cursor-hover w-fit">
                             <div
@@ -1248,6 +1290,7 @@
                     </div>
                 </div>
 
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ขวา - แบบฟอร์มส่งข้อความติดต่อ ทำงานผ่านระบบ Netlify Forms (data-netlify="true") โดยไม่ต้องมี Backend -->
                 <div data-aos="fade-left" data-aos-delay="100">
                     <form data-netlify="true" name="contact" method="POST" class="space-y-4">
                         <div>
@@ -1285,7 +1328,7 @@
         </section>
     </main>
 
-    <!-- 11. Footer -->
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายสุดของหน้าเว็บ (Section 8: Footer) แสดงข้อความลิขสิทธิ์และตัวเลขปีปัจจุบันที่คำนวณผ่าน JS -->
     <footer class="py-8 border-t border-gray-100 dark:border-zinc-800/60 text-center">
         <p class="text-sm text-gray-500 dark:text-zinc-500">
             &copy; <span id="current-year"></span> Sidtisak Hanthongchai. <span data-i18n="footer_rights">All rights
@@ -1293,10 +1336,10 @@
         </p>
     </footer>
 
-    <!-- Technical Case Study Modal -->
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัปเจาะลึกโปรเจกต์ (Section 9: Technical Case Study Modal Dialog) แสดงขึ้นเมื่อคลิกปุ่ม Case Study บนการ์ดผลงาน -->
     <div id="case-study-modal" class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-black/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
         <div class="modal-card bg-white dark:bg-[#0c0d14] border border-gray-200 dark:border-white/10 rounded-3xl max-w-3xl w-full max-h-[88vh] flex flex-col shadow-2xl shadow-blue-500/10 overflow-hidden">
-            <!-- Modal Header -->
+            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนหัวของหน้าต่างป๊อปอัป (แสดงป้ายหมวดหมู่, สถิติ Git, ชื่อโปรเจกต์ และปุ่มกากบาทปิดหน้าต่าง) -->
             <div class="p-6 md:px-8 md:py-6 border-b border-gray-100 dark:border-white/10 flex items-start justify-between gap-4 bg-gray-50/50 dark:bg-white/[0.02]">
                 <div>
                     <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -1305,17 +1348,18 @@
                     </div>
                     <h3 id="modal-project-title" class="text-xl md:text-2xl font-extrabold text-gray-900 dark:text-white"></h3>
                 </div>
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มกากบาทปิดหน้าต่าง Modal มุมขวาบน (#close-case-study-btn) -->
                 <button type="button" id="close-case-study-btn" class="cursor-hover text-gray-400 hover:text-gray-900 dark:hover:text-white p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-white/10 transition-colors" aria-label="Close modal">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
             
-            <!-- Modal Body (Scrollable) -->
+            <!-- 📍 ตำแหน่งบนหน้าเว็บ: เนื้อหาภายในหน้าต่างป๊อปอัปที่สามารถเลื่อนขึ้นลงได้ (#modal-project-body) ข้อมูล HTML จะถูกฉีดผ่าน renderCaseStudyModal() ใน main.js -->
             <div id="modal-project-body" class="p-6 md:p-8 overflow-y-auto modal-scroll space-y-6 text-sm leading-relaxed text-gray-600 dark:text-zinc-300">
                 <!-- Injected via JavaScript -->
             </div>
             
-            <!-- Modal Footer -->
+            <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายของหน้าต่างป๊อปอัป มีปุ่มทางลัดไปยัง GitHub Repository และปุ่ม Close ปิดหน้าต่าง -->
             <div class="p-4 md:px-8 border-t border-gray-100 dark:border-white/10 flex items-center justify-between gap-4 bg-gray-50/50 dark:bg-white/[0.02]">
                 <a id="modal-project-repo" href="#" target="_blank" rel="noopener noreferrer" class="cursor-hover inline-flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -1328,18 +1372,19 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ไลบรารี AOS สำหรับเอฟเฟกต์เลื่อนหน้าจอแล้วองค์ประกอบลอยขึ้น (Scroll Animation) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Set Current Year
+        // 📍 ตำแหน่งบนหน้าเว็บ: ส่วน Footer - อัปเดตตัวเลขปีปัจจุบันอัตโนมัติในแท็ก #current-year เพื่อไม่ต้องแก้โค้ดทุกปี
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Detect touch device early
+        // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บ - ตรวจจับว่าอุปกรณ์เป็นหน้าจอสัมผัส (Touch Device เช่น สมาร์ตโฟน/แท็บเล็ต) หรือไม่ เพื่อปิดเอฟเฟกต์เมาส์ที่ไม่จำเป็น
         const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-        // -------------------------
-        // Skeleton Loading & Init
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บ - ควบคุมการเปลี่ยนผ่านจากหน้าจอโครงร่างจำลอง (Skeleton Loading)
+        // สู่เนื้อหาจริง (#main-content) พร้อมสั่งเริ่มการทำงานของ AOS และรองรับ Deep Link Hash Anchor (เช่น #projects)
+        // ------------------------------------------------------------------------------------------------
         window.addEventListener('load', () => {
             const skeleton = document.getElementById('skeleton-loading');
             const mainContent = document.getElementById('main-content');
@@ -1351,16 +1396,16 @@
                 setTimeout(() => {
                     skeleton.classList.add('hidden');
 
-                    // Init AOS
+                    // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บ - สั่งเริ่มการทำงานของไลบรารี AOS สำหรับเลื่อนหน้าจอแล้วเนื้อหาลอยขึ้น
                     AOS.init({
                         once: true,
                         offset: 50,
                     });
 
-                    // Trigger Count-up after load
+                    // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดสถิติใน Bento Grid - เริ่มนับตัวเลข 0 ไป 289 Commits และ 81 Tests เมื่อโหลดหน้าเสร็จ
                     initCountUp();
 
-                    // Ensure clean smooth scroll if loaded with hash anchor (e.g., #projects)
+                    // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บ - เลื่อนหน้าจอไปยัง Section เป้าหมายอย่างนุ่มนวลหาก URL มี #anchor กำกับไว้
                     if (window.location.hash) {
                         try {
                             const target = document.querySelector(window.location.hash);
@@ -1372,17 +1417,19 @@
                         } catch (err) {}
                     }
                 }, 500);
-            }, 600); // 600ms artificial load time for effect
+            }, 600); // จำลองเวลาโหลด 600ms เพื่อให้ผู้ใช้เห็น Skeleton Loader ที่สวยงามและราบรื่น
         });
 
-        // -------------------------
-        // Dark Mode Toggle
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบน (Sticky Glass Navbar) ทั้งบนคอมและมือถือ - สลับโหมดมืด/สว่าง
+        // ควบคุมไอคอนพระอาทิตย์/พระจันทร์ (#theme-toggle, #theme-toggle-mobile) และบันทึกลง localStorage.theme
+        // ------------------------------------------------------------------------------------------------
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
 
+        // สลับการแสดงไอคอนพระอาทิตย์/พระจันทร์ตามคลาส dark บนแท็ก <html>
         function updateIcons() {
             if (document.documentElement.classList.contains('dark')) {
                 darkIcon.classList.add('hidden');
@@ -1394,6 +1441,7 @@
         }
         updateIcons();
 
+        // ฟังก์ชันสลับคลาส dark และจัดเก็บค่าลงหน่วยความจำเบราว์เซอร์
         function toggleTheme() {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
@@ -1408,9 +1456,10 @@
         themeToggleBtn.addEventListener('click', toggleTheme);
         themeToggleMobileBtn.addEventListener('click', toggleTheme);
 
-        // -------------------------
-        // Interactive Grid & Glow Card
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: พื้นหลังลายตาราง (#interactive-grid) และการ์ดทุกใบที่มีคลาส .glow-card
+        // คำนวณพิกัดเมาส์ X, Y แบบเรียลไทม์เพื่อสร้างเอฟเฟกต์แสงไฟสปอตไลต์เรืองแสงติดตามเคอร์เซอร์
+        // ------------------------------------------------------------------------------------------------
         const grid = document.getElementById('interactive-grid');
         const glowCards = document.querySelectorAll('.glow-card');
 
@@ -1421,14 +1470,14 @@
                 mouseX = e.clientX;
                 mouseY = e.clientY;
 
-                // Update Grid
+                // อัปเดตพิกัดแสงส่องลงบนตารางพื้นหลัง
                 if (grid) {
                     grid.classList.add('active');
                     grid.style.setProperty('--mouse-x', `${mouseX}px`);
                     grid.style.setProperty('--mouse-y', `${mouseY}px`);
                 }
 
-                // Update Glow Cards
+                // อัปเดตพิกัดแสงส่องลงบนการ์ดแต่ละใบ (คำนวณตำแหน่งสัมพัทธ์กับการ์ด)
                 glowCards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const x = mouseX - rect.left;
@@ -1439,9 +1488,10 @@
             });
         }
 
-        // -------------------------
-        // Mouse Parallax (Hero)
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนหัวของเว็บ (Section 2: Hero Section) - การขยับภาพมิติซ้อนลึก (Mouse Parallax)
+        // ขยับเลเยอร์แสง Aurora Blobs และไอคอนลอย 3D ตามองศาเมาส์ด้วยอัตราส่วน data-depth ที่ต่างกัน
+        // ------------------------------------------------------------------------------------------------
         const parallaxElements = document.querySelectorAll('[data-depth]');
         let targetX = 0, targetY = 0;
         let currentX = 0, currentY = 0;
@@ -1456,6 +1506,7 @@
             });
 
             function renderParallax() {
+                // ขยับแบบ Lerp (Linear Interpolation) นุ่มนวล 5% ต่อเฟรม
                 currentX += (targetX - currentX) * 0.05;
                 currentY += (targetY - currentY) * 0.05;
 
@@ -1476,9 +1527,11 @@
             renderParallax();
         }
 
-        // -------------------------
-        // Custom Cursor Logic (Original Version)
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าจอคอมพิวเตอร์ (Desktop ขนาดหน้าจอ >= 768px)
+        // ควบคุม Custom Cursor ประกอบด้วยจุดกลม (#cursor-dot) และวงแหวนตาม (#cursor-ring)
+        // เมื่อเลื่อนทับปุ่ม/ลิงก์ วงแหวนจะยืดเป็นรูปแคปซูลแนวนอน (56px x 32px) และจุดกลมขยายขนาด 2 เท่า
+        // ------------------------------------------------------------------------------------------------
         const cursorDot = document.getElementById('cursor-dot');
         const cursorRing = document.getElementById('cursor-ring');
         let curMouseX = 0;
@@ -1504,6 +1557,7 @@
                 cursorDot.style.top = `${curMouseY}px`;
             });
 
+            // ซ่อนเคอร์เซอร์เมื่อเมาส์เลื่อนออกจากหน้าต่างเบราว์เซอร์
             document.addEventListener('mouseleave', () => {
                 cursorDot.classList.add('opacity-0');
                 cursorRing.classList.add('opacity-0');
@@ -1515,6 +1569,7 @@
                 }
             });
 
+            // เลื่อนวงแหวนตามเคอร์เซอร์ด้วยความหน่วง 15% เพื่อความลื่นไหลระดับพรีเมียม
             function animateRing() {
                 if (hasMoved) {
                     ringX += (curMouseX - ringX) * 0.15;
@@ -1526,7 +1581,7 @@
             }
             animateRing();
 
-            // Hover effects for interactables (Horizontal capsule: 56px x 32px, dot scales 2x)
+            // 📍 ตำแหน่งบนหน้าเว็บ: ตรวจจับองค์ประกอบที่คลิกได้ (a, button, input, textarea, .cursor-hover) เพื่อเปลี่ยนสถานะเคอร์เซอร์
             const initCursorHovers = () => {
                 const interactables = document.querySelectorAll('a, button, input, textarea, .cursor-hover');
                 interactables.forEach(el => {
@@ -1545,7 +1600,7 @@
             };
             initCursorHovers();
 
-            // Click effect (Scale down slightly on click)
+            // ย่อเคอร์เซอร์ลงเล็กน้อยขณะคลิกเมาส์ (Click Feedback Effect)
             document.addEventListener('mousedown', () => {
                 cursorRing.classList.add('cursor-clicked');
                 cursorDot.classList.add('cursor-clicked');
@@ -1556,9 +1611,11 @@
             });
         }
 
-        // -------------------------
-        // Count Up Animation
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดสถิติใน Bento Grid (Section 4)
+        // อนิเมชันตัวเลขวิ่งขึ้น (Count-Up) จาก 0 ไปยังค่าจริง (289 Commits, 81 Tests)
+        // โดยใช้ IntersectionObserver ตรวจจับจังหวะที่การ์ดเลื่อนเข้ามาอยู่ในมุมมองสายตา
+        // ------------------------------------------------------------------------------------------------
         function initCountUp() {
             const counters = document.querySelectorAll('[data-count]');
 
@@ -1578,6 +1635,7 @@
             });
         }
 
+        // ฟังก์ชันคำนวณตัวเลขวิ่งแบบ Easing (ชะลอความเร็วตอนใกล้ถึงเป้าหมาย)
         function animateValue(obj, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
@@ -1594,30 +1652,32 @@
             window.requestAnimationFrame(step);
         }
 
-        // -------------------------
-        // Project Filtering
-        // -------------------------
+        // ------------------------------------------------------------------------------------------------
+        // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแสดงผลงานโปรเจกต์ (Section 5: Projects Section)
+        // จัดการคลิกปุ่มกรองหมวดหมู่ (All, Web App, Mobile App) เพื่อสลับแสดง/ซ่อนการ์ดโปรเจกต์แบบ Fade Scale
+        // ------------------------------------------------------------------------------------------------
         const filterBtns = document.querySelectorAll('.project-filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active styling from all buttons
+                // ล้างสีปุ่ม Active เดิมออกทั้งหมด
                 filterBtns.forEach(b => {
                     b.classList.remove('bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-500/20');
                     b.classList.add('bg-white', 'dark:bg-zinc-800', 'border', 'border-gray-200', 'dark:border-zinc-700', 'text-gray-600', 'dark:text-zinc-400');
                 });
 
-                // Add active styling to clicked button
+                // ใส่สีน้ำเงิน Active ให้กับปุ่มที่เพิ่งถูกคลิก
                 btn.classList.remove('bg-white', 'dark:bg-zinc-800', 'border', 'border-gray-200', 'dark:border-zinc-700', 'text-gray-600', 'dark:text-zinc-400');
                 btn.classList.add('bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-500/20');
 
                 const filterValue = btn.getAttribute('data-filter');
 
+                // กรองการ์ดผลงานตาม data-category
                 projectCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                         card.style.display = 'flex';
-                        // Small delay to allow display:flex to apply before animating opacity
+                        // หน่วงเวลาสั้นๆ เพื่อให้ display: flex มีผลก่อนทำอนิเมชัน opacity & scale
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'scale(1)';
@@ -1633,6 +1693,7 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=10"></script>
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ JavaScript หลักภายนอก (main.js?v=11) - จัดการระบบสลับสองภาษา (i18n), เมนูมือถือ, เม็ดประกายพื้นหลัง, และ Case Study Modal -->
+    <script src="assets/js/main.js?v=11"></script>
 
 </html>

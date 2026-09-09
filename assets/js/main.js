@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Global state for open modal
+    // ==========================================================================
+    // 📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัปแสดงรายละเอียดเชิงลึก (Case Study Modal)
+    // ตัวแปรสถานะส่วนกลาง: บันทึก ID ของโปรเจกต์ที่กำลังเปิดดูอยู่ (เช่น 'srichai', 'gamestore', 'propertyapp')
+    // เพื่อให้เมื่อผู้ใช้กดสลับภาษา (EN/TH) ระบบจะอัปเดตเนื้อหาในป๊อปอัปที่เปิดค้างอยู่ให้เป็นภาษานั้นทันที
+    // ==========================================================================
     let activeCaseStudyId = null;
 
-    // ==========================================
-    // 1. Multi-language (i18n) System
-    // ==========================================
+    // ==========================================================================
+    // 1. ระบบจัดการหลายภาษา (Multi-language i18n System)
+    // 📍 ตำแหน่งบนหน้าเว็บ: ครอบคลุมข้อความทั้งหมดทั่วทั้งหน้าเว็บ (Navbar, Hero, Bento, Works, Experience, Contact, Footer)
+    // ทำไมต้องทำ: เพื่อรองรับการนำเสนอผลงานทั้งผู้ประเมินชาวไทยและบริษัทข้ามชาติ/สากล 
+    // โดยใช้ระบบ data-i18n ผูกกับคำศัพท์ในพจนานุกรมนี้
+    // ==========================================================================
     const translations = {
         en: {
-            // Navbar
+            // 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบน (Navbar)
             nav_about: "About",
             nav_skills: "Skills",
             nav_services: "Services",
@@ -16,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_experience: "Experience",
             nav_contact: "Contact Me",
 
-            // Hero Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนหัวเว็บไซต์ (Hero Section: #about)
             hero_status: "Cooperative Education Candidate (16 Nov 2026 – 7 Mar 2027)",
             hero_th_name: "Sidtisak Hanthongchai (สิทธิศักดิ์ หาญธงไชย)",
             hero_role: "> Full Stack Developer_",
@@ -26,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_btn_contact: "Contact Me",
             hero_btn_cv: "Resume CV",
 
-            // Tech Marquee
+            // 📍 ตำแหน่งบนหน้าเว็บ: แถบข้อความและโลโก้วิ่ง (Tech Marquee)
             tech_heading: "Technologies I Work With",
 
-            // Bento Grid / Profile
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดตารางประวัติและทักษะ (Bento Grid / Profile)
             bento_eyebrow: "> PROFILE_",
             bento_heading: "BENTO GRID",
             bento_about_title: "> About Me",
@@ -49,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bento_service_mobile_desc: "Flutter, Dart, Express.js, MariaDB, REST API",
             bento_skills_title: "> SKILLS_STACK",
 
-            // Projects Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนจัดแสดงผลงานและปุ่มคัดกรอง (Projects Section & Filters: #works)
             projects_eyebrow: "> WORKS_",
             projects_heading: "PROJECTS",
             filter_all: "All",
@@ -60,22 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
             modal_view_github: "View GitHub Repository",
             modal_close: "Close",
 
-            // Project 1: Srichai Property
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
             p1_desc: "Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict to prevent overlapping client viewings.",
             p1_meta: "85 Commits · 15 PRs · 32 Tables · 32 APIs",
 
-            // Project 2: GameStore
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
             p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt lost backend as a dependency-free Node.js mock server. Optimized page assets reducing bundle size from 8.4MB to 1.25MB.",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
-            // Project 3: Property Viewing App
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
             p3_desc: "Flutter mobile booking application. Built end-to-end booking flow across 5 API routes. Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model classes with fromJson, and covered with Flutter integration_test.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
-            // Experience Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
             exp_eyebrow: "Experience",
             exp_heading: "Work, Education & Volunteering",
             exp_job1_title: "Data Analyst Intern",
@@ -108,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_lead_b3: "Co-organizer — National Science Week Exhibition 2023 (12 hours, event operations and leadership).",
             exp_lead_b4: "Co-op Readiness Training — Completed Faculty of Science Cooperative Education modules (Sci Festival 2026 & Road Map to Get Your Job).",
 
-            // Contact Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแบบฟอร์มติดต่อ (Contact Section: #contact)
             contact_eyebrow: "Contact",
             contact_heading: "Interested in working together?",
             contact_subheading: "Feel free to email me directly or leave a message in the form below. I will get back to you as soon as possible.",
@@ -123,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_msg_placeholder: "How can I help you?",
             contact_form_submit: "Send Message",
 
-            // Footer
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายสุดของหน้าเว็บ (Footer)
             footer_rights: "All rights reserved."
         },
         th: {
-            // Navbar
+            // 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบน (Navbar)
             nav_about: "เกี่ยวกับฉัน",
             nav_skills: "ทักษะ",
             nav_services: "บริการ",
@@ -135,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_experience: "ประสบการณ์",
             nav_contact: "ติดต่อผม",
 
-            // Hero Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนหัวเว็บไซต์ (Hero Section: #about)
             hero_status: "ผู้สมัครฝึกสหกิจศึกษา (16 พ.ย. 2569 – 7 มี.ค. 2570)",
             hero_th_name: "สิทธิศักดิ์ หาญธงไชย",
             hero_role: "> Full Stack Developer_",
@@ -145,10 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_btn_contact: "ติดต่อผม",
             hero_btn_cv: "เรซูเม CV",
 
-            // Tech Marquee
+            // 📍 ตำแหน่งบนหน้าเว็บ: แถบข้อความและโลโก้วิ่ง (Tech Marquee)
             tech_heading: "เทคโนโลยีและเครื่องมือที่ใช้ในปัจจุบัน",
 
-            // Bento Grid / Profile
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดตารางประวัติและทักษะ (Bento Grid / Profile)
             bento_eyebrow: "> ข้อมูลส่วนตัว_",
             bento_heading: "BENTO GRID",
             bento_about_title: "> เกี่ยวกับฉัน",
@@ -168,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bento_service_mobile_desc: "Flutter, Dart, Express.js, MariaDB, REST API",
             bento_skills_title: "> SKILLS_STACK",
 
-            // Projects Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนจัดแสดงผลงานและปุ่มคัดกรอง (Projects Section & Filters: #works)
             projects_eyebrow: "> ผลงาน_",
             projects_heading: "PROJECTS",
             filter_all: "ทั้งหมด",
@@ -179,22 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
             modal_view_github: "ดูซอร์สโค้ดบน GitHub",
             modal_close: "ปิดหน้าต่าง",
 
-            // Project 1: Srichai Property
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
             p1_desc: "โปรเจกต์จบการศึกษาแพลตฟอร์มอสังหาริมทรัพย์ ออกแบบ 32 ตารางฐานข้อมูล & 8 กระบวนการ DFD พัฒนาระบบคุมสิทธิ์ API, ระบบนับถอยหลัง SLA, แดชบอร์ด Recharts, และรื้อระบบกันนายหน้ารับนัดชนกัน hasAgentBookingConflict",
             p1_meta: "85 Commits · 15 PRs · 32 ตาราง · 32 APIs",
 
-            // Project 2: GameStore
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
             p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และย่อขนาดหน้าเว็บจาก 8.4MB เหลือ 1.25MB ต่อหน้า",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
-            // Project 3: Property Viewing App
+            // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
             p3_desc: "แอปจองดูบ้านด้วย Flutter พัฒนาระบบจองครบวงจร 5 เส้นทาง API คุม 11 endpoints ด้วย checkAccessToken middleware ออกแบบ 5 คลาส Model แบบ Type-Safe พร้อม factory fromJson และครอบคลุมด้วย Flutter integration_test",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
-            // Experience Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
             exp_eyebrow: "ประสบการณ์",
             exp_heading: "ประวัติการทำงาน การศึกษา และกิจกรรมจิตอาสา",
             exp_job1_title: "Data Analyst Intern (นักศึกษาฝึกงาน)",
@@ -227,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_lead_b3: "ผู้ร่วมจัด — สัปดาห์วิทยาศาสตร์แห่งชาติ ประจำปี 2566 (12 ชั่วโมง ด้านภาวะผู้นำและการทำงานเป็นทีม)",
             exp_lead_b4: "การอบรมเตรียมความพร้อมสหกิจศึกษา คณะวิทยาศาสตร์ ม.อ. (Sci Festival 2026 & Road Map to Get Your Job)",
 
-            // Contact Section
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแบบฟอร์มติดต่อ (Contact Section: #contact)
             contact_eyebrow: "ติดต่อ",
             contact_heading: "สนใจติดต่อร่วมงาน?",
             contact_subheading: "สามารถส่งอีเมลมาหาผมโดยตรง หรือฝากข้อความไว้ในฟอร์มด้านขวาได้เลยครับ ยินดีตอบกลับโดยเร็วที่สุด",
@@ -242,14 +249,22 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_msg_placeholder: "พิมพ์ข้อความที่คุณต้องการติดต่อ...",
             contact_form_submit: "ส่งข้อความ",
 
-            // Footer
+            // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายสุดของหน้าเว็บ (Footer)
             footer_rights: "สงวนลิขสิทธิ์ทั้งหมด"
         }
     };
 
-    // Initialize Language (Default to 'en' as requested)
+    // ==========================================================================
+    // 📍 ตำแหน่งบนหน้าเว็บ: ระบบจดจำภาษาที่เลือกใช้งาน
+    // ทำหน้าที่: ดึงค่าภาษาที่ผู้ใช้เคยเลือกไว้จาก localStorage หากเปิดเว็บครั้งแรกให้ใช้ 'en' เป็นค่าเริ่มต้น
+    // ==========================================================================
     let currentLang = localStorage.getItem('portfolio_lang') || 'en';
 
+    // ==========================================================================
+    // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บ และปุ่มสลับภาษาบน Navbar (ทั้ง Desktop และ Mobile)
+    // ทำหน้าที่: แปลงข้อความทั้งหมดบนหน้าเว็บตามภาษาที่เลือก (EN / TH) 
+    // โดยค้นหาแท็กที่มี data-i18n และ data-i18n-placeholder พร้อมปรับหน้าตาปุ่ม 🌐 บน Navbar
+    // ==========================================================================
     function applyLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('portfolio_lang', lang);
@@ -257,10 +272,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const dict = translations[lang] || translations.en;
 
-        // 1. Translate elements with data-i18n
+        // 1. แปลงข้อความในทุกแท็กที่มี attribute: data-i18n
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (dict[key]) {
+                // หากข้อความมีการขึ้นบรรทัดใหม่ด้วย <br> หรือจัดแต่งสีด้วย <span> ให้แทรกเป็น innerHTML
                 if (dict[key].includes('<br') || dict[key].includes('<span')) {
                     el.innerHTML = dict[key];
                 } else {
@@ -269,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 2. Translate placeholders with data-i18n-placeholder
+        // 2. แปลงข้อความตัวอย่าง (Placeholder) ในช่องกรอกแบบฟอร์มติดต่อ (Contact Form: #contact)
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
             const key = el.getAttribute('data-i18n-placeholder');
             if (dict[key]) {
@@ -277,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 3. Update Toggle Button UI (Desktop & Mobile)
+        // 3. ปรับสถานะไฮไลต์สีของปุ่มสลับภาษา (EN / TH) ทั้งบนจอคอมพิวเตอร์และจอมือถือ
         const updateButtonUI = (btnId) => {
             const btn = document.getElementById(btnId);
             if (!btn) return;
@@ -302,32 +318,37 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonUI('lang-toggle');
         updateButtonUI('lang-toggle-mobile');
 
-        // Update Case Study modal if currently open
+        // หากหน้าต่างเคสศึกษาเชิงลึก (Case Study Modal) กำลังเปิดอยู่ ให้เรนเดอร์เนื้อหาเป็นภาษาใหม่ตามทันที
         if (activeCaseStudyId && typeof renderCaseStudyModal === 'function') {
             renderCaseStudyModal(activeCaseStudyId, lang);
         }
     }
 
-    // Toggle Language Function
+    // ==========================================================================
+    // 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบน (Navbar: #lang-toggle และ #lang-toggle-mobile)
+    // ทำหน้าที่: ฟังก์ชันสลับภาษา เมื่อผู้ใช้คลิกปุ่ม 🌐 จะสลับระหว่าง EN และ TH ไปมา
+    // ==========================================================================
     function toggleLanguage() {
         const nextLang = currentLang === 'en' ? 'th' : 'en';
         applyLanguage(nextLang);
     }
 
-    // Bind event listeners to desktop & mobile toggle buttons
+    // ผูก Event Listener ดักจับการคลิกปุ่มสลับภาษาทั้งบน Desktop และ Mobile
     const langToggleBtn = document.getElementById('lang-toggle');
     const langToggleMobileBtn = document.getElementById('lang-toggle-mobile');
 
     if (langToggleBtn) langToggleBtn.addEventListener('click', toggleLanguage);
     if (langToggleMobileBtn) langToggleMobileBtn.addEventListener('click', toggleLanguage);
 
-    // Apply language on load
+    // ปรับภาษาเริ่มต้นทันทีเมื่อเปิดหน้าเว็บ
     applyLanguage(currentLang);
 
 
-    // ==========================================
-    // 2. Mobile Menu Toggle
-    // ==========================================
+    // ==========================================================================
+    // 2. ระบบเปิด-ปิดเมนูบนหน้าจอมือถือ (Mobile Hamburger Menu)
+    // 📍 ตำแหน่งบนหน้าเว็บ: เมนู Hamburger มุมขวาบนของแถบ Navbar เมื่อดูผ่านสมาร์ทโฟน
+    // ทำหน้าที่: สลับการแสดง/ซ่อนแผงเมนู (#mobile-menu) และซ่อนเมนูอัตโนมัติเมื่อกดเลือกเมนูใด ๆ
+    // ==========================================================================
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -336,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close menu when clicking a link
+        // เมื่อผู้ใช้แตะเลือกลิงก์เมนูบนมือถือ ให้ซ่อนแถบเมนูทันทีเพื่อให้หน้าจอเลื่อนไปยัง Section ได้อย่างชัดเจน
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -346,18 +367,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==========================================
-    // 3. Set Current Year in Footer
-    // ==========================================
+    // ==========================================================================
+    // 3. แสดงปี ค.ศ. ลิขสิทธิ์ปัจจุบันแบบอัตโนมัติ (Dynamic Footer Year)
+    // 📍 ตำแหน่งบนหน้าเว็บ: ข้อความลิขสิทธิ์ส่วนท้ายสุดของหน้าเว็บ (Footer: #current-year)
+    // ทำไมต้องทำ: เพื่อให้ปีลิขสิทธิ์อัปเดตเป็นปัจจุบันเสมอ ไม่ต้องคอยแก้โค้ดทุกปี
+    // ==========================================================================
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
 
-    // ==========================================
-    // 4. Animated Dot Background Generation
-    // ==========================================
+    // ==========================================================================
+    // 4. สุ่มสร้างจุดอนุภาคสีลอยเคลื่อนไหว (Animated Dot Background Generation)
+    // 📍 ตำแหน่งบนหน้าเว็บ: เลเยอร์พื้นหลังด้านหลังสุดของเว็บไซต์ (#dot-background)
+    // ทำไมต้องเขียนแบบนี้: 
+    // 1. สุ่มขนาด ความเร็ว ทิศทาง และ delay เพื่อให้อนุภาคขยับไม่พร้อมกันเป็นจังหวะเดียว ดูเป็นธรรมชาติ
+    // 2. ปรับลดจำนวนจุดบนจอมือถือเหลือ 40 จุด (จากปกติ 80 จุดบนจอคอม) เพื่อความลื่นไหลและประหยัดพลังงาน
+    // ==========================================================================
     const generateDots = () => {
         const container = document.getElementById('dot-background');
         if (!container) return;
@@ -413,10 +440,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     generateDots();
 
-    // ==========================================
-    // 5. Technical Case Study Modal System
-    // ==========================================
+    // ==========================================================================
+    // 5. คลังข้อมูลเคสศึกษาเชิงลึกของแต่ละโปรเจกต์ (Technical Case Study Modal System)
+    // 📍 ตำแหน่งบนหน้าเว็บ: แสดงผลในหน้าต่างป๊อปอัป (#case-study-modal) เมื่อคลิกปุ่ม "Case Study"
+    // โครงสร้าง: เก็บข้อมูล 2 ภาษา (en / th) พร้อมป้ายเทคโนโลยี, ภาพตัวอย่าง และข้อค้นพบทางเทคนิคเชิงลึก
+    // ==========================================================================
     const caseStudyData = {
+        // ==========================================================================
+        // 📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัป (Case Study Modal) สำหรับโปรเจกต์ที่ 1: Srichai Property
+        // ข้อมูลเชิงลึก: สถาปัตยกรรม Next.js 16, Prisma 7, ระบบจองรอบดูบ้าน และการปิดช่องโหว่ความปลอดภัย
+        // ==========================================================================
         srichai: {
             en: {
                 title: "Srichai Property — Real Estate Trading Platform",
@@ -517,6 +550,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             }
         },
+        // ==========================================================================
+        // 📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัป (Case Study Modal) สำหรับโปรเจกต์ที่ 2: GameStore
+        // ข้อมูลเชิงลึก: การเขียนชุดทดสอบ Playwright E2E 81 เคส, การกู้คืนระบบด้วย Node.js Mock Server และการลดขนาดหน้าเว็บลง 85%
+        // ==========================================================================
         gamestore: {
             en: {
                 title: "GameStore — Gaming Storefront with Automated Testing Suite",
@@ -587,6 +624,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             }
         },
+        // ==========================================================================
+        // 📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัป (Case Study Modal) สำหรับโปรเจกต์ที่ 3: Property Viewing App
+        // ข้อมูลเชิงลึก: สถาปัตยกรรมแอปมือถือ Flutter, Dart Model แบบ Type-Safe, แกลเลอรีภาพถ่ายหน้าจอจริง 4 สเต็ป และ Integration Test
+        // ==========================================================================
         propertyapp: {
             en: {
                 title: "Property Viewing App — Mobile Booking Application",
@@ -725,7 +766,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Helper: Map tech tag names to crisp vector logo icons (Style #1: 3D Tactile Capsule)
+    // ==========================================================================
+    // 6. ฟังก์ชันจับคู่ชื่อเทคโนโลยีกับโลโก้เวกเตอร์สไตล์ 3D Capsule (Style #1: 3D Tactile Capsule)
+    // 📍 ตำแหน่งบนหน้าเว็บ: ป้าย Tech Stack ใต้ชื่อโปรเจกต์ในหน้าต่างป๊อปอัป (Case Study Modal: #modal-project-body)
+    // ทำหน้าที่: ตรวจสอบคำสำคัญของชื่อเทคโนโลยี (เช่น next.js, flutter, prisma, playwright)
+    // แล้วคืนค่าเป็นแท็ก <img> เวกเตอร์ SVG คมชัด หรือ SVG ไอคอนเฉพาะทาง เพื่อนำไปแสดงคู่กับชื่อในสไตล์ 3D นูนนุ่ม
+    // ==========================================================================
     function getTechTagIcon(tag) {
         const t = tag.toLowerCase().trim();
         if (t.includes('next.js')) {
@@ -797,6 +843,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return '<span class="w-1.5 h-1.5 rounded-full bg-blue-500 inline-block"></span>';
     }
 
+    // ==========================================================================
+    // 7. ฟังก์ชันประกอบโครงสร้างเนื้อหาในหน้าต่างเคสศึกษา (Render Case Study Modal)
+    // 📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัปรายละเอียดเชิงลึก (#case-study-modal)
+    // ทำหน้าที่: ดึงข้อมูลตาม ID โปรเจกต์และภาษาปัจจุบัน (EN / TH) มาประกอบเป็น HTML ได้แก่:
+    // 1. ส่วนหัว: ป้ายประเภทงาน, ตัวเลขสถิติ Git, ชื่อโปรเจกต์, และปุ่มลิงก์ GitHub (ซ่อนในงานที่ไม่มี repo สาธารณะ)
+    // 2. ป้ายเทคโนโลยี 3D Tactile Capsule: แสดงรายการ Tech Stack พร้อมโลโก้เวกเตอร์
+    // 3. แกลเลอรีขั้นตอนการทำงานบนมือถือ (Screenshots Gallery): แสดงเฉพาะโปรเจกต์ที่มีภาพ เช่น Flutter 4 หน้าจอ
+    // 4. หัวข้อเจาะลึกสถาปัตยกรรมระบบ: แสดงการตัดสินใจทางเทคนิค และบั๊กจริงระดับ Production
+    // ==========================================================================
     function renderCaseStudyModal(projectId, lang) {
         const project = caseStudyData[projectId];
         if (!project) return;
@@ -826,7 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bodyEl) {
             let html = '';
 
-            // Tech Stack Badges (3D Tactile Capsule - Style #1)
+            // ป้ายเทคโนโลยีแบบ 3D Tactile Capsule (Style #1)
             if (data.tags && data.tags.length > 0) {
                 html += '<div class="flex flex-wrap gap-2 pb-4 border-b border-gray-100 dark:border-white/5">';
                 data.tags.forEach(tag => {
@@ -836,7 +891,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 html += '</div>';
             }
 
-            // App Workflow Screenshots Gallery (if provided)
+            // แกลเลอรีภาพถ่ายหน้าจอแสดงขั้นตอนการทำงานบนมือถือจริง (App Workflow Gallery)
             if (data.screenshots && data.screenshots.length > 0) {
                 html += `
                     <div class="bg-gradient-to-b from-gray-50 to-white dark:from-white/[0.03] dark:to-white/[0.01] border border-gray-100 dark:border-white/5 rounded-2xl p-5">
@@ -865,7 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }
 
-            // Key Sections
+            // หัวข้อเจาะลึกสถาปัตยกรรมระบบ (Architecture Decisions & Production Insights)
             data.sections.forEach(sec => {
                 html += `
                     <div class="bg-gray-50/70 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-2xl p-5">
@@ -889,6 +944,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ==========================================================================
+    // 8. ฟังก์ชันควบคุมการเปิดหน้าต่างเคสศึกษา (Open Case Study Modal)
+    // 📍 ตำแหน่งบนหน้าเว็บ: ทำงานเมื่อคลิกปุ่ม "Case Study" บนการ์ดผลงานโปรเจกต์ใด ๆ
+    // ทำไมต้องเขียนแบบนี้:
+    // 1. เก็บ ID ของโปรเจกต์ลง activeCaseStudyId สำหรับสลับภาษา
+    // 2. เติมคลาส active ให้ #case-study-modal เพื่อเริ่มเอฟเฟกต์ Fade-in และขยายขนาด
+    // 3. กำหนด document.body.style.overflow = 'hidden' เพื่อล็อกไม่ให้หน้าเว็บหลักด้านหลังเลื่อนขณะอ่านป๊อปอัป
+    // ==========================================================================
     function openCaseStudyModal(projectId) {
         activeCaseStudyId = projectId;
         renderCaseStudyModal(projectId, currentLang);
@@ -899,6 +962,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ==========================================================================
+    // 9. ฟังก์ชันควบคุมการปิดหน้าต่างเคสศึกษา (Close Case Study Modal)
+    // 📍 ตำแหน่งบนหน้าเว็บ: ทำงานเมื่อกดปุ่มปิด (X), ปุ่มปิดล่างสุด, คลิกพื้นหลังสีดำ หรือกดปุ่ม ESC
+    // ทำไมต้องเขียนแบบนี้:
+    // 1. เคลียร์ activeCaseStudyId เป็น null
+    // 2. ลบคลาส active ออก เพื่อเริ่มเอฟเฟกต์ Fade-out
+    // 3. คืนค่า document.body.style.overflow = '' เพื่อให้หน้าเว็บหลักกลับมาเลื่อนขึ้นลงได้ตามปกติ
+    // ==========================================================================
     function closeCaseStudyModal() {
         activeCaseStudyId = null;
         const modal = document.getElementById('case-study-modal');
@@ -908,7 +979,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Modal Trigger Buttons
+    // 📍 ตำแหน่งบนหน้าเว็บ: ปุ่ม "Case Study" บนการ์ดผลงานทุกใบในหมวด PROJECTS
+    // ทำหน้าที่: ดักจับการคลิกเพื่อดึงค่า data-project ('srichai', 'gamestore', 'propertyapp') แล้วเปิด Modal
     document.querySelectorAll('.open-case-study-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -917,13 +989,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close Buttons
+    // 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มปิดหน้าต่างเคสศึกษา ทั้งปุ่มกากบาทมุมขวาบน (#close-case-study-btn) และปุ่มปิดด้านล่าง (#close-case-study-bottom-btn)
     const closeBtn = document.getElementById('close-case-study-btn');
     const closeBottomBtn = document.getElementById('close-case-study-bottom-btn');
     if (closeBtn) closeBtn.addEventListener('click', closeCaseStudyModal);
     if (closeBottomBtn) closeBottomBtn.addEventListener('click', closeCaseStudyModal);
 
-    // Backdrop Click to Close
+    // 📍 ตำแหน่งบนหน้าเว็บ: พื้นหลังสีดำโปร่งแสงด้านนอกกล่องป๊อปอัป (#case-study-modal)
+    // ทำหน้าที่: อำนวยความสะดวกให้ผู้ใช้สามารถคลิกพื้นที่ว่างนอกกล่องเพื่อปิดป๊อปอัปได้ทันที
     const modalEl = document.getElementById('case-study-modal');
     if (modalEl) {
         modalEl.addEventListener('click', (e) => {
@@ -933,7 +1006,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ESC Key to Close
+    // 📍 ตำแหน่งบนหน้าเว็บ: การกดแป้นพิมพ์คีย์บอร์ดทั่วทั้งหน้าจอ (Keyboard Event: Escape)
+    // ทำหน้าที่: ตรวจจับหากผู้ใช้กดปุ่ม 'Escape' (ESC) ขณะที่หน้าต่างเคสศึกษากำลังเปิดอยู่ ให้ปิดป๊อปอัปทันที
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && activeCaseStudyId) {
             closeCaseStudyModal();
