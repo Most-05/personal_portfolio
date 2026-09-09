@@ -1,5 +1,10 @@
 # Sidtisak Hanthongchai — Personal Portfolio & Resume
 
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://most-05.github.io/personal_portfolio/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-emerald?style=for-the-badge&logo=github)](https://most-05.github.io/personal_portfolio/)
+
+> 🚀 **เข้าชมเว็บไซต์จริง (Live Demo):** [https://most-05.github.io/personal_portfolio/](https://most-05.github.io/personal_portfolio/)
+
 เว็บไซต์ Personal Portfolio และ Resume สำหรับแนะนำตัว นำเสนอทักษะ ประสบการณ์ และผลงาน สำหรับการสมัครงานและยื่นฝึกงาน/สหกิจศึกษา (Cooperative Education)
 
 ---
@@ -37,4 +42,5 @@
 ---
 
 ## 🚀 วิธีเปิดใช้งาน (Getting Started)
-สามารถเปิดไฟล์ `index.html` บนเว็บเบราว์เซอร์ใดก็ได้ (Chrome, Edge, Safari, Firefox) โดยตรงได้ทันที หรือ Deploy ขึ้นบน **Netlify / GitHub Pages / Vercel** ได้โดยไม่ต้องตั้งค่า Build Command ใด ๆ
+- 🌐 **เข้าชมผ่านเว็บไซต์จริง:** [https://most-05.github.io/personal_portfolio/](https://most-05.github.io/personal_portfolio/)
+- 💻 **เปิดใช้งานบนเครื่อง Local:** สามารถเปิดไฟล์ `index.html` บนเว็บเบราว์เซอร์ใดก็ได้ (Chrome, Edge, Safari, Firefox) โดยตรงได้ทันที หรือ Deploy ขึ้นบน **Netlify / GitHub Pages / Vercel** ได้โดยไม่ต้องตั้งค่า Build Command ใด ๆ
