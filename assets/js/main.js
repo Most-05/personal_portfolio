@@ -594,6 +594,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 meta: "60 / 78 Commits (77% contribution) · 5 Core Functions · 5 Model Classes · Flutter integration_test",
                 repo: "https://github.com/Most-05",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
+                screenshotsTitle: "Mobile Application Workflow & Real UI",
+                screenshots: [
+                    {
+                        src: "assets/images/flutter-1.png",
+                        title: "1. Authentication",
+                        desc: "Secure Login & Registration via Email/Password & Google Sign-In"
+                    },
+                    {
+                        src: "assets/images/flutter-2.png",
+                        title: "2. Property Discovery",
+                        desc: "Property categories, featured listings, and province-based browsing"
+                    },
+                    {
+                        src: "assets/images/flutter-3.png",
+                        title: "3. Appointment Booking",
+                        desc: "Interactive 3-step slot scheduling with calendar & appointment notes"
+                    },
+                    {
+                        src: "assets/images/flutter-4.png",
+                        title: "4. Booking Lifecycle",
+                        desc: "Appointment status tracking, reschedule requests, and cancellations"
+                    }
+                ],
                 sections: [
                     {
                         heading: "End-to-End Mobile Booking Lifecycle",
@@ -638,6 +661,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 meta: "60 / 78 Commits เป็นของผม (77%) · 5 ฟังก์ชันหลัก · 5 คลาส Model · Flutter integration_test",
                 repo: "https://github.com/Most-05",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
+                screenshotsTitle: "ภาพตัวอย่างขั้นตอนการทำงานบนแอปพลิเคชันจริง (Mobile Workflow)",
+                screenshots: [
+                    {
+                        src: "assets/images/flutter-1.png",
+                        title: "1. ระบบยืนยันตัวตน (Authentication)",
+                        desc: "เข้าสู่ระบบและสมัครสมาชิกด้วย Email/Password และ Google Sign-In"
+                    },
+                    {
+                        src: "assets/images/flutter-2.png",
+                        title: "2. ค้นหาและดูรายการบ้าน (Discovery)",
+                        desc: "หมวดหมู่อสังหาริมทรัพย์, รายการบ้านแนะนำ และค้นหาตามรายจังหวัด"
+                    },
+                    {
+                        src: "assets/images/flutter-3.png",
+                        title: "3. ระบบจองนัดหมาย (Slot Booking)",
+                        desc: "ขั้นตอนการจอง 3 ระดับ เลือกวันที่, ช่วงเวลา และระบุหมายเหตุการนัด"
+                    },
+                    {
+                        src: "assets/images/flutter-4.png",
+                        title: "4. วงจรการนัดหมาย (Booking Lifecycle)",
+                        desc: "ติดตามสถานะการจอง, ขอยกเลิกนัด และขอเปลี่ยนวันเวลานัดหมาย"
+                    }
+                ],
                 sections: [
                     {
                         heading: "ระบบการจองดูบ้านครบวงจรบนมือถือ (Full Mobile Booking Lifecycle)",
@@ -788,6 +834,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     html += `<span class="tag-tactile-3d">${iconHtml}<span>${tag}</span></span>`;
                 });
                 html += '</div>';
+            }
+
+            // App Workflow Screenshots Gallery (if provided)
+            if (data.screenshots && data.screenshots.length > 0) {
+                html += `
+                    <div class="bg-gradient-to-b from-gray-50 to-white dark:from-white/[0.03] dark:to-white/[0.01] border border-gray-100 dark:border-white/5 rounded-2xl p-5">
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-3.5 text-base flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                            ${data.screenshotsTitle || "Application Workflow"}
+                        </h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            ${data.screenshots.map(s => `
+                                <a href="${s.src}" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden border border-gray-200/80 dark:border-white/10 bg-gray-900/5 dark:bg-black/30 hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200">
+                                    <div class="aspect-[9/16] overflow-hidden bg-slate-900 relative">
+                                        <img src="${s.src}" alt="${s.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+                                        <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors pointer-events-none"></div>
+                                    </div>
+                                    <div class="p-2.5">
+                                        <p class="font-semibold text-xs text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">${s.title}</p>
+                                        <p class="text-[11px] text-gray-500 dark:text-zinc-400 leading-snug mt-0.5 line-clamp-2">${s.desc}</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                        <p class="text-[11px] text-gray-400 dark:text-zinc-500 text-center mt-3">* คลิกที่รูปภาพเพื่อเปิดดูขนาดเต็ม (Click to view full size)</p>
+                    </div>
+                `;
             }
 
             // Key Sections
