@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=5">
+    <link rel="stylesheet" href="assets/css/style.css?v=6">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -175,6 +175,39 @@
         }
 
         /* 4.5 Custom Cursor */
+        #cursor-ring {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #60a5fa;
+            border-radius: 9999px;
+            background-color: transparent;
+            transition: width 0.28s cubic-bezier(0.25, 1, 0.5, 1), 
+                        height 0.28s cubic-bezier(0.25, 1, 0.5, 1), 
+                        border-color 0.25s ease, 
+                        background-color 0.25s ease, 
+                        transform 0.15s ease-out;
+        }
+
+        #cursor-ring.cursor-hovered {
+            width: 56px;
+            height: 32px;
+            border-color: #3b82f6;
+            background-color: rgba(96, 165, 250, 0.2);
+        }
+
+        #cursor-ring.cursor-clicked {
+            transform: translate(-50%, -50%) scale(0.8);
+            background-color: rgba(59, 130, 246, 0.4);
+        }
+
+        #cursor-dot.cursor-hovered {
+            transform: translate(-50%, -50%) scale(2);
+        }
+
+        #cursor-dot.cursor-clicked {
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+
         @media (min-width: 768px) {
             body.custom-cursor-active,
             body.custom-cursor-active * {
@@ -311,12 +344,12 @@
         </div>
     </div>
 
-    <!-- Custom Cursor (Dot & Ring - Original) -->
+    <!-- Custom Cursor (Dot & Ring - Horizontal Capsule on Hover) -->
     <div id="cursor-dot"
-        class="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block opacity-0">
+        class="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 hidden md:block opacity-0">
     </div>
     <div id="cursor-ring"
-        class="fixed top-0 left-0 w-8 h-8 border-2 border-blue-400 rounded-full pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block opacity-0">
+        class="fixed top-0 left-0 pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 hidden md:block opacity-0">
     </div>
 
     <!-- Interactive Grid -->
@@ -1375,7 +1408,7 @@
             }
             animateRing();
 
-            // Hover effects for interactables (Original: ring expands & fills blue, dot scales 2x)
+            // Hover effects for interactables (Horizontal capsule: 56px x 32px, dot scales 2x)
             const initCursorHovers = () => {
                 const interactables = document.querySelectorAll('a, button, input, textarea, .cursor-hover');
                 interactables.forEach(el => {
@@ -1383,25 +1416,25 @@
                     el.dataset.cursorBound = "true";
 
                     el.addEventListener('mouseenter', () => {
-                        cursorRing.classList.add('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
-                        cursorDot.classList.add('scale-[2]');
+                        cursorRing.classList.add('cursor-hovered');
+                        cursorDot.classList.add('cursor-hovered');
                     });
                     el.addEventListener('mouseleave', () => {
-                        cursorRing.classList.remove('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
-                        cursorDot.classList.remove('scale-[2]');
+                        cursorRing.classList.remove('cursor-hovered');
+                        cursorDot.classList.remove('cursor-hovered');
                     });
                 });
             };
             initCursorHovers();
 
-            // Click effect (Original: ring shrinks to 75% & darkens, dot shrinks to 50%)
+            // Click effect (Scale down slightly on click)
             document.addEventListener('mousedown', () => {
-                cursorRing.classList.add('scale-75', 'bg-blue-500/40');
-                cursorDot.classList.add('scale-50');
+                cursorRing.classList.add('cursor-clicked');
+                cursorDot.classList.add('cursor-clicked');
             });
             document.addEventListener('mouseup', () => {
-                cursorRing.classList.remove('scale-75', 'bg-blue-500/40');
-                cursorDot.classList.remove('scale-50');
+                cursorRing.classList.remove('cursor-clicked');
+                cursorDot.classList.remove('cursor-clicked');
             });
         }
 
@@ -1482,6 +1515,6 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=5"></script>
+    <script src="assets/js/main.js?v=6"></script>
 
 </html>
