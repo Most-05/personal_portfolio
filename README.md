@@ -29,7 +29,7 @@
 │   ├── js/main.js                       # สคริปต์ควบคุมการทำงาน UI
 │   ├── fonts/                           # ฟอนต์ที่ใช้ในโปรเจกต์
 │   └── images/                          # รูปภาพและไอคอนประกอบ
-├── Full Stack-Sidtisak Hanthongchai.pdf # เอกสารเรซูเมฉบับเต็ม
+├── Full_Stack-Sidtisak Hanthongchai.pdf # เอกสารเรซูเมฉบับเต็ม
 ├── DESIGN.md                            # Design System และแนวทางการออกแบบ
 └── README.md
 ```

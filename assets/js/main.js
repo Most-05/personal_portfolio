@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_job1_title: "Data Analyst Intern",
             exp_job1_date: "16 Apr – 12 Jun 2026",
             exp_job1_company: "Khunying Long Athakravisunthorn Learning Resources Center, PSU",
-            exp_job1_b1: "Cleaned and restructured 5 years of library statistics for 5 universities in Excel and Power Query, then created a 5-page Power BI dashboard with a written handover manual for successors.",
+            exp_job1_b1: "Cleaned and restructured 5 years (2021–2025) of library statistics for 5 universities in Excel and Power Query, created a 5-page Power BI dashboard for the department head, and produced a comprehensive 21-page handover manual for successors.",
             exp_job1_b2: "Key management insight: PSU operated 48 IT systems (peer avg <25) on a 6x smaller IT budget, correlating with the group's highest average downtime.",
 
             exp_edu_title: "B.Sc. in ICT (Information & Communication Technology)",
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_job1_title: "Data Analyst Intern (นักศึกษาฝึกงาน)",
             exp_job1_date: "16 เม.ย. – 12 มิ.ย. 2026",
             exp_job1_company: "สำนักทรัพยากรการเรียนรู้คุณหญิงหลง อรรถกระวีสุนทร ม.อ.",
-            exp_job1_b1: "ทำความสะอาดข้อมูลสถิติห้องสมุด 5 ปีของ 5 มหาวิทยาลัยด้วย Excel และ Power Query แล้วสร้าง Dashboard บน Power BI 5 หน้า พร้อมจัดทำคู่มือปฏิบัติงานส่งต่อให้รุ่นถัดไป",
+            exp_job1_b1: "ทำความสะอาดและจัดโครงสร้างข้อมูลสถิติห้องสมุด 5 ปี (2021–2025) ของ 5 มหาวิทยาลัยด้วย Excel และ Power Query พร้อมสร้าง Dashboard บน Power BI 5 หน้าเสนอหัวหน้าฝ่าย และจัดทำคู่มือส่งต่องานฉบับสมบูรณ์ความยาว 21 หน้าสำหรับรุ่นถัดไป",
             exp_job1_b2: "ข้อค้นพบสำคัญที่ฝ่ายบริหารนำไปใช้: ม.อ. มีระบบสารสนเทศมากที่สุด 48 ระบบ แต่งบ IT น้อยกว่าคู่เทียบ 6 เท่า สอดคล้องกับค่า Downtime เฉลี่ยที่สูงที่สุด",
 
             exp_edu_title: "วิทยาศาสตรบัณฑิต (วท.บ.) ICT",
