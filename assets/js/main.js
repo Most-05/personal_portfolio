@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Hero Section
             hero_status: "Cooperative Education Candidate (16 Nov 2026 – 7 Mar 2027)",
-            hero_th_name: "Sidtisak Hanthongchai (สิทธิศักดิ์ หาญธงชัย)",
+            hero_th_name: "Sidtisak Hanthongchai (สิทธิศักดิ์ หาญธงไชย)",
             hero_role: "> Full Stack Developer_",
             hero_desc: "Fourth-year ICT student at Prince of Songkla University. 289 commits across 3 codebases (Web, Web App, Mobile). Specialized in Next.js, React, Node.js, and Flutter with an emphasis on clean architecture and automated testing.",
             hero_location: "📍 Hat Yai, Songkhla, Thailand",
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Hero Section
             hero_status: "ผู้สมัครฝึกสหกิจศึกษา (16 พ.ย. 2569 – 7 มี.ค. 2570)",
-            hero_th_name: "สิทธิศักดิ์ หาญธงชัย",
+            hero_th_name: "สิทธิศักดิ์ หาญธงไชย",
             hero_role: "> Full Stack Developer_",
             hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ เจ้าของ 289 Commits ใน 3 โปรเจกต์จริง (เว็บ, เว็บแอป, มือถือ) เชี่ยวชาญ Next.js, React, Node.js และ Flutter มุ่งเน้นสถาปัตยกรรมโค้ดที่สะอาดและการทดสอบอัตโนมัติ",
             hero_location: "📍 หาดใหญ่, สงขลา, ประเทศไทย",
