@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Global state for open modal
+    let activeCaseStudyId = null;
+
     // ==========================================
     // 1. Multi-language (i18n) System
     // ==========================================
@@ -298,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonUI('lang-toggle-mobile');
 
         // Update Case Study modal if currently open
-        if (typeof activeCaseStudyId !== 'undefined' && activeCaseStudyId) {
+        if (activeCaseStudyId && typeof renderCaseStudyModal === 'function') {
             renderCaseStudyModal(activeCaseStudyId, lang);
         }
     }
@@ -673,8 +676,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
-
-    let activeCaseStudyId = null;
 
     function renderCaseStudyModal(projectId, lang) {
         const project = caseStudyData[projectId];

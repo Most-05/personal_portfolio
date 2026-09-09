@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -1176,7 +1176,7 @@
     </footer>
 
     <!-- Technical Case Study Modal -->
-    <div id="case-study-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div id="case-study-modal" class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-black/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
         <div class="modal-card bg-white dark:bg-[#0c0d14] border border-gray-200 dark:border-white/10 rounded-3xl max-w-3xl w-full max-h-[88vh] flex flex-col shadow-2xl shadow-blue-500/10 overflow-hidden">
             <!-- Modal Header -->
             <div class="p-6 md:px-8 md:py-6 border-b border-gray-100 dark:border-white/10 flex items-start justify-between gap-4 bg-gray-50/50 dark:bg-white/[0.02]">
@@ -1232,66 +1232,6 @@
 
                 setTimeout(() => {
                     skeleton.classList.add('hidden');
-
-                    // Custom Cursor Logic
-                    const cursorDot = document.getElementById('cursor-dot');
-                    const cursorRing = document.getElementById('cursor-ring');
-                    let mouseX = 0;
-                    let mouseY = 0;
-                    let ringX = 0;
-                    let ringY = 0;
-
-                    if (window.innerWidth >= 768) {
-                        document.body.style.cursor = 'none';
-
-                        document.addEventListener('mousemove', (e) => {
-                            mouseX = e.clientX;
-                            mouseY = e.clientY;
-                            cursorDot.style.left = `${mouseX}px`;
-                            cursorDot.style.top = `${mouseY}px`;
-                        });
-
-                        function animateRing() {
-                            ringX += (mouseX - ringX) * 0.15;
-                            ringY += (mouseY - ringY) * 0.15;
-                            cursorRing.style.left = `${ringX}px`;
-                            cursorRing.style.top = `${ringY}px`;
-                            requestAnimationFrame(animateRing);
-                        }
-                        animateRing();
-
-                        // Hover effects for interactables
-                        const initCursorHovers = () => {
-                            const interactables = document.querySelectorAll('a, button, .cursor-hover');
-                            interactables.forEach(el => {
-                                el.style.cursor = 'none'; // Ensure no default pointer
-
-                                // Prevent duplicate event listeners
-                                if (el.dataset.cursorBound) return;
-                                el.dataset.cursorBound = "true";
-
-                                el.addEventListener('mouseenter', () => {
-                                    cursorRing.classList.add('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
-                                    cursorDot.classList.add('scale-[2]');
-                                });
-                                el.addEventListener('mouseleave', () => {
-                                    cursorRing.classList.remove('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
-                                    cursorDot.classList.remove('scale-[2]');
-                                });
-                            });
-                        };
-                        initCursorHovers();
-
-                        // Click effect
-                        document.addEventListener('mousedown', () => {
-                            cursorRing.classList.add('scale-75', 'bg-blue-500/40');
-                            cursorDot.classList.add('scale-50');
-                        });
-                        document.addEventListener('mouseup', () => {
-                            cursorRing.classList.remove('scale-75', 'bg-blue-500/40');
-                            cursorDot.classList.remove('scale-50');
-                        });
-                    }
 
                     // Init AOS
                     AOS.init({
@@ -1520,6 +1460,6 @@
             });
         });
     </script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2"></script>
 
 </html>
