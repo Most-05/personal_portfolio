@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -186,6 +186,7 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 9999;
+            opacity: 0;
             transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.2s;
         }
 
@@ -200,6 +201,7 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 9998;
+            opacity: 0;
             will-change: transform;
             transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s, opacity 0.2s;
         }
@@ -218,11 +220,7 @@
 
         @media (min-width: 768px) {
             body.custom-cursor-active,
-            body.custom-cursor-active a,
-            body.custom-cursor-active button,
-            body.custom-cursor-active input,
-            body.custom-cursor-active textarea,
-            body.custom-cursor-active .cursor-hover {
+            body.custom-cursor-active * {
                 cursor: none !important;
             }
         }
@@ -342,13 +340,6 @@
     class="bg-[#f8fafc] dark:bg-[#050508] text-gray-900 dark:text-zinc-100 font-sans antialiased overflow-x-hidden transition-colors duration-300"
     data-aos-easing="ease-out-cubic" data-aos-duration="700" data-aos-delay="0">
 
-    <!-- Custom Cursor (Dot & Ring) -->
-    <div id="cursor-dot"
-        class="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block">
-    </div>
-    <div id="cursor-ring"
-        class="fixed top-0 left-0 w-8 h-8 border-2 border-blue-400 rounded-full pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block">
-    </div>
 
     <!-- Animated Dot Background (Full Page) -->
     <div id="dot-background" class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true"></div>
@@ -1256,6 +1247,18 @@
 
                     // Trigger Count-up after load
                     initCountUp();
+
+                    // Ensure clean smooth scroll if loaded with hash anchor (e.g., #projects)
+                    if (window.location.hash) {
+                        try {
+                            const target = document.querySelector(window.location.hash);
+                            if (target) {
+                                setTimeout(() => {
+                                    target.scrollIntoView({ behavior: 'smooth' });
+                                }, 150);
+                            }
+                        } catch (err) {}
+                    }
                 }, 500);
             }, 600); // 600ms artificial load time for effect
         });
@@ -1370,12 +1373,19 @@
 
         if (!isTouchDevice && window.innerWidth >= 768) {
             document.body.classList.add('custom-cursor-active');
-            let cx = window.innerWidth / 2, cy = window.innerHeight / 2;
-            let rx = cx, ry = cy;
+            let cx = 0, cy = 0;
+            let rx = 0, ry = 0;
             let isMouseDown = false;
+            let hasMoved = false;
 
             window.addEventListener('mousemove', (e) => {
                 cx = e.clientX; cy = e.clientY;
+                if (!hasMoved) {
+                    hasMoved = true;
+                    rx = cx; ry = cy;
+                    cursor.style.opacity = '1';
+                    cursorRing.style.opacity = '1';
+                }
                 cursor.style.transform = `translate(calc(${cx}px - 50%), calc(${cy}px - 50%))`;
             });
 
@@ -1384,15 +1394,19 @@
                 cursorRing.style.opacity = '0';
             });
             document.addEventListener('mouseenter', () => {
-                cursor.style.opacity = '1';
-                cursorRing.style.opacity = '1';
+                if (hasMoved) {
+                    cursor.style.opacity = '1';
+                    cursorRing.style.opacity = '1';
+                }
             });
 
             function renderCursorRing() {
-                rx += (cx - rx) * 0.15;
-                ry += (cy - ry) * 0.15;
-                const scale = isMouseDown ? ' scale(0.75)' : '';
-                cursorRing.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))${scale}`;
+                if (hasMoved) {
+                    rx += (cx - rx) * 0.15;
+                    ry += (cy - ry) * 0.15;
+                    const scale = isMouseDown ? ' scale(0.75)' : '';
+                    cursorRing.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))${scale}`;
+                }
                 requestAnimationFrame(renderCursorRing);
             }
             renderCursorRing();
@@ -1495,6 +1509,6 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/main.js?v=4"></script>
 
 </html>
