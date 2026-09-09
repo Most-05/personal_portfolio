@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_edu_title: "B.Sc. in ICT (Information & Communication Technology)",
             exp_edu_date: "2023 - Expected 2027",
             exp_edu_school: "Prince of Songkla University, Hat Yai Campus",
-            exp_edu_b1: "Faculty of Science. Relevant Software Coursework: Software Engineering, ICT Project I, IT Governance, Software Service & Quality Management, Interaction Design, Database Systems, Systems Analysis & Design.",
+            exp_edu_b1: "Faculty of Science. Relevant Coursework: Data Structures & Algorithms (C), Object-Oriented Programming (Java), Software Engineering, ICT Project I, Database Systems, Systems Analysis & Design, Interaction Design, Software Service & Quality Management, IT Governance.",
             exp_edu_b2: "Cooperative Education: Course 308-497 (6 Credits, 40 hrs/week, 16 Nov 2026 – 7 Mar 2027).",
 
             exp_act_title: "Training & Community Leadership",
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_edu_title: "วิทยาศาสตรบัณฑิต (วท.บ.) ICT",
             exp_edu_date: "2566 - คาดว่าจะจบ 2570",
             exp_edu_school: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่",
-            exp_edu_b1: "คณะวิทยาศาสตร์ รายวิชาซอฟต์แวร์: วิศวกรรมซอฟต์แวร์, โครงงาน ICT I, การจัดการ IT องค์กร, การบริการซอฟต์แวร์และประกันคุณภาพ, การออกแบบเชิงปฏิสัมพันธ์, ระบบฐานข้อมูล, การวิเคราะห์และออกแบบระบบสารสนเทศ",
+            exp_edu_b1: "คณะวิทยาศาสตร์ รายวิชาหลัก: โครงสร้างข้อมูลและอัลกอริทึม (ภาษา C), การเขียนโปรแกรมเชิงวัตถุ OOP (Java), วิศวกรรมซอฟต์แวร์, โครงงาน ICT I, ระบบฐานข้อมูล, การวิเคราะห์และออกแบบระบบสารสนเทศ, การออกแบบเชิงปฏิสัมพันธ์, การบริการซอฟต์แวร์และประกันคุณภาพ, การจัดการ IT องค์กร",
             exp_edu_b2: "สหกิจศึกษา: รายวิชา 308-497 (6 หน่วยกิต, 40 ชม./สัปดาห์, 16 พ.ย. 2569 – 7 มี.ค. 2570)",
 
             exp_act_title: "การอบรมและกิจกรรมจิตอาสา",
