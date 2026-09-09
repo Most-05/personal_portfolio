@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=4">
+    <link rel="stylesheet" href="assets/css/style.css?v=5">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -175,49 +175,6 @@
         }
 
         /* 4.5 Custom Cursor */
-        .custom-cursor {
-            width: 8px;
-            height: 8px;
-            background-color: #3b82f6;
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0;
-            transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.2s;
-        }
-
-        .custom-cursor-ring {
-            width: 32px;
-            height: 32px;
-            border: 1.5px solid rgba(59, 130, 246, 0.45);
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0;
-            will-change: transform;
-            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s, opacity 0.2s;
-        }
-
-        .custom-cursor.hovered {
-            width: 0;
-            height: 0;
-        }
-
-        .custom-cursor-ring.hovered {
-            width: 52px;
-            height: 52px;
-            border-color: rgba(59, 130, 246, 0.8);
-            background-color: rgba(59, 130, 246, 0.08);
-        }
-
         @media (min-width: 768px) {
             body.custom-cursor-active,
             body.custom-cursor-active * {
@@ -354,9 +311,13 @@
         </div>
     </div>
 
-    <!-- Custom Cursor (Hidden on touch devices) -->
-    <div id="custom-cursor" class="custom-cursor hidden md:block" aria-hidden="true"></div>
-    <div id="custom-cursor-ring" class="custom-cursor-ring hidden md:block" aria-hidden="true"></div>
+    <!-- Custom Cursor (Dot & Ring - Original) -->
+    <div id="cursor-dot"
+        class="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block opacity-0">
+    </div>
+    <div id="cursor-ring"
+        class="fixed top-0 left-0 w-8 h-8 border-2 border-blue-400 rounded-full pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block opacity-0">
+    </div>
 
     <!-- Interactive Grid -->
     <div id="interactive-grid" class="interactive-grid hidden md:block" aria-hidden="true"></div>
@@ -1365,70 +1326,82 @@
         }
 
         // -------------------------
+        // Custom Cursor Logic (Original Version)
         // -------------------------
-        // Custom Cursor
-        // -------------------------
-        const cursor = document.getElementById('custom-cursor');
-        const cursorRing = document.getElementById('custom-cursor-ring');
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorRing = document.getElementById('cursor-ring');
+        let curMouseX = 0;
+        let curMouseY = 0;
+        let ringX = 0;
+        let ringY = 0;
+        let hasMoved = false;
 
-        if (!isTouchDevice && window.innerWidth >= 768) {
+        if (window.innerWidth >= 768) {
             document.body.classList.add('custom-cursor-active');
-            let cx = 0, cy = 0;
-            let rx = 0, ry = 0;
-            let isMouseDown = false;
-            let hasMoved = false;
 
-            window.addEventListener('mousemove', (e) => {
-                cx = e.clientX; cy = e.clientY;
+            document.addEventListener('mousemove', (e) => {
+                curMouseX = e.clientX;
+                curMouseY = e.clientY;
                 if (!hasMoved) {
                     hasMoved = true;
-                    rx = cx; ry = cy;
-                    cursor.style.opacity = '1';
-                    cursorRing.style.opacity = '1';
+                    ringX = curMouseX;
+                    ringY = curMouseY;
+                    cursorDot.classList.remove('opacity-0');
+                    cursorRing.classList.remove('opacity-0');
                 }
-                cursor.style.transform = `translate(calc(${cx}px - 50%), calc(${cy}px - 50%))`;
+                cursorDot.style.left = `${curMouseX}px`;
+                cursorDot.style.top = `${curMouseY}px`;
             });
 
             document.addEventListener('mouseleave', () => {
-                cursor.style.opacity = '0';
-                cursorRing.style.opacity = '0';
+                cursorDot.classList.add('opacity-0');
+                cursorRing.classList.add('opacity-0');
             });
             document.addEventListener('mouseenter', () => {
                 if (hasMoved) {
-                    cursor.style.opacity = '1';
-                    cursorRing.style.opacity = '1';
+                    cursorDot.classList.remove('opacity-0');
+                    cursorRing.classList.remove('opacity-0');
                 }
             });
 
-            function renderCursorRing() {
+            function animateRing() {
                 if (hasMoved) {
-                    rx += (cx - rx) * 0.15;
-                    ry += (cy - ry) * 0.15;
-                    const scale = isMouseDown ? ' scale(0.75)' : '';
-                    cursorRing.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))${scale}`;
+                    ringX += (curMouseX - ringX) * 0.15;
+                    ringY += (curMouseY - ringY) * 0.15;
+                    cursorRing.style.left = `${ringX}px`;
+                    cursorRing.style.top = `${ringY}px`;
                 }
-                requestAnimationFrame(renderCursorRing);
+                requestAnimationFrame(animateRing);
             }
-            renderCursorRing();
+            animateRing();
 
-            // Hover state mapping
-            const hoverTargets = document.querySelectorAll('a, button, input, textarea, .cursor-hover');
-            hoverTargets.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursor.classList.add('hovered');
-                    cursorRing.classList.add('hovered');
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('hovered');
-                    cursorRing.classList.remove('hovered');
-                });
-            });
+            // Hover effects for interactables (Original: ring expands & fills blue, dot scales 2x)
+            const initCursorHovers = () => {
+                const interactables = document.querySelectorAll('a, button, input, textarea, .cursor-hover');
+                interactables.forEach(el => {
+                    if (el.dataset.cursorBound) return;
+                    el.dataset.cursorBound = "true";
 
-            window.addEventListener('mousedown', () => {
-                isMouseDown = true;
+                    el.addEventListener('mouseenter', () => {
+                        cursorRing.classList.add('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
+                        cursorDot.classList.add('scale-[2]');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursorRing.classList.remove('w-14', 'h-14', 'bg-blue-400/20', 'border-blue-500');
+                        cursorDot.classList.remove('scale-[2]');
+                    });
+                });
+            };
+            initCursorHovers();
+
+            // Click effect (Original: ring shrinks to 75% & darkens, dot shrinks to 50%)
+            document.addEventListener('mousedown', () => {
+                cursorRing.classList.add('scale-75', 'bg-blue-500/40');
+                cursorDot.classList.add('scale-50');
             });
-            window.addEventListener('mouseup', () => {
-                isMouseDown = false;
+            document.addEventListener('mouseup', () => {
+                cursorRing.classList.remove('scale-75', 'bg-blue-500/40');
+                cursorDot.classList.remove('scale-50');
             });
         }
 
@@ -1509,6 +1482,6 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=4"></script>
+    <script src="assets/js/main.js?v=5"></script>
 
 </html>
