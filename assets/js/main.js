@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             filter_webapp: "Web App",
             filter_mobile: "Mobile App",
             project_view: "View Project",
+            btn_case_study: "Case Study",
+            modal_view_github: "View GitHub Repository",
+            modal_close: "Close",
 
             // Project 1: Srichai Property
             p1_title: "Srichai Property",
@@ -167,6 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
             filter_webapp: "Web App",
             filter_mobile: "Mobile App",
             project_view: "ดูรายละเอียด",
+            btn_case_study: "อ่านเคสเชิงลึก",
+            modal_view_github: "ดูซอร์สโค้ดบน GitHub",
+            modal_close: "ปิดหน้าต่าง",
 
             // Project 1: Srichai Property
             p1_title: "Srichai Property",
@@ -290,6 +296,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateButtonUI('lang-toggle');
         updateButtonUI('lang-toggle-mobile');
+
+        // Update Case Study modal if currently open
+        if (typeof activeCaseStudyId !== 'undefined' && activeCaseStudyId) {
+            renderCaseStudyModal(activeCaseStudyId, lang);
+        }
     }
 
     // Toggle Language Function
@@ -396,4 +407,385 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     generateDots();
+
+    // ==========================================
+    // 5. Technical Case Study Modal System
+    // ==========================================
+    const caseStudyData = {
+        srichai: {
+            en: {
+                title: "Srichai Property — Real Estate Trading Platform",
+                badge: "Senior Capstone Project",
+                meta: "85 Commits · 15 PRs · 32 Tables · 32 APIs · 35 Pages · 3 User Roles",
+                repo: "https://github.com/PHmeen/SrichaiProperty",
+                tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
+                sections: [
+                    {
+                        heading: "Architectural Decision: Property Viewing Slots",
+                        points: [
+                            "Designed the <code>property_viewing_slots</code> table in Prisma schema.",
+                            "Proposed decoupling availability from 'Agent' and binding it directly to 'Each Property' — an architectural pivot adopted by the entire team for the remainder of the project.",
+                            "Engineered full booking lifecycle: Booking &rarr; Slot Lock &rarr; Agent Confirm/Reject/Complete &rarr; Client Reschedule/Cancel &rarr; Slot Restitution, broadcasting state changes via Pusher."
+                        ]
+                    },
+                    {
+                        heading: "API-Level Business Rules & Concurrency Control",
+                        points: [
+                            "Enforced business invariants on backend API routes rather than relying on UI button states.",
+                            "Strict limit: 1 pending booking per client per property.",
+                            "Pre-commit slot verification to eliminate race conditions.",
+                            "Duplicate cancellation prevention and cross-property broker conflict checks."
+                        ]
+                    },
+                    {
+                        heading: "Security Hardening (3 Critical Vulnerabilities Fixed)",
+                        points: [
+                            "Enforced listing ownership resolution directly from verified session tokens, rejecting arbitrary user IDs in request bodies.",
+                            "Restricted listing approval and status toggling exclusively to verified Admin role.",
+                            "Implemented strict authorization check returning HTTP 403 Forbidden whenever unauthorized users attempt to cancel appointments belonging to other clients."
+                        ]
+                    },
+                    {
+                        heading: "Admin Analytics & Dedicated Microservices",
+                        points: [
+                            "Authored <code>/api/admin/analytics</code> executing 8 Prisma queries in parallel via <code>Promise.all</code>, aggregating data across daily, monthly, and yearly intervals for Recharts rendering.",
+                            "Refactored <code>hasAgentBookingConflict</code> to evaluate conflicts against 'confirmed active appointments' rather than merely 'opened schedule windows'.",
+                            "Built 3 core services: <code>slaService</code> (dynamic countdown timer with urgency color-coding and sorting), <code>viewingSlotService</code> (slot collision engine), and <code>slotAvailabilityService</code> (slot scarcity alerts with 24-hour deduplication)."
+                        ]
+                    },
+                    {
+                        heading: "Structured Rejection & Cancellation Reasons",
+                        points: [
+                            "Engineered structured cancellation reason modal capturing client feedback into <code>cancel_reason</code> while offering a streamlined 1-click rebooking button.",
+                            "Expanded listing rejection reasons from 5 to 9 standardized criteria defined in <code>REJECT_REASONS</code> constants."
+                        ]
+                    }
+                ]
+            },
+            th: {
+                title: "Srichai Property — เว็บแอปซื้อขายอสังหาริมทรัพย์",
+                badge: "โปรเจกต์จบการศึกษา (Senior Capstone)",
+                meta: "85 Commits ของผม · 15 PRs · 32 ตาราง · 32 APIs · 35 หน้าเว็บ · 3 บทบาทผู้ใช้",
+                repo: "https://github.com/PHmeen/SrichaiProperty",
+                tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
+                sections: [
+                    {
+                        heading: "การออกแบบสถาปัตยกรรม: ตารางรอบวันว่างเข้าชม (property_viewing_slots)",
+                        points: [
+                            "ออกแบบตาราง <code>property_viewing_slots</code> ใน <code>prisma/schema.prisma</code>",
+                            "เป็นผู้เสนอเลิกใช้ระบบวันว่างเดิมที่ผูกกับ 'นายหน้า' แล้วเปลี่ยนมาผูกกับ 'บ้านแต่ละหลัง' แทน — เป็นการตัดสินใจเชิงสถาปัตยกรรมที่ทีมใช้ต่อจนจบระบบ",
+                            "พัฒนาวงจรการจองครบวงจร: จอง &rarr; ล็อกรอบเวลา &rarr; นายหน้ายืนยัน/ปฏิเสธ/ปิดงาน &rarr; ลูกค้าแก้วันหรือยกเลิก &rarr; คืนรอบเวลา โดยทุกการเปลี่ยนสถานะเขียนแจ้งเตือนแบบเรียลไทม์"
+                        ]
+                    },
+                    {
+                        heading: "คุมกฎธุรกิจที่ระดับ API (Business Rules at API Layer)",
+                        points: [
+                            "บังคับกฎธุรกิจไว้ที่ชั้น API ไม่ใช่แค่การซ่อนปุ่มบนหน้าเว็บ",
+                            "กำหนดให้ 1 ลูกค้าต่อ 1 บ้านสามารถจองค้างได้เพียง 1 ครั้งเท่านั้น",
+                            "ตรวจสอบว่ารอบเวลานั้นว่างจริงก่อนบันทึก (กันการจองชนกัน)",
+                            "ป้องกันการกดยกเลิกซ้ำ และตรวจการชนกันของวันว่างข้ามบ้านของนายหน้าคนเดียวกัน"
+                        ]
+                    },
+                    {
+                        heading: "ปิดช่องโหว่ความปลอดภัย 3 จุดสำคัญ (Security Vulnerability Fixes)",
+                        points: [
+                            "ยึดตัวตนเจ้าของประกาศจาก Session โดยตรง แทนการรับ user ID จาก Request Body เพื่อป้องกันการสวมสิทธิ์",
+                            "จำกัดให้เฉพาะบทบาทผู้ดูแลระบบ (Admin) เท่านั้นที่สามารถเปลี่ยนสถานะประกาศได้",
+                            "ส่งคืน HTTP 403 Forbidden ทันทีเมื่อมีผู้ใช้คนอื่นพยายามยกเลิกนัดหมายที่ไม่ใช่ของตนเอง"
+                        ]
+                    },
+                    {
+                        heading: "ระบบสถิติผู้ดูแลระบบ (Admin Analytics) และ Microservices",
+                        points: [
+                            "เขียน <code>/api/admin/analytics</code> เองทั้งไฟล์ โดยยิง Prisma 8 queries ขนานกันด้วย <code>Promise.all</code> แบ่งช่วงข้อมูลเป็นราย วัน/เดือน/ปี แล้วแสดงผลด้วยกราฟ Recharts",
+                            "รื้อระบบกันนายหน้ารับนัดชนกันใหม่เป็น <code>hasAgentBookingConflict</code> ให้อ่านจาก 'นัดหมายจริง' แทน 'วันว่างที่เปิดไว้'",
+                            "เขียนและเป็นเจ้าของ Service สำคัญ 3 ตัว: <code>slaService</code> (นับถอยหลังตรวจประกาศตาม SLA จริงพร้อมป้ายสีตามความด่วน), <code>viewingSlotService</code> (กฎการชนกันของรอบเวลา), และ <code>slotAvailabilityService</code> (เตือนนายหน้าเมื่อบ้านหลังไหนรอบว่างใกล้หมด โดยกันเตือนซ้ำภายใน 24 ชม.)"
+                        ]
+                    },
+                    {
+                        heading: "ระบบเหตุผลการปฏิเสธและการยกเลิกนัดหมาย",
+                        points: [
+                            "พัฒนาโมดัลเลือกเหตุผลแทน <code>confirm()</code> เดิม บันทึกลง <code>cancel_reason</code> พร้อมแจ้งลูกค้าและมีปุ่มให้กดจองรอบใหม่ได้ทันที",
+                            "ขยายเหตุผลตีกลับประกาศจาก 5 เป็น 9 ข้อ โดยแยกออกมาเป็นค่าคงที่ <code>REJECT_REASONS</code>"
+                        ]
+                    }
+                ]
+            }
+        },
+        gamestore: {
+            en: {
+                title: "GameStore — Gaming Storefront with Automated Testing Suite",
+                badge: "Solo Rebuild Project",
+                meta: "144 Commits · 81 Playwright E2E Tests · 14 Web Pages · 8.4MB → 1.25MB Asset Size",
+                repo: "https://github.com/Most-05/game-store",
+                tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
+                sections: [
+                    {
+                        heading: "Zero-Dependency Node.js Mock Server Architecture",
+                        points: [
+                            "Original backend was lost with only a SQL dump remaining. Architected a clean, dependency-free Node.js mock server from scratch.",
+                            "Integrated the mock server seamlessly into the development pipeline via <code>src/setupProxy.js</code>, allowing the entire full-stack application to boot with a single command.",
+                            "Structured modular test suites across 8 spec suites: <code>e2e/01-routes ... 08-rov.spec.js</code>."
+                        ]
+                    },
+                    {
+                        heading: "Critical Production Bugs Uncovered by Playwright (Undetectable by Eye)",
+                        points: [
+                            "<strong>Missing CartProvider:</strong> Caught an unmounted context provider that broke the shopping cart across the entire application.",
+                            "<strong>Checkout Payment Bypass:</strong> Detected that checkout falsely showed success without deducting the user's actual wallet balance.",
+                            "<strong>Broken Dynamic Routes:</strong> Identified subtle URL typos that prevented specific product categories from rendering.",
+                            "<strong>Linux File Case-Sensitivity Trap:</strong> Uncovered mismatched casing between local asset file paths and import statements. While Windows silently tolerated the casing discrepancy, deployment to a standard Linux server would have corrupted 19 out of 26 item images!"
+                        ]
+                    },
+                    {
+                        heading: "Asset & Bundle Size Optimization (85% Reduction)",
+                        points: [
+                            "Reduced total page payload from 8.4 MB down to 1.25 MB.",
+                            "Migrated 19 hotlinked external images into optimized, compressed local project assets to prevent broken links and reduce network latency.",
+                            "Adhered to atomic Git commit standards with descriptive messages detailing 'why' changes occurred rather than just 'what'."
+                        ]
+                    }
+                ]
+            },
+            th: {
+                title: "GameStore — เว็บร้านขายไอเทมเกมพร้อมชุดทดสอบอัตโนมัติ",
+                badge: "โปรเจกต์เดี่ยว รื้อทำใหม่ทั้งระบบ (Solo Rebuild)",
+                meta: "144 Commits · 81 เทส E2E (Playwright) · 14 หน้าเว็บ · ย่อขนาด 8.4MB → 1.25MB",
+                repo: "https://github.com/Most-05/game-store",
+                tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
+                sections: [
+                    {
+                        heading: "สถาปัตยกรรมกู้ชีพ Backend ด้วย Zero-Dependency Node.js Mock Server",
+                        points: [
+                            "Backend ตัวเดิมหายไปจากเครื่องเหลือเพียงไฟล์ SQL จึงเขียน Mock Server ขึ้นมาใหม่ด้วย Node.js ล้วนโดยไม่พึ่งพา third-party library",
+                            "เชื่อมต่อเข้ากับ Dev Server ผ่าน <code>src/setupProxy.js</code> ทำให้ระบบทั้งหมดสามารถรันขึ้นมาใช้งานได้ด้วยคำสั่งเดียว",
+                            "จัดโครงสร้างชุดทดสอบ 8 ไฟล์สเปก (<code>e2e/01-routes ... 08-rov.spec.js</code>) ครอบคลุมทุก route, ทุกลิงก์ภายใน, ระบบสมัคร/ล็อกอิน, ยอดเงินในกระเป๋า และร้านค้าทั้งสามร้าน"
+                        ]
+                    },
+                    {
+                        heading: "บั๊กจริงระดับ Production ที่ Playwright ตรวจพบ (การตรวจด้วยตาไม่มีวันเจอ)",
+                        points: [
+                            "<strong>ขาด CartProvider:</strong> ตรวจพบคอนเท็กซ์ที่ไม่ได้ครอบไว้ ทำให้ระบบตะกร้าพังทั้งเว็บเมื่อเกิดข้อผิดพลาด",
+                            "<strong>หน้าชำระเงินไม่ตัดเงินจริง:</strong> หน้าบ้านขึ้นว่าชำระเงินสำเร็จ แต่เบื้องหลังไม่ได้ตัดยอดเงินใน Wallet จริง",
+                            "<strong>Route สะกดผิด:</strong> จับจุดพิมพ์ตกในเส้นทาง URL ที่ทำให้บางหน้าเปิดไม่ติด",
+                            "<strong>บั๊กตัวพิมพ์เล็ก-ใหญ่บน Linux (Case Sensitivity):</strong> ตรวจพบชื่อไฟล์รูปภาพตัวพิมพ์ไม่ตรงกับโค้ดเรียกใช้ ซึ่งบนเครื่อง Windows จะเปิดได้ปกติ แต่ทันทีที่ Deploy ขึ้นเซิร์ฟเวอร์ Linux รูปภาพจะพังทันที 19 จาก 26 รูป!"
+                        ]
+                    },
+                    {
+                        heading: "การเพิ่มประสิทธิภาพหน้าเว็บและขนาดไฟล์ (ลดลง 85%)",
+                        points: [
+                            "ลดขนาดข้อมูลต่อหน้าจาก 8.4 MB เหลือเพียง 1.25 MB",
+                            "ย้ายรูปภาพ 19 ภาพที่เคย Hotlink จากภายนอกเข้ามาเก็บไว้ในโปรเจกต์ พร้อมทำการบีบอัดขนาดไฟล์ ป้องกันรูปตายและลดเวลาโหลด",
+                            "คอมมิตแบบแยกเรื่องละก้อน (Atomic Commits) พร้อมระบุเหตุผล 'ทำไม' ในข้อความคอมมิต"
+                        ]
+                    }
+                ]
+            }
+        },
+        propertyapp: {
+            en: {
+                title: "Property Viewing App — Mobile Booking Application",
+                badge: "Academic Capstone (Course 308-493)",
+                meta: "60 / 78 Commits (77% contribution) · 5 Core Functions · 5 Model Classes · Flutter integration_test",
+                repo: "https://github.com/Most-05",
+                tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
+                sections: [
+                    {
+                        heading: "End-to-End Mobile Booking Lifecycle",
+                        points: [
+                            "Developed complete appointment scheduling pipeline: Browse viewings, create new bookings, modify dates, cancel slots, and compute booking counts per property.",
+                            "Seamless coordination between client-side Flutter application and backend Express.js REST API."
+                        ]
+                    },
+                    {
+                        heading: "API Security & Access Control Guardrails",
+                        points: [
+                            "Guarded endpoints with custom <code>checkAccessToken</code> middleware.",
+                            "Coupled token verification with ownership authorization checks to guarantee properties can only be edited or deleted by their verified creator."
+                        ]
+                    },
+                    {
+                        heading: "Type-Safe Architecture Migration",
+                        points: [
+                            "Refactored entire data layer away from raw untyped Maps (<code>Map<String, dynamic></code>) to strongly typed Dart Model classes.",
+                            "Implemented <code>factory Model.fromJson(...)</code> constructors across all models, enabling compile-time validation of API contract mismatches and eliminating runtime null errors."
+                        ]
+                    },
+                    {
+                        heading: "Province Master Data & SQL Aggregations",
+                        points: [
+                            "Engineered province master data endpoints feeding dynamic dropdowns in property creation forms.",
+                            "Implemented analytical backend queries using SQL <code>GROUP BY</code> to summarize and display property distribution per province."
+                        ]
+                    },
+                    {
+                        heading: "Automated Integration Testing & Live Demonstration Guide",
+                        points: [
+                            "Authored Flutter <code>integration_test</code> suites verifying end-to-end booking user flows on emulator/device.",
+                            "Authored comprehensive step-by-step presentation manual ensuring flawless live demonstration during coursework evaluation."
+                        ]
+                    }
+                ]
+            },
+            th: {
+                title: "ระบบการจองดูบ้าน — แอปพลิเคชันมือถือด้วย Flutter",
+                badge: "ผลงานรายวิชา 308-493 ชุดวิชาชีพเฉพาะทาง (6 หน่วยกิต)",
+                meta: "60 / 78 Commits เป็นของผม (77%) · 5 ฟังก์ชันหลัก · 5 คลาส Model · Flutter integration_test",
+                repo: "https://github.com/Most-05",
+                tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
+                sections: [
+                    {
+                        heading: "ระบบการจองดูบ้านครบวงจรบนมือถือ (Full Mobile Booking Lifecycle)",
+                        points: [
+                            "พัฒนาระบบจองครบวงจร: แสดงรายการนัด, เพิ่มการจองใหม่, แก้ไขวันเวลา, ขอยกเลิก และนับจำนวนการจองของบ้านแต่ละหลัง ทั้งฝั่งแอปพลิเคชัน Flutter และฝั่ง Express.js API",
+                            "เชื่อมโยงการทำงานระหว่างหน้าบ้านและหลังบ้านอย่างลื่นไหล"
+                        ]
+                    },
+                    {
+                        heading: "ความปลอดภัยของ API และการตรวจสอบสิทธิ์",
+                        points: [
+                            "ป้องกัน Endpoint ของบ้านด้วย Middleware <code>checkAccessToken</code>",
+                            "ทำงานร่วมกับระบบตรวจสอบสิทธิ์เจ้าของประกาศ เพื่อให้มั่นใจว่ามีเฉพาะเจ้าของตัวจริงเท่านั้นที่สามารถแก้ไขหรือลบประกาศได้"
+                        ]
+                    },
+                    {
+                        heading: "ยกระดับสู่สถาปัตยกรรม Type-Safe ด้วย Dart Model",
+                        points: [
+                            "เปลี่ยนจากการรับส่งข้อมูลเป็น Map ดิบทั้งแอป มาใช้คลาส Model ที่มี <code>factory Model.fromJson(...)</code> ครบถ้วน",
+                            "ช่วยให้ตรวจจับข้อผิดพลาดของชื่อฟิลด์ได้ตั้งแต่ขั้นตอน Compile หมดปัญหา Null Pointer Runtime Exception"
+                        ]
+                    },
+                    {
+                        heading: "ระบบข้อมูลหลักรายจังหวัดและการคำนวณสถิติ (GROUP BY)",
+                        points: [
+                            "สร้าง Endpoint รายชื่อจังหวัดสำหรับแสดงผล Dropdown ในฟอร์มลงประกาศบ้าน",
+                            "เขียน Query สรุปจำนวนอสังหาริมทรัพย์แบ่งตามรายจังหวัดด้วยคำสั่ง SQL <code>GROUP BY</code>"
+                        ]
+                    },
+                    {
+                        heading: "ชุดทดสอบอัตโนมัติ (Integration Test) และคู่มือนำเสนอ",
+                        points: [
+                            "เขียน Flutter <code>integration_test</code> จำลองและควบคุม Flow การจองดูบ้านทั้งเส้นทาง",
+                            "จัดทำคู่มือเดโมทีละขั้นตอน (Step-by-step Demo Guide) สำหรับการนำเสนอต่อหน้าอาจารย์ผู้ตรวจชิ้นงาน"
+                        ]
+                    }
+                ]
+            }
+        }
+    };
+
+    let activeCaseStudyId = null;
+
+    function renderCaseStudyModal(projectId, lang) {
+        const project = caseStudyData[projectId];
+        if (!project) return;
+
+        const data = project[lang] || project.en;
+        if (!data) return;
+
+        const badgeEl = document.getElementById('modal-project-badge');
+        const metaEl = document.getElementById('modal-project-meta');
+        const titleEl = document.getElementById('modal-project-title');
+        const repoLink = document.getElementById('modal-project-repo');
+        const bodyEl = document.getElementById('modal-project-body');
+
+        if (badgeEl) badgeEl.textContent = data.badge;
+        if (metaEl) metaEl.textContent = data.meta;
+        if (titleEl) titleEl.textContent = data.title;
+
+        if (repoLink) {
+            if (data.repo && projectId !== 'propertyapp') {
+                repoLink.href = data.repo;
+                repoLink.classList.remove('hidden');
+            } else {
+                repoLink.classList.add('hidden');
+            }
+        }
+
+        if (bodyEl) {
+            let html = '';
+
+            // Tech Stack Badges
+            if (data.tags && data.tags.length > 0) {
+                html += '<div class="flex flex-wrap gap-1.5 pb-2 border-b border-gray-100 dark:border-white/5">';
+                data.tags.forEach(tag => {
+                    html += `<span class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold font-mono-custom">${tag}</span>`;
+                });
+                html += '</div>';
+            }
+
+            // Key Sections
+            data.sections.forEach(sec => {
+                html += `
+                    <div class="bg-gray-50/70 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-2xl p-5">
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-base flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+                            ${sec.heading}
+                        </h4>
+                        <ul class="space-y-2 text-gray-600 dark:text-zinc-300">
+                            ${sec.points.map(pt => `
+                                <li class="flex items-start gap-2.5 leading-relaxed">
+                                    <span class="text-blue-500 dark:text-blue-400 font-bold shrink-0 mt-0.5">•</span>
+                                    <span>${pt}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+
+            bodyEl.innerHTML = html;
+        }
+    }
+
+    function openCaseStudyModal(projectId) {
+        activeCaseStudyId = projectId;
+        renderCaseStudyModal(projectId, currentLang);
+        const modal = document.getElementById('case-study-modal');
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeCaseStudyModal() {
+        activeCaseStudyId = null;
+        const modal = document.getElementById('case-study-modal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Modal Trigger Buttons
+    document.querySelectorAll('.open-case-study-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const projectId = btn.getAttribute('data-project');
+            if (projectId) openCaseStudyModal(projectId);
+        });
+    });
+
+    // Close Buttons
+    const closeBtn = document.getElementById('close-case-study-btn');
+    const closeBottomBtn = document.getElementById('close-case-study-bottom-btn');
+    if (closeBtn) closeBtn.addEventListener('click', closeCaseStudyModal);
+    if (closeBottomBtn) closeBottomBtn.addEventListener('click', closeCaseStudyModal);
+
+    // Backdrop Click to Close
+    const modalEl = document.getElementById('case-study-modal');
+    if (modalEl) {
+        modalEl.addEventListener('click', (e) => {
+            if (e.target === modalEl) {
+                closeCaseStudyModal();
+            }
+        });
+    }
+
+    // ESC Key to Close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && activeCaseStudyId) {
+            closeCaseStudyModal();
+        }
+    });
 });
