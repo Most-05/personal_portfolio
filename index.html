@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -181,10 +181,12 @@
             background-color: #3b82f6;
             border-radius: 50%;
             position: fixed;
+            top: 0;
+            left: 0;
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 9999;
-            transition: width 0.15s, height 0.15s, background-color 0.15s;
+            transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.2s;
         }
 
         .custom-cursor-ring {
@@ -193,11 +195,13 @@
             border: 1.5px solid rgba(59, 130, 246, 0.45);
             border-radius: 50%;
             position: fixed;
+            top: 0;
+            left: 0;
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 9998;
             will-change: transform;
-            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s;
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s, opacity 0.2s;
         }
 
         .custom-cursor.hovered {
@@ -210,6 +214,17 @@
             height: 52px;
             border-color: rgba(59, 130, 246, 0.8);
             background-color: rgba(59, 130, 246, 0.08);
+        }
+
+        @media (min-width: 768px) {
+            body.custom-cursor-active,
+            body.custom-cursor-active a,
+            body.custom-cursor-active button,
+            body.custom-cursor-active input,
+            body.custom-cursor-active textarea,
+            body.custom-cursor-active .cursor-hover {
+                cursor: none !important;
+            }
         }
 
         /* 4.6 Interactive Grid */
@@ -830,17 +845,17 @@
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">Recharts</span>
                             </div>
-                            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-white/5">
-                                <button type="button" class="open-case-study-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all cursor-hover" data-project="srichai">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                    <span data-i18n="btn_case_study">Case Study</span>
-                                </button>
+                            <div class="mt-4 flex items-center justify-between">
                                 <a href="https://github.com/PHmeen/SrichaiProperty" target="_blank"
                                     rel="noopener noreferrer"
                                     class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-hover group">
                                     <span data-i18n="project_view">View Project</span> <span
                                         class="ml-1 transition-transform group-hover:translate-x-1">&rarr;</span>
                                 </a>
+                                <button type="button" class="open-case-study-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all cursor-hover" data-project="srichai">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    <span data-i18n="btn_case_study">Case Study</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -882,16 +897,16 @@
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">React
                                     Router 7</span>
                             </div>
-                            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-white/5">
-                                <button type="button" class="open-case-study-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all cursor-hover" data-project="gamestore">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                    <span data-i18n="btn_case_study">Case Study</span>
-                                </button>
+                            <div class="mt-4 flex items-center justify-between">
                                 <a href="https://github.com/Most-05/game-store" target="_blank" rel="noopener noreferrer"
                                     class="inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-hover group">
                                     <span data-i18n="project_view">View Project</span> <span
                                         class="ml-1 transition-transform group-hover:translate-x-1">&rarr;</span>
                                 </a>
+                                <button type="button" class="open-case-study-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all cursor-hover" data-project="gamestore">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    <span data-i18n="btn_case_study">Case Study</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -936,12 +951,12 @@
                                 <span
                                     class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold">integration_test</span>
                             </div>
-                            <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-white/5">
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-xs text-gray-400 font-mono-custom">Coursework 308-493 · 2-person team</span>
                                 <button type="button" class="open-case-study-btn inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all cursor-hover" data-project="propertyapp">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                                     <span data-i18n="btn_case_study">Case Study</span>
                                 </button>
-                                <span class="text-xs text-gray-400 font-mono-custom">Coursework 308-493</span>
                             </div>
                         </div>
                     </div>
@@ -1347,24 +1362,37 @@
         }
 
         // -------------------------
+        // -------------------------
         // Custom Cursor
         // -------------------------
         const cursor = document.getElementById('custom-cursor');
         const cursorRing = document.getElementById('custom-cursor-ring');
 
-        if (!isTouchDevice) {
-            let cx = 0, cy = 0;
-            let rx = 0, ry = 0;
+        if (!isTouchDevice && window.innerWidth >= 768) {
+            document.body.classList.add('custom-cursor-active');
+            let cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+            let rx = cx, ry = cy;
+            let isMouseDown = false;
 
             window.addEventListener('mousemove', (e) => {
                 cx = e.clientX; cy = e.clientY;
                 cursor.style.transform = `translate(calc(${cx}px - 50%), calc(${cy}px - 50%))`;
             });
 
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+                cursorRing.style.opacity = '0';
+            });
+            document.addEventListener('mouseenter', () => {
+                cursor.style.opacity = '1';
+                cursorRing.style.opacity = '1';
+            });
+
             function renderCursorRing() {
-                rx += (cx - rx) * 0.12;
-                ry += (cy - ry) * 0.12;
-                cursorRing.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
+                rx += (cx - rx) * 0.15;
+                ry += (cy - ry) * 0.15;
+                const scale = isMouseDown ? ' scale(0.75)' : '';
+                cursorRing.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))${scale}`;
                 requestAnimationFrame(renderCursorRing);
             }
             renderCursorRing();
@@ -1380,6 +1408,13 @@
                     cursor.classList.remove('hovered');
                     cursorRing.classList.remove('hovered');
                 });
+            });
+
+            window.addEventListener('mousedown', () => {
+                isMouseDown = true;
+            });
+            window.addEventListener('mouseup', () => {
+                isMouseDown = false;
             });
         }
 
@@ -1460,6 +1495,6 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/main.js?v=3"></script>
 
 </html>
