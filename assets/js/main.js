@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_btn_cv: "เรซูเม CV",
 
             // Tech Marquee
-            tech_heading: "เทคโนโลยีและเครื่องมือที่เชี่ยวชาญ",
+            tech_heading: "เทคโนโลยีและเครื่องมือที่ใช้ในปัจจุบัน",
 
             // Bento Grid / Profile
             bento_eyebrow: "> ข้อมูลส่วนตัว_",
