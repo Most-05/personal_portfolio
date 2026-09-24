@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_status: "Cooperative Education Candidate (16 Nov 2026 – 7 Mar 2027)",
             hero_th_name: "Sidtisak Hanthongchai (สิทธิศักดิ์ หาญธงไชย)",
             hero_role: "> Full Stack Developer_",
-            hero_desc: "Fourth-year ICT student at Prince of Songkla University. 289 commits across 3 codebases (Web, Web App, Mobile). Specialized in Next.js, React, Node.js, and Flutter with an emphasis on clean architecture and automated testing.",
+            hero_desc: "Fourth-year ICT student at Prince of Songkla University. 454 commits across 3 codebases (Web, Web App, Mobile). Specialized in Next.js, React, Node.js, and Flutter with an emphasis on clean architecture and automated testing.",
             hero_location: "📍 Hat Yai, Songkhla, Thailand",
             hero_btn_works: "View Projects",
             hero_btn_contact: "Contact Me",
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bento_about_desc: "Fourth-year Information and Communication Technology (ICT) student at Prince of Songkla University, Hat Yai Campus. Experienced in full-lifecycle system design (Context Diagrams, DFD, ER Models, Figma Interactive Prototyping across 5 team projects) to production deployment, owning core subsystems with verified Git commits and automated testing.",
             bento_tag_clean: "Clean Code",
             bento_tag_problem: "Problem Solving",
-            bento_tag_pr: "15 Merged PRs",
+            bento_tag_pr: "19 Merged PRs",
             bento_tag_codebases: "3 Codebases",
             bento_tag_verified: "Git Log Verified",
             bento_tag_figma: "5 Figma Prototypes",
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
             p1_desc: "Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict to prevent overlapping client viewings.",
-            p1_meta: "85 Commits · 15 PRs · 32 Tables · 32 APIs",
+            p1_meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_status: "ผู้สมัครฝึกสหกิจศึกษา (16 พ.ย. 2569 – 7 มี.ค. 2570)",
             hero_th_name: "สิทธิศักดิ์ หาญธงไชย",
             hero_role: "> Full Stack Developer_",
-            hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ เจ้าของ 289 Commits ใน 3 โปรเจกต์จริง (เว็บ, เว็บแอป, มือถือ) เชี่ยวชาญ Next.js, React, Node.js และ Flutter มุ่งเน้นสถาปัตยกรรมโค้ดที่สะอาดและการทดสอบอัตโนมัติ",
+            hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ เจ้าของ 454 Commits ใน 3 โปรเจกต์จริง (เว็บ, เว็บแอป, มือถือ) เชี่ยวชาญ Next.js, React, Node.js และ Flutter มุ่งเน้นสถาปัตยกรรมโค้ดที่สะอาดและการทดสอบอัตโนมัติ",
             hero_location: "📍 หาดใหญ่, สงขลา, ประเทศไทย",
             hero_btn_works: "ดูผลงาน",
             hero_btn_contact: "ติดต่อผม",
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bento_about_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) ม.สงขลานครินทร์ วิทยาเขตหาดใหญ่ มีประสบการณ์ออกแบบระบบตั้งแต่ต้นน้ำ (Context Diagram, DFD, ER Model, Figma Interactive Prototype ใน 5 โปรเจกต์ทีม) สู่โค้ดที่รันจริง รับผิดชอบระบบหลักพร้อมตัวเลขสถิติ Git และชุดทดสอบอัตโนมัติที่ตรวจสอบย้อนกลับได้จริง",
             bento_tag_clean: "Clean Code",
             bento_tag_problem: "Problem Solving",
-            bento_tag_pr: "15 Merged PRs",
+            bento_tag_pr: "19 Merged PRs",
             bento_tag_codebases: "3 Codebases",
             bento_tag_verified: "ตรวจจาก Git Log จริง",
             bento_tag_figma: "Figma 5 โปรเจกต์ทีม",
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
             p1_desc: "โปรเจกต์จบการศึกษาแพลตฟอร์มอสังหาริมทรัพย์ ออกแบบ 32 ตารางฐานข้อมูล & 8 กระบวนการ DFD พัฒนาระบบคุมสิทธิ์ API, ระบบนับถอยหลัง SLA, แดชบอร์ด Recharts, และรื้อระบบกันนายหน้ารับนัดชนกัน hasAgentBookingConflict",
-            p1_meta: "85 Commits · 15 PRs · 32 ตาราง · 32 APIs",
+            p1_meta: "250 Commits · 19 PRs · 32 ตาราง · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
             en: {
                 title: "Srichai Property — Real Estate Trading Platform",
                 badge: "Senior Capstone Project",
-                meta: "85 Commits · 15 PRs · 32 Tables · 32 APIs · 35 Pages · 3 User Roles",
+                meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs · 35 Pages · 3 User Roles",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 sections: [
@@ -484,11 +484,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         ]
                     },
                     {
-                        heading: "Admin Analytics & Dedicated Microservices",
+                        heading: "Admin Analytics, SLA Engine & Health Metrics",
                         points: [
-                            "Authored <code>/api/admin/analytics</code> executing 8 Prisma queries in parallel via <code>Promise.all</code>, aggregating data across daily, monthly, and yearly intervals for Recharts rendering.",
-                            "Refactored <code>hasAgentBookingConflict</code> to evaluate conflicts against 'confirmed active appointments' rather than merely 'opened schedule windows'.",
-                            "Built 3 core services: <code>slaService</code> (dynamic countdown timer with urgency color-coding and sorting), <code>viewingSlotService</code> (slot collision engine), and <code>slotAvailabilityService</code> (slot scarcity alerts with 24-hour deduplication)."
+                            "Authored <code>/api/admin/analytics</code> executing 8 Prisma queries in parallel via <code>Promise.all</code>, aggregating data across daily, monthly, and yearly intervals with dynamic % period comparisons for Recharts rendering.",
+                            "Engineered <code>slaService</code> with historical audit trail capabilities: added <code>reviewed_by</code> and <code>reviewed_at</code> to properties schema to calculate review durations and quantify SLA compliance percentage (answering midterm faculty evaluation criteria).",
+                            "Integrated Appointment Health metrics (completed / no-show / rejected / cancelled) based on real audit data, and deployed anti-view spamming guardrails (PR #19)."
                         ]
                     },
                     {
@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
             th: {
                 title: "Srichai Property — เว็บแอปซื้อขายอสังหาริมทรัพย์",
                 badge: "โปรเจกต์จบการศึกษา (Senior Capstone)",
-                meta: "85 Commits ของผม · 15 PRs · 32 ตาราง · 32 APIs · 35 หน้าเว็บ · 3 บทบาทผู้ใช้",
+                meta: "250 Commits ของผม · 19 PRs · 32 ตาราง · 32 APIs · 35 หน้าเว็บ · 3 บทบาทผู้ใช้",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 sections: [
@@ -533,11 +533,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         ]
                     },
                     {
-                        heading: "ระบบสถิติผู้ดูแลระบบ (Admin Analytics) และ Microservices",
+                        heading: "ระบบสถิติผู้ดูแลระบบ, ระบบวัดผล SLA ย้อนหลัง และ Appointment Health",
                         points: [
-                            "เขียน <code>/api/admin/analytics</code> เองทั้งไฟล์ โดยยิง Prisma 8 queries ขนานกันด้วย <code>Promise.all</code> แบ่งช่วงข้อมูลเป็นราย วัน/เดือน/ปี แล้วแสดงผลด้วยกราฟ Recharts",
-                            "รื้อระบบกันนายหน้ารับนัดชนกันใหม่เป็น <code>hasAgentBookingConflict</code> ให้อ่านจาก 'นัดหมายจริง' แทน 'วันว่างที่เปิดไว้'",
-                            "เขียนและเป็นเจ้าของ Service สำคัญ 3 ตัว: <code>slaService</code> (นับถอยหลังตรวจประกาศตาม SLA จริงพร้อมป้ายสีตามความด่วน), <code>viewingSlotService</code> (กฎการชนกันของรอบเวลา), และ <code>slotAvailabilityService</code> (เตือนนายหน้าเมื่อบ้านหลังไหนรอบว่างใกล้หมด โดยกันเตือนซ้ำภายใน 24 ชม.)"
+                            "เขียน <code>/api/admin/analytics</code> เองทั้งไฟล์ ยิง Prisma 8 queries ขนานกันด้วย <code>Promise.all</code> แสดงผลกราฟ Recharts พร้อมคำนวณ % เปรียบเทียบกับช่วงก่อนหน้า",
+                            "พัฒนาระบบวัดผล SLA ย้อนหลังตามข้อเสนอแนะอาจารย์ตอน Midterm: เพิ่ม <code>reviewed_by</code> และ <code>reviewed_at</code> ใน schema บันทึกแอดมินคนตรวจ คำนวณเวลาเฉลี่ย และเปอร์เซ็นต์ที่ตรวจทันกำหนด 24 ชม.",
+                            "เพิ่มแถบวัดอัตราสุขภาพระบบนัดหมาย (Appointment Health) จำแนก เข้าชมสำเร็จ / เบี้ยวนัด (No-show) / ถูกปฏิเสธ / ยกเลิก และพัฒนาระบบป้องกันการปั่นยอดวิวบ้าน (PR #19)"
                         ]
                     },
                     {
