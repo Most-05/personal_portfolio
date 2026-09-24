@@ -33,8 +33,8 @@
 │   ├── css/style.css                    # สไตล์เสริมและการตั้งค่า Animation
 │   ├── js/main.js                       # สคริปต์ควบคุมการทำงาน UI
 │   ├── fonts/                           # ฟอนต์ที่ใช้ในโปรเจกต์
-│   └── images/                          # รูปภาพและไอคอนประกอบ
-├── Full_Stack-Sidtisak Hanthongchai.pdf # เอกสารเรซูเมฉบับเต็ม
+│   ├── images/                          # รูปภาพและไอคอนประกอบ
+│   └── Full_Stack-Sidtisak Hanthongchai.pdf # เอกสารเรซูเมฉบับเต็ม
 ├── DESIGN.md                            # Design System และแนวทางการออกแบบ
 └── README.md
 ```

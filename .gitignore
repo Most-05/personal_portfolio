@@ -1,25 +1,52 @@
-# Dependencies
+# Dependencies & Testing Artifacts
 node_modules/
 test-results/
 playwright-report/
+.cache/
 
 # Subproject & Exercises (FitAI web application)
 exercise/
 
-# Backup files
+# Backup & Temporary files
 *.backup.*
+*.bak
+*.tmp
 index.phase3-final.html
+*.metadata.json
+.tempmediaStorage/
 
-# Environment & Logs
+# Environment, Secrets & Credentials
 .env
 .env.*
+*.pem
+*.key
+*.keystore
+*.jks
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # OS & Editor files
 .DS_Store
 Thumbs.db
+desktop.ini
+.vscode/
+.idea/
 *.code-workspace
+.agents/
+.claude/
+
+# Internal Agent & AI Prompt Files
+GEMINI.md
+
+# Screenshots & Local Test Assets
 Screenshot*.png
 new*.png
+
+# Sensitive Personal PDFs & Academic Activity Reports (Do NOT upload to GitHub)
 Portfolio_Sidtisak.pdf
 ใบสรุปผลกิจกรรม*.pdf
+*6610210776*.pdf
