@@ -105,15 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_act_b2: "Technical Workshops: Git, CI/CD & Container Deployment and AI Vibe Coding intensive training (Aug 2026).",
             exp_act_b3: "Mobile App Development with Flutter workshop — Faculty of Science / PSU ICT Club (Aug 2025), later scaled into a production coursework mobile app.",
             exp_act_b4: "Flood Relief Assistance Centre volunteer — Student Development and Alumni Relations, Hat Yai Campus (Nov 2025).",
-            exp_act_b5: "Volunteer Leadership for Sustainable Community Development course — PSU Volunteer Center (Nov 2024, 3 credits).",
+            exp_act_b5: "Volunteer Leadership for Sustainable Community Development course — PSU Volunteer Center (Nov 2024, 20 competency hours / 3 credits).",
 
             exp_lead_title: "University Leadership & Certified Activities",
             exp_lead_date: "2023 – 2026",
             exp_lead_school: "Prince of Songkla University, Hat Yai Campus",
             exp_lead_b1: "136 Total Activity Hours certified by PSU Student Development Division (81 hrs Competency + 55 hrs General Interest).",
-            exp_lead_b2: "Project Leader — ICT Curriculum Orientation 2024 (Lead organizer for ICT branch student activities, Dec 2024).",
+            exp_lead_b2: "Recreation Team — ICT Student Orientation 2024 (Co-organizer for student activities & engagement, Dec 2024).",
             exp_lead_b3: "Co-organizer — National Science Week Exhibition 2023 (12 hours, event operations and leadership).",
-            exp_lead_b4: "Co-op Readiness Training — Completed Faculty of Science Cooperative Education modules (Sci Festival 2026 & Road Map to Get Your Job).",
+            exp_lead_b4: "Co-op Readiness Training — Completed Faculty of Science Cooperative Education modules (Sci Festival 2026: Industry Panel & Student Exchange, Jul 2026).",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแบบฟอร์มติดต่อ (Contact Section: #contact)
             contact_eyebrow: "Contact",
@@ -224,15 +224,15 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_act_b2: "ผ่านการอบรมเชิงปฏิบัติการเข้มข้น: Git, CI/CD & Container Deployment และ AI Vibe Coding (ส.ค. 2569)",
             exp_act_b3: "โครงการอบรมเชิงปฏิบัติการ Mobile App Development with Flutter — คณะวิทยาศาสตร์ / ชุมนุม ICT ม.อ. (ส.ค. 2568) ซึ่งต่อยอดเป็นแอปที่ส่งจริง",
             exp_act_b4: "จิตอาสาศูนย์ช่วยเหลือผู้ประสบอุทกภัย — กองพัฒนานักศึกษาและศิษย์เก่าสัมพันธ์ วิทยาเขตหาดใหญ่ (พ.ย. 2568)",
-            exp_act_b5: "รายวิชาผู้นำจิตอาสาเพื่อการพัฒนาชุมชนอย่างยั่งยืน — ศูนย์อาสาสมัคร ม.สงขลานครินทร์ (พ.ย. 2567, 3 หน่วยกิต)",
+            exp_act_b5: "รายวิชาผู้นำจิตอาสาเพื่อการพัฒนาชุมชนอย่างยั่งยืน — ศูนย์อาสาสมัคร ม.สงขลานครินทร์ (พ.ย. 2567, 20 ชั่วโมงสมรรถนะเต็ม / 3 หน่วยกิต)",
 
             exp_lead_title: "กิจกรรมมหาวิทยาลัยและภาวะผู้นำ",
             exp_lead_date: "2566 – 2569",
             exp_lead_school: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่",
             exp_lead_b1: "ผ่านกิจกรรมเสริมหลักสูตรรับรองโดยกองพัฒนานักศึกษา ม.อ. รวม 136 ชั่วโมง (สมรรถนะ 81 ชม. + ความสนใจ 55 ชม.)",
-            exp_lead_b2: "ผู้รับผิดชอบโครงการ — กิจกรรมรับน้องหลักสูตร ICT 2024 (ผู้นำจัดกิจกรรมนักศึกษาหลักสูตรเทคโนโลยีสารสนเทศและการสื่อสาร, ธ.ค. 2567)",
+            exp_lead_b2: "ฝ่ายสันทนาการ — กิจกรรมรับน้องหลักสูตร ICT 2024 (ร่วมจัดกิจกรรมสันทนาการและสานสัมพันธ์นักศึกษา, ธ.ค. 2567)",
             exp_lead_b3: "ผู้ร่วมจัด — สัปดาห์วิทยาศาสตร์แห่งชาติ ประจำปี 2566 (12 ชั่วโมง ด้านภาวะผู้นำและการทำงานเป็นทีม)",
-            exp_lead_b4: "การอบรมเตรียมความพร้อมสหกิจศึกษา คณะวิทยาศาสตร์ ม.อ. (Sci Festival 2026 & Road Map to Get Your Job)",
+            exp_lead_b4: "การอบรมเตรียมความพร้อมสหกิจศึกษา คณะวิทยาศาสตร์ ม.อ. (Sci Festival 2026 : เสวนาแลกเปลี่ยนเรียนรู้และประชาสัมพันธ์สถานประกอบการ, 22 ก.ค. 2569)",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแบบฟอร์มติดต่อ (Contact Section: #contact)
             contact_eyebrow: "ติดต่อ",
@@ -1013,4 +1013,28 @@ document.addEventListener('DOMContentLoaded', () => {
             closeCaseStudyModal();
         }
     });
+
+    // ------------------------------------------------------------------------------------------------
+    // 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มลอยมุมล่างขวา (#scroll-to-top)
+    // เลื่อนหน้าจอเกิน 400px จะค่อยๆ ลอยขึ้นมาแบบ Fade-in และคลิกแล้วเลื่อนกลับขึ้นบนสุดแบบ Smooth
+    // ------------------------------------------------------------------------------------------------
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            }
+        }, { passive: true });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+            });
+        });
+    }
 });

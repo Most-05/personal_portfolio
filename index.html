@@ -4,14 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidtisak Hanthongchai - Portfolio</title>
+    <title>Sidtisak Hanthongchai - Full Stack Developer Portfolio</title>
+
+    <!-- 📍 ไอคอนแท็บเบราว์เซอร์ (Favicon: โลโก้ตัว S สไตล์ Dev นีออน) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- 📍 ข้อมูล Open Graph & Twitter Cards สำหรับการแชร์ลิงก์บน Social Media (LINE, Facebook, Discord, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://most-05.github.io/personal_portfolio/">
+    <meta property="og:title" content="Sidtisak Hanthongchai - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Fourth-year ICT student at Prince of Songkla University. 289 commits across 3 codebases, 81 Playwright automated tests. Specialized in Next.js, React, Node.js, and Flutter.">
+    <meta property="og:image" content="https://most-05.github.io/personal_portfolio/assets/images/profile.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sidtisak Hanthongchai - Full Stack Developer Portfolio">
+    <meta name="twitter:description" content="Fourth-year ICT student at Prince of Songkla University. Specialized in Next.js, React, Node.js, and Flutter.">
+    <meta name="twitter:image" content="https://most-05.github.io/personal_portfolio/assets/images/profile.jpeg">
 
     <!-- 📍 ตัวอักษรและฟอนต์ (Google Fonts: Outfit และ Stylesheet: style.css) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=11">
+    <link rel="stylesheet" href="assets/css/style.css?v=12">
 
     <!-- 📍 สไตล์สำหรับเอฟเฟกต์เลื่อนหน้าจอ (AOS CSS: Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -590,9 +604,10 @@
                             class="cursor-hover inline-flex items-center border border-gray-200 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-900 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5">
                             Contact Me
                         </a>
-                        <a href="assets/Full_Stack-Sidtisak Hanthongchai.pdf" data-i18n="hero_btn_cv" target="_blank"
-                            class="cursor-hover inline-flex items-center border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5">
-                            Resume CV
+                        <a href="assets/Full_Stack-Sidtisak Hanthongchai.pdf" data-i18n="hero_btn_cv" target="_blank" download="Full_Stack-Sidtisak_Hanthongchai.pdf"
+                            class="cursor-hover inline-flex items-center gap-2 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5">
+                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            <span>Resume CV</span>
                         </a>
                     </div>
                 </div>
@@ -708,6 +723,7 @@
         </section>
 
         <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วน Bento Grid รวมข้อมูลสรุป (#about-bento, #about, #skills, #services) ประกอบด้วย About Me, Stats, Services, Skills Stack -->
+        <div id="about" class="relative -top-24 pointer-events-none" aria-hidden="true"></div>
         <section id="about-bento" class="py-12 md:py-24 relative z-10">
             <div class="max-w-6xl mx-auto px-6">
                 <!-- 📍 ตำแหน่งบนหน้าเว็บ: หัวข้อหลักของ Bento Grid สไตล์ Terminal Monospace -->
@@ -797,7 +813,7 @@
                     </div>
 
                     <!-- 📍 ตำแหน่งบนหน้าเว็บ: การ์ดที่ 5 ใน Bento Grid (กินพื้นที่เต็มแถว 4 คอลัมน์) - คลังเทคโนโลยีทั้งหมด (SKILLS_STACK) พร้อมไอคอนเวกเตอร์สีสันแท้และเอฟเฟกต์โฮเวอร์เรืองแสง -->
-                    <div
+                    <div id="skills"
                         class="md:col-span-3 lg:col-span-4 focus-item border-beam glow-card cursor-hover p-8 rounded-3xl bg-white/60 dark:bg-white/[0.03]">
                         <h3 class="text-xl font-bold mb-6 font-mono-custom" data-i18n="bento_skills_title">>
                             SKILLS_STACK</h3>
@@ -914,6 +930,7 @@
         </section>
 
         <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแสดงผลงานโปรเจกต์ (Section 5: Projects Section #projects / #works) มีปุ่มกรองหมวดหมู่และการ์ดแสดงรายละเอียด -->
+        <div id="works" class="relative -top-24 pointer-events-none" aria-hidden="true"></div>
         <section id="projects"
             class="py-12 md:py-20 border-t border-gray-100/50 dark:border-white/[0.05] bg-transparent relative z-10">
             <div class="max-w-6xl mx-auto px-6">
@@ -1201,7 +1218,7 @@
                                 <li data-i18n="exp_act_b4">Flood Relief Assistance Centre volunteer — Student
                                     Development and Alumni Relations, Hat Yai Campus (Nov 2025).</li>
                                 <li data-i18n="exp_act_b5">Volunteer Leadership for Sustainable Community Development
-                                    course — PSU Volunteer Center (Nov 2024, 3 credits).</li>
+                                    course — PSU Volunteer Center (Nov 2024, 20 competency hours / 3 credits).</li>
                             </ul>
                         </div>
 
@@ -1222,12 +1239,11 @@
                             <ul class="list-disc list-inside text-gray-500 dark:text-zinc-400 text-sm space-y-2">
                                 <li data-i18n="exp_lead_b1">136 Total Activity Hours certified by PSU Student
                                     Development Division (81 hrs Competency + 55 hrs General Interest).</li>
-                                <li data-i18n="exp_lead_b2">Project Leader — ICT Curriculum Orientation 2024 (Lead
-                                    organizer for ICT branch student activities, Dec 2024).</li>
+                                <li data-i18n="exp_lead_b2">Recreation Team — ICT Student Orientation 2024 (Co-organizer for student activities & engagement, Dec 2024).</li>
                                 <li data-i18n="exp_lead_b3">Co-organizer — National Science Week Exhibition 2023 (12
                                     hours, event operations and leadership).</li>
                                 <li data-i18n="exp_lead_b4">Co-op Readiness Training — Completed Faculty of Science
-                                    Cooperative Education modules (Sci Festival 2026 & Road Map to Get Your Job).</li>
+                                    Cooperative Education modules (Sci Festival 2026: Industry Panel & Student Exchange, Jul 2026).</li>
                             </ul>
                         </div>
                     </div>
@@ -1327,6 +1343,14 @@
             </div>
         </section>
     </main>
+
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มลอยกลับขึ้นด้านบนสุดของหน้าเว็บ (Scroll to Top Floating Button #scroll-to-top) -->
+    <button id="scroll-to-top" aria-label="Scroll to top"
+        class="cursor-hover fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-gray-200/80 dark:border-zinc-700/80 shadow-lg text-blue-600 dark:text-blue-400 flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:scale-110 active:scale-95 hover:shadow-blue-500/20 hover:border-blue-500/50">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
 
     <!-- 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายสุดของหน้าเว็บ (Section 8: Footer) แสดงข้อความลิขสิทธิ์และตัวเลขปีปัจจุบันที่คำนวณผ่าน JS -->
     <footer class="py-8 border-t border-gray-100 dark:border-zinc-800/60 text-center">
@@ -1693,7 +1717,7 @@
             });
         });
     </script>
-    <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ JavaScript หลักภายนอก (main.js?v=11) - จัดการระบบสลับสองภาษา (i18n), เมนูมือถือ, เม็ดประกายพื้นหลัง, และ Case Study Modal -->
-    <script src="assets/js/main.js?v=11"></script>
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ JavaScript หลักภายนอก (main.js?v=12) - จัดการระบบสลับสองภาษา (i18n), เมนูมือถือ, เม็ดประกายพื้นหลัง, และ Case Study Modal -->
+    <script src="assets/js/main.js?v=12"></script>
 
 </html>
