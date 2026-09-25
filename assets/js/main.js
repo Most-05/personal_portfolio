@@ -69,17 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
-            p1_desc: "Comprehensive real estate platform featuring robust API access control, SLA countdowns, and a conflict-prevention booking algorithm.",
+            p1_desc: "• Designed 32 DB tables & 8 DFD processes<br>• Built API access control & SLA countdowns<br>• Implemented conflict-prevention booking algorithm",
             p1_meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "React storefront emphasizing reliability with 81 Playwright E2E tests. Rebuilt as a dependency-free Node.js mock server and slashed bundle size by 85%.",
+            p2_desc: "A high-performance React storefront web application prioritizing reliability through comprehensive testing. Engineered 81 Playwright E2E tests covering all routes and authentication flows. Successfully rebuilt the backend as a dependency-free Node.js mock server and aggressively optimized page assets, drastically reducing the bundle size by 85% for lightning-fast load times.",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "End-to-end Flutter mobile booking app. Architected 5 comprehensive API routes guarded by strict access token middleware and validated by robust integration tests.",
+            p3_desc: "A fully-featured cross-platform mobile booking application built with Flutter. Designed a secure end-to-end booking flow backed by Express.js API endpoints. Features strict access token middleware for data protection, type-safe data models, and comprehensive integration testing to ensure absolute stability and a seamless user experience.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
@@ -188,17 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
-            p1_desc: "แพลตฟอร์มจัดการอสังหาฯ ครบวงจร โดดเด่นด้วยระบบคุมสิทธิ์ API, การนับถอยหลัง SLA และอัลกอริทึมป้องกันนายหน้ารับนัดชนกัน (hasAgentBookingConflict)",
+            p1_desc: "• ออกแบบ 32 ตารางฐานข้อมูล และ 8 กระบวนการ DFD<br>• พัฒนาระบบคุมสิทธิ์ API และการนับถอยหลัง SLA<br>• สร้างอัลกอริทึมป้องกันนายหน้ารับนัดชนกัน",
             p1_meta: "250 Commits · 19 PRs · 32 ตาราง · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React ชูจุดเด่นด้านการทดสอบ E2E 81 เคส ครอบคลุมทุก Route รื้อระบบ Mock Server ขึ้นมาใหม่ และรีดขนาดเว็บให้เล็กลงถึง 85%",
+            p2_desc: "โปรเจกต์เว็บแอปพลิเคชันร้านขายไอเทมเกมที่พัฒนาด้วย React โดยให้ความสำคัญกับความเสถียรของระบบด้วยการเขียนชุดทดสอบ Playwright E2E มากถึง 81 เคส ครอบคลุมการทำงานทุก Route นอกจากนี้ยังได้ออกแบบระบบหลังบ้านใหม่ด้วย Node.js Mock Server และปรับแต่งประสิทธิภาพจนลดขนาดไฟล์เว็บลงได้ถึง 85% เพื่อประสบการณ์ใช้งานที่ลื่นไหลที่สุด",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "แอปพลิเคชันมือถือจองคิวดูบ้าน พัฒนาด้วย Flutter สร้างเส้นทาง API ครบวงจร ปกป้องข้อมูลด้วย Middleware และใช้ Type-safe Model เพื่อความปลอดภัยสูงสุด",
+            p3_desc: "แอปพลิเคชันมือถือสำหรับจองคิวดูบ้านแบบครบวงจร พัฒนาด้วย Flutter ควบคู่กับระบบ Backend (Express.js) ที่ออกแบบเส้นทาง API ครอบคลุมทุกฟีเจอร์ มีการปกป้องข้อมูลด้วย Middleware ตรวจสอบสิทธิ์ และใช้ Type-safe Model เพื่อความปลอดภัยสูงสุด พร้อมด้วยชุดทดสอบ Integration Test ที่ช่วยรับประกันความเสถียรของระบบ",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
