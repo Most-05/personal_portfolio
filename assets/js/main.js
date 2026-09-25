@@ -69,17 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
-            p1_desc: "Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict to prevent overlapping client viewings.",
+            p1_desc: "Comprehensive real estate platform featuring robust API access control, SLA countdowns, and a conflict-prevention booking algorithm.",
             p1_meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt lost backend as a dependency-free Node.js mock server. Optimized page assets reducing bundle size from 8.4MB to 1.25MB.",
+            p2_desc: "• 81 Playwright E2E tests covering all routes<br>• Rebuilt backend as a Node.js mock server<br>• Reduced bundle size by 85% (8.4MB → 1.25MB)",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "Flutter mobile booking application. Built end-to-end booking flow across 5 API routes. Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model classes with fromJson, and covered with Flutter integration_test.",
+            p3_desc: "A cross-platform mobile booking app built with Flutter. Features a secure end-to-end booking flow backed by middleware-protected API endpoints, type-safe data models, and comprehensive integration testing for stability.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
@@ -188,17 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
-            p1_desc: "โปรเจกต์จบการศึกษาแพลตฟอร์มอสังหาริมทรัพย์ ออกแบบ 32 ตารางฐานข้อมูล & 8 กระบวนการ DFD พัฒนาระบบคุมสิทธิ์ API, ระบบนับถอยหลัง SLA, แดชบอร์ด Recharts, และรื้อระบบกันนายหน้ารับนัดชนกัน hasAgentBookingConflict",
+            p1_desc: "แพลตฟอร์มจัดการอสังหาฯ ครบวงจร โดดเด่นด้วยระบบคุมสิทธิ์ API, การนับถอยหลัง SLA และอัลกอริทึมป้องกันนายหน้ารับนัดชนกัน (hasAgentBookingConflict)",
             p1_meta: "250 Commits · 19 PRs · 32 ตาราง · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และย่อขนาดหน้าเว็บจาก 8.4MB เหลือ 1.25MB ต่อหน้า",
+            p2_desc: "• เขียน Test E2E 81 เคส ครอบคลุมทุก Route<br>• รื้อ Backend เป็น Node.js Mock Server<br>• รีด Bundle Size เล็กลง 85% (8.4MB → 1.25MB)",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "แอปจองดูบ้านด้วย Flutter พัฒนาระบบจองครบวงจร 5 เส้นทาง API คุม 11 endpoints ด้วย checkAccessToken middleware ออกแบบ 5 คลาส Model แบบ Type-Safe พร้อม factory fromJson และครอบคลุมด้วย Flutter integration_test",
+            p3_desc: "แอปพลิเคชันมือถือสำหรับจองคิวดูบ้าน พัฒนาด้วย Flutter ควบคู่กับระบบ Backend ที่ออกแบบเส้นทาง API ครบวงจร มีการปกป้องข้อมูลด้วย Middleware และใช้ Type-safe Model เพื่อความปลอดภัยสูงสุด พร้อมชุดทดสอบ Integration Test ครอบคลุมการทำงาน",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
