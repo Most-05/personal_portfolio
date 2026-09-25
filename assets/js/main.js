@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "• 81 Playwright E2E tests covering all routes<br>• Rebuilt backend as a Node.js mock server<br>• Reduced bundle size by 85% (8.4MB → 1.25MB)",
+            p2_desc: "React storefront emphasizing reliability with 81 Playwright E2E tests. Rebuilt as a dependency-free Node.js mock server and slashed bundle size by 85%.",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "A cross-platform mobile booking app built with Flutter. Features a secure end-to-end booking flow backed by middleware-protected API endpoints, type-safe data models, and comprehensive integration testing for stability.",
+            p3_desc: "End-to-end Flutter mobile booking app. Architected 5 comprehensive API routes guarded by strict access token middleware and validated by robust integration tests.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
@@ -193,12 +193,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "• เขียน Test E2E 81 เคส ครอบคลุมทุก Route<br>• รื้อ Backend เป็น Node.js Mock Server<br>• รีด Bundle Size เล็กลง 85% (8.4MB → 1.25MB)",
+            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React ชูจุดเด่นด้านการทดสอบ E2E 81 เคส ครอบคลุมทุก Route รื้อระบบ Mock Server ขึ้นมาใหม่ และรีดขนาดเว็บให้เล็กลงถึง 85%",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "แอปพลิเคชันมือถือสำหรับจองคิวดูบ้าน พัฒนาด้วย Flutter ควบคู่กับระบบ Backend ที่ออกแบบเส้นทาง API ครบวงจร มีการปกป้องข้อมูลด้วย Middleware และใช้ Type-safe Model เพื่อความปลอดภัยสูงสุด พร้อมชุดทดสอบ Integration Test ครอบคลุมการทำงาน",
+            p3_desc: "แอปพลิเคชันมือถือจองคิวดูบ้าน พัฒนาด้วย Flutter สร้างเส้นทาง API ครบวงจร ปกป้องข้อมูลด้วย Middleware และใช้ Type-safe Model เพื่อความปลอดภัยสูงสุด",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
