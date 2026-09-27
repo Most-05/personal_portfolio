@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบน (Navbar)
             nav_home: "Home",
             nav_about: "About",
-            nav_skills: "Skills",
             nav_projects: "Projects",
             nav_experience: "Experience",
             nav_contact: "Contact Me",
@@ -137,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูด้านบน (Navbar)
             nav_home: "หน้าแรก",
             nav_about: "เกี่ยวกับฉัน",
-            nav_skills: "ทักษะ",
             nav_projects: "ผลงาน",
             nav_experience: "ประสบการณ์",
             nav_contact: "ติดต่อผม",
