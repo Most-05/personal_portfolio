@@ -69,17 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
-            p1_desc: "Comprehensive real estate platform built with Next.js and PostgreSQL. Designed to streamline property viewings and agent scheduling with robust security measures.<br><br>• Designed 32 DB tables & 8 DFD processes<br>• Built API access control & SLA countdowns<br>• Implemented conflict-prevention booking algorithm",
+            p1_desc: "Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict to prevent overlapping client viewings.",
             p1_meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "High-performance React storefront web application prioritizing reliability and speed. Overcame performance bottlenecks and missing backend issues to deliver a lightning-fast experience.<br><br>• Rebuilt backend using dependency-free Node.js Mock Server<br>• Engineered 81 Playwright E2E tests for maximum stability<br>• Optimized page assets, reducing bundle size by 85%",
+            p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt backend as a dependency-free Node.js mock server. Optimized page assets reducing bundle size from 8.4MB to 1.25MB.",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "Fully-featured cross-platform mobile booking application built with Flutter. Designed a secure end-to-end booking flow backed by customized Express.js API endpoints.<br><br>• Architected 5 comprehensive API routes with strict middlewares<br>• Ensured complete data safety with Type-safe Models<br>• Validated stability through robust Flutter Integration Tests",
+            p3_desc: "Flutter mobile booking application. Built end-to-end booking flow across 5 API routes. Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model classes with fromJson, and covered with Flutter integration_test.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
@@ -188,17 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 1 (Srichai Property) ในหมวด PROJECTS
             p1_title: "Srichai Property",
-            p1_desc: "แพลตฟอร์มจัดการอสังหาริมทรัพย์ครบวงจรที่พัฒนาด้วย Next.js และ PostgreSQL ออกแบบมาเพื่อเพิ่มประสิทธิภาพการจองคิวดูบ้านและจัดตารางงานนายหน้า พร้อมระบบรักษาความปลอดภัยที่รัดกุม<br><br>• ออกแบบ 32 ตารางฐานข้อมูล และ 8 กระบวนการ DFD<br>• พัฒนาระบบคุมสิทธิ์ API และการนับถอยหลัง SLA<br>• สร้างอัลกอริทึมป้องกันนายหน้ารับนัดชนกัน",
+            p1_desc: "โปรเจกต์จบการศึกษาแพลตฟอร์มอสังหาริมทรัพย์ ออกแบบ 32 ตารางฐานข้อมูล และ 8 กระบวนการ DFD พัฒนาระบบคุมสิทธิ์ API, ระบบนับถอยหลัง SLA, แดชบอร์ดสรุปข้อมูลด้วย Recharts และปรับปรุงอัลกอริทึมเพื่อป้องกันนายหน้ารับนัดชนกัน",
             p1_meta: "250 Commits · 19 PRs · 32 ตาราง · 32 APIs",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "โปรเจกต์เว็บร้านขายไอเทมเกมด้วย React ที่เน้นเรื่องความเร็วและความเสถียร แก้ปัญหาระบบหลังบ้านเดิมที่พังและลดขนาดไฟล์เว็บที่ใหญ่เกินไปเพื่อประสบการณ์ใช้งานที่ลื่นไหลที่สุด<br><br>• สร้างระบบหลังบ้านใหม่ด้วย Node.js Mock Server<br>• เขียนชุดทดสอบ Playwright E2E มากถึง 81 เคส<br>• ปรับแต่งไฟล์เว็บ ลดขนาด Bundle ลงได้ถึง 85%",
+            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และรีดขนาดไฟล์เว็บจาก 8.4MB เหลือเพียง 1.25MB เพื่อความเร็วสูงสุด",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
-            p3_desc: "แอปพลิเคชันมือถือสำหรับจองคิวดูบ้านแบบครบวงจร พัฒนาด้วย Flutter ควบคู่กับระบบ Backend (Express.js) ที่ออกแบบเส้นทาง API ครอบคลุมทุกฟีเจอร์การใช้งาน<br><br>• สร้าง 5 API Routes พร้อมตรวจสอบสิทธิ์ด้วย Middleware<br>• ใช้ Type-safe Model เพื่อความปลอดภัยสูงสุดของข้อมูล<br>• รับประกันความเสถียรด้วยชุดทดสอบ Integration Test",
+            p3_desc: "แอปจองดูบ้านด้วย Flutter พัฒนาระบบจองครบวงจร 5 เส้นทาง API คุม 11 endpoints ด้วย checkAccessToken middleware ออกแบบ 5 คลาส Model แบบ Type-safe พร้อมครอบคลุมการทำงานด้วยชุดทดสอบ Integration Test",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
