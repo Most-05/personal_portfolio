@@ -10,18 +10,21 @@
     src: url('../fonts/LINE_Seed_Sans_TH/LINE_Seed_Sans_TH_V1.003/Web/WOFF2/LINESeedSansTH_W_Rg.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
+}
 
 @font-face {
     font-family: 'LINE Seed Sans TH';
     src: url('../fonts/LINE_Seed_Sans_TH/LINE_Seed_Sans_TH_V1.003/Web/WOFF2/LINESeedSansTH_W_Bd.woff2') format('woff2');
     font-weight: 700;
     font-display: swap;
+}
 
 @font-face {
     font-family: 'LINE Seed Sans TH';
     src: url('../fonts/LINE_Seed_Sans_TH/LINE_Seed_Sans_TH_V1.003/Web/WOFF2/LINESeedSansTH_W_XBd.woff2') format('woff2');
     font-weight: 800;
     font-display: swap;
+}
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: เลเยอร์พื้นหลังด้านหลังสุดของเว็บไซต์ (#dot-background)
@@ -37,21 +40,26 @@
   opacity: 0.6;
   will-change: transform;
   pointer-events: none;
+}
 
 @keyframes float {
   0% { transform: translate(0, 0) rotate(var(--rotation)); opacity: 0.2; }
   33% { transform: translate(var(--tx-1), var(--ty-1)) rotate(var(--rotation)); opacity: 0.8; }
   66% { transform: translate(var(--tx-2), var(--ty-2)) rotate(var(--rotation)); opacity: 0.5; }
   100% { transform: translate(0, 0) rotate(var(--rotation)); opacity: 0.2; }
+}
 
 .dot-animated {
   animation: float var(--duration) ease-in-out infinite;
   animation-delay: var(--delay);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .dot-animated {
     animation: none;
     opacity: 0.4 !important;
+  }
+}
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: ข้อความหัวเรื่องขนาดใหญ่ในส่วน Hero Section (เช่นคำว่า "> Full Stack Developer_")
@@ -60,24 +68,29 @@
    ========================================================================== */
 .font-mono-custom {
     font-family: 'JetBrains Mono', monospace;
+}
 
 .text-outline {
     -webkit-text-stroke: 2px rgba(15, 23, 42, 0.6);
     color: transparent;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .text-outline:hover {
     color: rgba(15, 23, 42, 1);
     -webkit-text-stroke: 2px transparent;
     text-shadow: 0 0 20px rgba(15,23,42,0.3);
+}
 
 .dark .text-outline {
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+}
 
 .dark .text-outline:hover {
     color: white;
     -webkit-text-stroke: 2px transparent;
     text-shadow: 0 0 30px rgba(255,255,255,0.6);
+}
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: กรอบการ์ดผลงานโปรเจกต์ทั้ง 3 ใบในหมวด PROJECTS (#works)
@@ -87,12 +100,14 @@
 @keyframes spin-gradient {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 .border-beam {
     position: relative;
     border-radius: 1rem;
     overflow: hidden;
     background: transparent;
+}
 
 .border-beam::before {
     content: '';
@@ -107,9 +122,11 @@
     opacity: 0.3;
     transition: opacity 0.5s ease;
     z-index: -2;
+}
 
 .border-beam:hover::before {
     opacity: 1;
+}
 
 .border-beam::after {
     content: '';
@@ -120,10 +137,12 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: -1;
+}
 
 .border-beam > * {
     position: relative;
     z-index: 10;
+}
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: แถวการ์ดผลงานในหมวด PROJECTS (.focus-group)
@@ -132,11 +151,11 @@
    ========================================================================== */
 .focus-group:hover > .focus-item:not(:hover) {
     opacity: 0.3;
-    /* removed blur for performance */
     transform: scale(0.97);
 }
 .focus-item {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: หน้าต่างป๊อปอัปแสดงรายละเอียดเชิงลึกของโปรเจกต์ (#case-study-modal)
@@ -149,39 +168,39 @@
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 .modal-backdrop.active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+}
 
 .modal-card {
-    transform: scale(0.95) translateY(10px) translateZ(0);
+    transform: scale(0.95) translateY(10px);
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
+}
 
 .modal-backdrop.active .modal-card {
-    transform: scale(1) translateY(0) translateZ(0);
+    transform: scale(1) translateY(0);
     opacity: 1;
-
-/* บังคับใช้ Hardware Acceleration สำหรับ Scroll ภายใน Modal เพื่อความลื่นไหล */
-.modal-scroll {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transform: translateZ(0);
-    will-change: transform, scroll-position;
+}
 
 /* สไตล์แถบเลื่อนแนวตั้ง (Custom Scrollbar) ภายในหน้าต่างเคสศึกษา */
 .modal-scroll::-webkit-scrollbar {
     width: 6px;
+}
 .modal-scroll::-webkit-scrollbar-track {
     background: transparent;
+}
 .modal-scroll::-webkit-scrollbar-thumb {
     background: rgba(156, 163, 175, 0.3);
     border-radius: 9999px;
+}
 .modal-scroll::-webkit-scrollbar-thumb:hover {
     background: rgba(156, 163, 175, 0.5);
+}
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: ป้ายเทคโนโลยี Tech Stack (.tag-tactile-3d) ในหน้าต่างป๊อปอัป Case Study Modal
@@ -208,15 +227,18 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     cursor: default;
     user-select: none;
+}
 
 .tag-tactile-3d:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.12), 0 3px 6px -1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
     border-color: #94a3b8;
+}
 
 .tag-tactile-3d:active {
     transform: translateY(1px);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
 
 .dark .tag-tactile-3d {
     background: linear-gradient(180deg, #27272a 0%, #18181b 100%);
@@ -224,15 +246,18 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 2px solid #09090b;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
 
 .dark .tag-tactile-3d:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.25);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
 
 .dark .tag-tactile-3d:active {
     transform: translateY(1px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
 
 .tag-tactile-3d img,
 .tag-tactile-3d svg {
@@ -241,10 +266,12 @@
     object-fit: contain;
     flex-shrink: 0;
     transition: transform 0.2s ease;
+}
 
 .tag-tactile-3d:hover img,
 .tag-tactile-3d:hover svg {
     transform: scale(1.15);
+}
 
 @media (prefers-reduced-motion: reduce) {
     .tag-tactile-3d,
@@ -252,17 +279,11 @@
     .tag-tactile-3d svg {
         transition: none !important;
         transform: none !important;
+    }
+}
 
 
 
- / *   C u s t o m   s t y l e s   f o r   m o d a l   k e y w o r d   h i g h l i g h t s   * / 
- . m o d a l - p r o j e c t - b o d y   s t r o n g   { 
-         c o l o r :   # 2 5 6 3 e b ; 
-         f o n t - w e i g h t :   6 0 0 ; 
- . d a r k   . m o d a l - p r o j e c t - b o d y   s t r o n g   { 
-         c o l o r :   # 6 0 a 5 f a ; 
- 
- 
 /* Custom styles for modal keyword highlights */
 .modal-project-body strong {
     color: #2563eb;
@@ -271,6 +292,7 @@
 .dark .modal-project-body strong {
     color: #60a5fa;
 }
+
 
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บเมื่อมีการเปิด Case Study Modal
@@ -292,4 +314,28 @@ body.modal-open .border-beam::before {
 
 body.modal-open .interactive-grid {
     display: none !important;
+}
+
+/* ==========================================================================
+   📍 ตำแหน่งบนหน้าเว็บ: แถบเลื่อน (Scrollbar) ภายใน Case Study Modal
+   ทำหน้าที่: ตกแต่งให้แถบเลื่อนดูสะอาดตา และเพิ่ม overscroll-behavior เพื่อแก้ปัญหาการเลื่อนกระตุก
+   ========================================================================== */
+.modal-scroll {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.modal-scroll::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.3);
+    border-radius: 9999px;
+}
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.5);
 }
