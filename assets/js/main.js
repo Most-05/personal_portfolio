@@ -454,6 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Senior Capstone Project",
                 meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs · 35 Pages · 3 User Roles",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
+                demo: "#",
                 overview: "A full-stack real estate trading platform developed as a Senior Capstone Project. It enables property listing, viewing slot booking, and integrates a comprehensive admin dashboard with SLA metrics.",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 sections: [
@@ -504,6 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "โปรเจกต์จบการศึกษา (Senior Capstone)",
                 meta: "250 Commits ของผม · 19 PRs · 32 ตาราง · 32 APIs · 35 หน้าเว็บ · 3 บทบาทผู้ใช้",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
+                demo: "#",
                 overview: "เว็บแอปพลิเคชันซื้อขายอสังหาริมทรัพย์แบบครบวงจร (โปรเจกต์จบการศึกษา) รองรับการลงประกาศบ้าน ระบบจองรอบดูบ้าน และระบบหลังบ้านสำหรับผู้ดูแลระบบพร้อมหน้าปัดแสดงสถิติ SLA",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 sections: [
@@ -560,6 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Solo Rebuild Project",
                 meta: "144 Commits · 81 Playwright E2E Tests · 14 Web Pages · 8.4MB → 1.25MB Asset Size",
                 repo: "https://github.com/Most-05/game-store",
+                demo: "#",
                 overview: "A solo rebuild of a gaming storefront to recover lost backend architecture. Includes a custom zero-dependency Node.js mock server and extensive Playwright E2E testing to ensure production stability.",
                 imageType: "desktop",
                 tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
@@ -596,6 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "โปรเจกต์เดี่ยว รื้อทำใหม่ทั้งระบบ (Solo Rebuild)",
                 meta: "144 Commits · 81 เทส E2E (Playwright) · 14 หน้าเว็บ · ย่อขนาด 8.4MB → 1.25MB",
                 repo: "https://github.com/Most-05/game-store",
+                demo: "#",
                 overview: "การรื้อทำระบบร้านขายไอเทมเกมใหม่ทั้งหมดด้วยตัวเอง เพื่อแก้ปัญหา Backend เดิมสูญหาย โดยเขียน Mock Server ขึ้นมาใหม่เองและทำชุดทดสอบอัตโนมัติด้วย Playwright E2E",
                 imageType: "desktop",
                 tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
@@ -638,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Academic Capstone (Course 308-493)",
                 meta: "60 / 78 Commits (77% contribution) · 5 Core Functions · 5 Model Classes · Flutter integration_test",
                 repo: "https://github.com/Most-05",
+                demo: "#",
                 overview: "A mobile booking application built with Flutter and Express.js, featuring secure authentication, property discovery, and an end-to-end appointment scheduling lifecycle.",
                 imageType: "mobile",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
@@ -707,6 +712,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "ผลงานรายวิชา 308-493 ชุดวิชาชีพเฉพาะทาง (6 หน่วยกิต)",
                 meta: "60 / 78 Commits เป็นของผม (77%) · 5 ฟังก์ชันหลัก · 5 คลาส Model · Flutter integration_test",
                 repo: "https://github.com/Most-05",
+                demo: "#",
                 overview: "แอปพลิเคชันจองดูบ้านบนมือถือที่พัฒนาด้วย Flutter และ Express.js มีระบบล็อกอิน ค้นหาอสังหาริมทรัพย์ และวงจรการนัดหมายครบวงจร",
                 imageType: "mobile",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
@@ -871,6 +877,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const metaEl = document.getElementById('modal-project-meta');
         const titleEl = document.getElementById('modal-project-title');
         const repoLink = document.getElementById('modal-project-repo');
+        const demoLink = document.getElementById('modal-project-demo');
         const bodyEl = document.getElementById('modal-project-body');
 
         if (badgeEl) badgeEl.textContent = data.badge;
@@ -883,6 +890,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 repoLink.classList.remove('hidden');
             } else {
                 repoLink.classList.add('hidden');
+            }
+        }
+
+        if (demoLink) {
+            if (data.demo && data.demo !== "#") {
+                demoLink.href = data.demo;
+                demoLink.classList.remove('hidden');
+            } else {
+                demoLink.classList.add('hidden');
             }
         }
 
@@ -978,6 +994,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
         }
     }
 
@@ -995,6 +1012,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modal) {
             modal.classList.remove('active');
             document.body.style.overflow = '';
+            document.body.classList.remove('modal-open');
         }
     }
 
