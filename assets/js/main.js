@@ -454,39 +454,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Senior Capstone Project",
                 meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs · 35 Pages · 3 User Roles",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
+                overview: "A full-stack real estate trading platform developed as a Senior Capstone Project. It enables property listing, viewing slot booking, and integrates a comprehensive admin dashboard with SLA metrics.",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 sections: [
                     {
                         heading: "Architectural Decision: Property Viewing Slots",
                         points: [
                             "Designed the <code>property_viewing_slots</code> table in Prisma schema.",
-                            "Proposed decoupling availability from 'Agent' and binding it directly to 'Each Property' — an architectural pivot adopted by the entire team for the remainder of the project.",
-                            "Engineered full booking lifecycle: Booking &rarr; Slot Lock &rarr; Agent Confirm/Reject/Complete &rarr; Client Reschedule/Cancel &rarr; Slot Restitution, broadcasting state changes via Pusher."
+                            "Proposed <strong>decoupling availability from 'Agent'</strong> and binding it directly to 'Each Property' — an architectural pivot adopted by the entire team for the remainder of the project.",
+                            "Engineered <strong>full booking lifecycle</strong>: Booking &rarr; Slot Lock &rarr; Agent Confirm/Reject/Complete &rarr; Client Reschedule/Cancel &rarr; Slot Restitution, broadcasting state changes via <strong>Pusher</strong>."
                         ]
                     },
                     {
                         heading: "API-Level Business Rules & Concurrency Control",
                         points: [
                             "Enforced business invariants on backend API routes rather than relying on UI button states.",
-                            "Strict limit: 1 pending booking per client per property.",
-                            "Pre-commit slot verification to eliminate race conditions.",
+                            "Strict limit: <strong>1 pending booking</strong> per client per property.",
+                            "<strong>Pre-commit slot verification</strong> to eliminate race conditions.",
                             "Duplicate cancellation prevention and cross-property broker conflict checks."
                         ]
                     },
                     {
                         heading: "Security Hardening (3 Critical Vulnerabilities Fixed)",
                         points: [
-                            "Enforced listing ownership resolution directly from verified session tokens, rejecting arbitrary user IDs in request bodies.",
-                            "Restricted listing approval and status toggling exclusively to verified Admin role.",
-                            "Implemented strict authorization check returning HTTP 403 Forbidden whenever unauthorized users attempt to cancel appointments belonging to other clients."
+                            "Enforced listing ownership resolution directly from <strong>verified session tokens</strong>, rejecting arbitrary user IDs in request bodies.",
+                            "Restricted listing approval and status toggling exclusively to <strong>verified Admin role</strong>.",
+                            "Implemented strict authorization check returning <strong>HTTP 403 Forbidden</strong> whenever unauthorized users attempt to cancel appointments belonging to other clients."
                         ]
                     },
                     {
                         heading: "Admin Analytics, SLA Engine & Health Metrics",
                         points: [
-                            "Authored <code>/api/admin/analytics</code> executing 8 Prisma queries in parallel via <code>Promise.all</code>, aggregating data across daily, monthly, and yearly intervals with dynamic % period comparisons for Recharts rendering.",
-                            "Engineered <code>slaService</code> with historical audit trail capabilities: added <code>reviewed_by</code> and <code>reviewed_at</code> to properties schema to calculate review durations and quantify SLA compliance percentage (answering midterm faculty evaluation criteria).",
-                            "Integrated Appointment Health metrics (completed / no-show / rejected / cancelled) based on real audit data, and deployed anti-view spamming guardrails (PR #19)."
+                            "Authored <code>/api/admin/analytics</code> executing <strong>8 Prisma queries in parallel</strong> via <code>Promise.all</code>, aggregating data across daily, monthly, and yearly intervals with dynamic % period comparisons for Recharts rendering.",
+                            "Engineered <strong>slaService</strong> with historical audit trail capabilities: added <code>reviewed_by</code> and <code>reviewed_at</code> to properties schema to calculate review durations and quantify SLA compliance percentage (answering midterm faculty evaluation criteria).",
+                            "Integrated <strong>Appointment Health metrics</strong> (completed / no-show / rejected / cancelled) based on real audit data, and deployed anti-view spamming guardrails (PR #19)."
                         ]
                     },
                     {
@@ -503,45 +504,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "โปรเจกต์จบการศึกษา (Senior Capstone)",
                 meta: "250 Commits ของผม · 19 PRs · 32 ตาราง · 32 APIs · 35 หน้าเว็บ · 3 บทบาทผู้ใช้",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
+                overview: "เว็บแอปพลิเคชันซื้อขายอสังหาริมทรัพย์แบบครบวงจร (โปรเจกต์จบการศึกษา) รองรับการลงประกาศบ้าน ระบบจองรอบดูบ้าน และระบบหลังบ้านสำหรับผู้ดูแลระบบพร้อมหน้าปัดแสดงสถิติ SLA",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 sections: [
                     {
                         heading: "การออกแบบสถาปัตยกรรม: ตารางรอบวันว่างเข้าชม (property_viewing_slots)",
                         points: [
                             "ออกแบบตาราง <code>property_viewing_slots</code> ใน <code>prisma/schema.prisma</code>",
-                            "เป็นผู้เสนอเลิกใช้ระบบวันว่างเดิมที่ผูกกับ 'นายหน้า' แล้วเปลี่ยนมาผูกกับ 'บ้านแต่ละหลัง' แทน — เป็นการตัดสินใจเชิงสถาปัตยกรรมที่ทีมใช้ต่อจนจบระบบ",
-                            "พัฒนาวงจรการจองครบวงจร: จอง &rarr; ล็อกรอบเวลา &rarr; นายหน้ายืนยัน/ปฏิเสธ/ปิดงาน &rarr; ลูกค้าแก้วันหรือยกเลิก &rarr; คืนรอบเวลา โดยทุกการเปลี่ยนสถานะเขียนแจ้งเตือนแบบเรียลไทม์"
+                            "เป็นผู้เสนอ<strong>เลิกใช้ระบบวันว่างเดิมที่ผูกกับ 'นายหน้า'</strong> แล้วเปลี่ยนมาผูกกับ 'บ้านแต่ละหลัง' แทน — เป็นการตัดสินใจเชิงสถาปัตยกรรมที่ทีมใช้ต่อจนจบระบบ",
+                            "พัฒนา<strong>วงจรการจองครบวงจร</strong>: จอง &rarr; ล็อกรอบเวลา &rarr; นายหน้ายืนยัน/ปฏิเสธ/ปิดงาน &rarr; ลูกค้าแก้วันหรือยกเลิก &rarr; คืนรอบเวลา โดยทุกการเปลี่ยนสถานะเขียนแจ้งเตือนแบบเรียลไทม์"
                         ]
                     },
                     {
                         heading: "คุมกฎธุรกิจที่ระดับ API (Business Rules at API Layer)",
                         points: [
                             "บังคับกฎธุรกิจไว้ที่ชั้น API ไม่ใช่แค่การซ่อนปุ่มบนหน้าเว็บ",
-                            "กำหนดให้ 1 ลูกค้าต่อ 1 บ้านสามารถจองค้างได้เพียง 1 ครั้งเท่านั้น",
-                            "ตรวจสอบว่ารอบเวลานั้นว่างจริงก่อนบันทึก (กันการจองชนกัน)",
+                            "กำหนดให้ 1 ลูกค้าต่อ 1 บ้าน<strong>สามารถจองค้างได้เพียง 1 ครั้งเท่านั้น</strong>",
+                            "ตรวจสอบว่ารอบเวลานั้นว่างจริงก่อนบันทึก (<strong>ป้องกันการจองชนกัน</strong>)",
                             "ป้องกันการกดยกเลิกซ้ำ และตรวจการชนกันของวันว่างข้ามบ้านของนายหน้าคนเดียวกัน"
                         ]
                     },
                     {
                         heading: "ปิดช่องโหว่ความปลอดภัย 3 จุดสำคัญ (Security Vulnerability Fixes)",
                         points: [
-                            "ยึดตัวตนเจ้าของประกาศจาก Session โดยตรง แทนการรับ user ID จาก Request Body เพื่อป้องกันการสวมสิทธิ์",
-                            "จำกัดให้เฉพาะบทบาทผู้ดูแลระบบ (Admin) เท่านั้นที่สามารถเปลี่ยนสถานะประกาศได้",
-                            "ส่งคืน HTTP 403 Forbidden ทันทีเมื่อมีผู้ใช้คนอื่นพยายามยกเลิกนัดหมายที่ไม่ใช่ของตนเอง"
+                            "ยึดตัวตนเจ้าของประกาศจาก <strong>Session โดยตรง</strong> แทนการรับ user ID จาก Request Body เพื่อป้องกันการสวมสิทธิ์",
+                            "จำกัดให้เฉพาะ<strong>ผู้ดูแลระบบ (Admin) เท่านั้น</strong>ที่สามารถเปลี่ยนสถานะประกาศได้",
+                            "ส่งคืน <strong>HTTP 403 Forbidden</strong> ทันทีเมื่อมีผู้ใช้คนอื่นพยายามยกเลิกนัดหมายที่ไม่ใช่ของตนเอง"
                         ]
                     },
                     {
                         heading: "ระบบสถิติผู้ดูแลระบบ, ระบบวัดผล SLA ย้อนหลัง และ Appointment Health",
                         points: [
-                            "เขียน <code>/api/admin/analytics</code> เองทั้งไฟล์ ยิง Prisma 8 queries ขนานกันด้วย <code>Promise.all</code> แสดงผลกราฟ Recharts พร้อมคำนวณ % เปรียบเทียบกับช่วงก่อนหน้า",
-                            "พัฒนาระบบวัดผล SLA ย้อนหลังตามข้อเสนอแนะอาจารย์ตอน Midterm: เพิ่ม <code>reviewed_by</code> และ <code>reviewed_at</code> ใน schema บันทึกแอดมินคนตรวจ คำนวณเวลาเฉลี่ย และเปอร์เซ็นต์ที่ตรวจทันกำหนด 24 ชม.",
-                            "เพิ่มแถบวัดอัตราสุขภาพระบบนัดหมาย (Appointment Health) จำแนก เข้าชมสำเร็จ / เบี้ยวนัด (No-show) / ถูกปฏิเสธ / ยกเลิก และพัฒนาระบบป้องกันการปั่นยอดวิวบ้าน (PR #19)"
+                            "เขียน <code>/api/admin/analytics</code> เองทั้งไฟล์ ยิง Prisma <strong>8 queries ขนานกันด้วย Promise.all</strong> แสดงผลกราฟ Recharts พร้อมคำนวณ % เปรียบเทียบกับช่วงก่อนหน้า",
+                            "พัฒนา<strong>ระบบวัดผล SLA ย้อนหลัง</strong>ตามข้อเสนอแนะอาจารย์ตอน Midterm: เพิ่ม <code>reviewed_by</code> และ <code>reviewed_at</code> ใน schema บันทึกแอดมินคนตรวจ คำนวณเวลาเฉลี่ย และเปอร์เซ็นต์ที่ตรวจทันกำหนด 24 ชม.",
+                            "เพิ่มแถบวัดอัตรา<strong>สุขภาพระบบนัดหมาย (Appointment Health)</strong> จำแนก เข้าชมสำเร็จ / เบี้ยวนัด (No-show) / ถูกปฏิเสธ / ยกเลิก และพัฒนาระบบป้องกันการปั่นยอดวิวบ้าน (PR #19)"
                         ]
                     },
                     {
                         heading: "ระบบเหตุผลการปฏิเสธและการยกเลิกนัดหมาย",
                         points: [
-                            "พัฒนาโมดัลเลือกเหตุผลแทน <code>confirm()</code> เดิม บันทึกลง <code>cancel_reason</code> พร้อมแจ้งลูกค้าและมีปุ่มให้กดจองรอบใหม่ได้ทันที",
+                            "พัฒนา<strong>โมดัลเลือกเหตุผล</strong>แทน <code>confirm()</code> เดิม บันทึกลง <code>cancel_reason</code> พร้อมแจ้งลูกค้าและมีปุ่มให้กดจองรอบใหม่ได้ทันที",
                             "ขยายเหตุผลตีกลับประกาศจาก 5 เป็น 9 ข้อ โดยแยกออกมาเป็นค่าคงที่ <code>REJECT_REASONS</code>"
                         ]
                     }
@@ -558,6 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Solo Rebuild Project",
                 meta: "144 Commits · 81 Playwright E2E Tests · 14 Web Pages · 8.4MB → 1.25MB Asset Size",
                 repo: "https://github.com/Most-05/game-store",
+                overview: "A solo rebuild of a gaming storefront to recover lost backend architecture. Includes a custom zero-dependency Node.js mock server and extensive Playwright E2E testing to ensure production stability.",
+                imageType: "desktop",
                 tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
                 sections: [
                     {
@@ -592,6 +596,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "โปรเจกต์เดี่ยว รื้อทำใหม่ทั้งระบบ (Solo Rebuild)",
                 meta: "144 Commits · 81 เทส E2E (Playwright) · 14 หน้าเว็บ · ย่อขนาด 8.4MB → 1.25MB",
                 repo: "https://github.com/Most-05/game-store",
+                overview: "การรื้อทำระบบร้านขายไอเทมเกมใหม่ทั้งหมดด้วยตัวเอง เพื่อแก้ปัญหา Backend เดิมสูญหาย โดยเขียน Mock Server ขึ้นมาใหม่เองและทำชุดทดสอบอัตโนมัติด้วย Playwright E2E",
+                imageType: "desktop",
                 tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
                 sections: [
                     {
@@ -632,6 +638,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Academic Capstone (Course 308-493)",
                 meta: "60 / 78 Commits (77% contribution) · 5 Core Functions · 5 Model Classes · Flutter integration_test",
                 repo: "https://github.com/Most-05",
+                overview: "A mobile booking application built with Flutter and Express.js, featuring secure authentication, property discovery, and an end-to-end appointment scheduling lifecycle.",
+                imageType: "mobile",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
                 screenshotsTitle: "Mobile Application Workflow & Real UI",
                 screenshots: [
@@ -699,6 +707,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "ผลงานรายวิชา 308-493 ชุดวิชาชีพเฉพาะทาง (6 หน่วยกิต)",
                 meta: "60 / 78 Commits เป็นของผม (77%) · 5 ฟังก์ชันหลัก · 5 คลาส Model · Flutter integration_test",
                 repo: "https://github.com/Most-05",
+                overview: "แอปพลิเคชันจองดูบ้านบนมือถือที่พัฒนาด้วย Flutter และ Express.js มีระบบล็อกอิน ค้นหาอสังหาริมทรัพย์ และวงจรการนัดหมายครบวงจร",
+                imageType: "mobile",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
                 screenshotsTitle: "ภาพตัวอย่างขั้นตอนการทำงานบนแอปพลิเคชันจริง (Mobile Workflow)",
                 screenshots: [
@@ -879,6 +889,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bodyEl) {
             let html = '';
 
+            // บทสรุปภาพรวม (Project Overview)
+            if (data.overview) {
+                html += `
+                    <div class="mb-4 text-gray-700 dark:text-zinc-300 text-sm md:text-base leading-relaxed bg-blue-50/50 dark:bg-blue-900/10 p-4 rounded-xl border border-blue-100 dark:border-blue-800/30">
+                        ${data.overview}
+                    </div>
+                `;
+            }
+
             // ป้ายเทคโนโลยีแบบ 3D Tactile Capsule (Style #1)
             if (data.tags && data.tags.length > 0) {
                 html += '<div class="flex flex-wrap gap-2 pb-4 border-b border-gray-100 dark:border-white/5">';
@@ -891,8 +910,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // แกลเลอรีภาพถ่ายหน้าจอแสดงขั้นตอนการทำงานบนมือถือจริง (App Workflow Gallery)
             if (data.screenshots && data.screenshots.length > 0) {
+                const aspectRatioClass = data.imageType === 'desktop' ? 'aspect-video' : 'aspect-[9/16]';
                 html += `
-                    <div class="bg-gradient-to-b from-gray-50 to-white dark:from-white/[0.03] dark:to-white/[0.01] border border-gray-100 dark:border-white/5 rounded-2xl p-5">
+                    <div class="bg-gradient-to-b from-gray-50 to-white dark:from-white/[0.03] dark:to-white/[0.01] border border-gray-100 dark:border-white/5 rounded-2xl p-5 mt-4">
                         <h4 class="font-bold text-gray-900 dark:text-white mb-3.5 text-base flex items-center gap-2">
                             <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
@@ -902,7 +922,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                             ${data.screenshots.map(s => `
                                 <a href="${s.src}" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden border border-gray-200/80 dark:border-white/10 bg-gray-900/5 dark:bg-black/30 hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200">
-                                    <div class="aspect-[9/16] overflow-hidden bg-slate-900 relative">
+                                    <div class="${aspectRatioClass} overflow-hidden bg-slate-900 relative">
                                         <img src="${s.src}" alt="${s.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                                         <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors pointer-events-none"></div>
                                     </div>
@@ -919,14 +939,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // หัวข้อเจาะลึกสถาปัตยกรรมระบบ (Architecture Decisions & Production Insights)
-            data.sections.forEach(sec => {
+            data.sections.forEach((sec, index) => {
+                const mtClass = (index === 0 && (!data.screenshots || data.screenshots.length === 0)) ? 'mt-4' : 'mt-4';
                 html += `
-                    <div class="bg-gray-50/70 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-2xl p-5">
+                    <div class="bg-gray-50/70 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-2xl p-5 ${mtClass}">
                         <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-base flex items-center gap-2">
                             <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
                             ${sec.heading}
                         </h4>
-                        <ul class="space-y-2 text-gray-600 dark:text-zinc-300">
+                        <ul class="space-y-2 text-gray-600 dark:text-zinc-300 [&_strong]:text-blue-600 dark:[&_strong]:text-blue-400 [&_strong]:font-semibold">
                             ${sec.points.map(pt => `
                                 <li class="flex items-start gap-2.5 leading-relaxed">
                                     <span class="text-blue-500 dark:text-blue-400 font-bold shrink-0 mt-0.5">•</span>
