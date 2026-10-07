@@ -285,3 +285,13 @@
 }
 
 
+
+ / *   C u s t o m   s t y l e s   f o r   m o d a l   k e y w o r d   h i g h l i g h t s   * / 
+ . m o d a l - p r o j e c t - b o d y   s t r o n g   { 
+         c o l o r :   # 2 5 6 3 e b ; 
+         f o n t - w e i g h t :   6 0 0 ; 
+ } 
+ . d a r k   . m o d a l - p r o j e c t - b o d y   s t r o n g   { 
+         c o l o r :   # 6 0 a 5 f a ; 
+ }  
+ 
