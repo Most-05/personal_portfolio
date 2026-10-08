@@ -316,6 +316,17 @@ body.modal-open .interactive-grid {
     display: none !important;
 }
 
+/* ซ่อนหน้าเว็บด้านหลังทั้งหมดตอน Modal เปิด เพราะพื้นหลังแบบโปร่งบังคับให้เบราว์เซอร์วาดการ์ดเบลอกระจก (backdrop-filter)
+   และจุดลอยด้านหลังใหม่ทุกเฟรม (วัดแล้วทิ้งเฟรม 230–290 จาก ~300 บนเครื่องที่ไม่มีการ์ดจอ เหลือ 5–7 เมื่อซ่อน)
+   หน่วง 0.3s ให้ Modal fade-in เสร็จก่อน ไม่งั้นพื้นหลังจะหายวาบ ตอนปิด Modal หน้าเว็บจะกลับมาทันทีเพราะไม่มี transition ขากลับ */
+body.modal-open #main-content,
+body.modal-open footer,
+body.modal-open #dot-background,
+body.modal-open #scroll-to-top {
+    visibility: hidden;
+    transition: visibility 0s linear 0.3s;
+}
+
 /* ==========================================================================
    📍 ตำแหน่งบนหน้าเว็บ: แถบเลื่อน (Scrollbar) ภายใน Case Study Modal
    ทำหน้าที่: ตกแต่งให้แถบเลื่อนดูสะอาดตา และเพิ่ม overscroll-behavior เพื่อแก้ปัญหาการเลื่อนกระตุก
