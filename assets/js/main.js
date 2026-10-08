@@ -128,6 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_msg_label: "Message",
             contact_form_msg_placeholder: "How can I help you?",
             contact_form_submit: "Send Message",
+            contact_form_sending: "Sending...",
+            contact_form_success: "Thank you! Your message has been sent. I will get back to you soon.",
+            contact_form_error: "Sorry, the message could not be sent. Please email me directly at sidtisakm@gmail.com.",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายสุดของหน้าเว็บ (Footer)
             footer_rights: "All rights reserved."
@@ -246,6 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_msg_label: "ข้อความ",
             contact_form_msg_placeholder: "พิมพ์ข้อความที่คุณต้องการติดต่อ...",
             contact_form_submit: "ส่งข้อความ",
+            contact_form_sending: "กำลังส่ง...",
+            contact_form_success: "ขอบคุณครับ ส่งข้อความเรียบร้อยแล้ว จะติดต่อกลับโดยเร็วที่สุด",
+            contact_form_error: "ขออภัย ส่งข้อความไม่สำเร็จ กรุณาส่งอีเมลมาที่ sidtisakm@gmail.com โดยตรงครับ",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนท้ายสุดของหน้าเว็บ (Footer)
             footer_rights: "สงวนลิขสิทธิ์ทั้งหมด"
@@ -1050,6 +1056,54 @@ document.addEventListener('DOMContentLoaded', () => {
             closeCaseStudyModal();
         }
     });
+
+    // ==========================================================================
+    // 10. ส่งฟอร์มติดต่อผ่าน Web3Forms แบบไม่เปลี่ยนหน้า
+    // 📍 ตำแหน่งบนหน้าเว็บ: แบบฟอร์มในส่วน Contact (#contact-form)
+    // ทำไมต้องเขียนแบบนี้: ถ้าปล่อยให้ฟอร์มส่งเอง ผู้ใช้จะถูกพาออกไปหน้า Web3Forms จึงดักไว้แล้วส่งด้วย fetch
+    // และแสดงผลลัพธ์ในหน้าเดิมตามภาษาที่เลือก ถ้าส่งไม่ได้ให้บอกอีเมลไว้ติดต่อตรงแทน จะได้ไม่เสียโอกาสงาน
+    // ==========================================================================
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-form-status');
+
+    if (contactForm && contactStatus) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+        const showContactStatus = (key, isError) => {
+            const dict = translations[currentLang] || translations.en;
+            contactStatus.textContent = dict[key];
+            contactStatus.classList.remove('hidden', 'text-green-600', 'dark:text-green-400', 'text-red-600', 'dark:text-red-400');
+            contactStatus.classList.add(...(isError ? ['text-red-600', 'dark:text-red-400'] : ['text-green-600', 'dark:text-green-400']));
+        };
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const dict = translations[currentLang] || translations.en;
+            submitBtn.disabled = true;
+            submitBtn.textContent = dict.contact_form_sending;
+            contactStatus.classList.add('hidden');
+
+            try {
+                const res = await fetch(contactForm.action, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+                });
+                const result = await res.json();
+                if (res.ok && result.success) {
+                    contactForm.reset();
+                    showContactStatus('contact_form_success', false);
+                } else {
+                    showContactStatus('contact_form_error', true);
+                }
+            } catch (err) {
+                showContactStatus('contact_form_error', true);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = (translations[currentLang] || translations.en).contact_form_submit;
+            }
+        });
+    }
 
     // ------------------------------------------------------------------------------------------------
     // 📍 ตำแหน่งบนหน้าเว็บ: ปุ่มลอยมุมล่างขวา (#scroll-to-top)

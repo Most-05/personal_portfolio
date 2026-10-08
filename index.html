@@ -1319,9 +1319,16 @@
                     </div>
                 </div>
 
-                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ขวา - แบบฟอร์มส่งข้อความติดต่อ ทำงานผ่านระบบ Netlify Forms (data-netlify="true") โดยไม่ต้องมี Backend -->
+                <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ขวา - แบบฟอร์มส่งข้อความติดต่อ ส่งผ่าน Web3Forms เข้าอีเมล sidtisakm@gmail.com
+                     ใช้ Web3Forms แทน Netlify Forms เพราะเว็บอยู่บน GitHub Pages ซึ่งไม่มีระบบรับฟอร์ม (access_key เป็น public key ใส่ในหน้าเว็บได้)
+                     main.js จะดักการส่งแล้วส่งแบบไม่เปลี่ยนหน้า ถ้า JS ไม่ทำงาน ฟอร์มยังส่งได้ตามปกติผ่าน action -->
                 <div data-aos="fade-left" data-aos-delay="100">
-                    <form data-netlify="true" name="contact" method="POST" class="space-y-4">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                        <input type="hidden" name="access_key" value="029e8c98-6132-476b-a3f6-49a89b4f652f">
+                        <input type="hidden" name="subject" value="New message from Portfolio (most-05.github.io)">
+                        <input type="hidden" name="from_name" value="Sidtisak Portfolio">
+                        <!-- ช่องดักบอท: คนมองไม่เห็นจึงไม่กรอก ถ้ามีค่า Web3Forms จะทิ้งข้อความนั้นเป็นสแปม -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
                         <div>
                             <label
                                 class="block text-xs font-semibold text-gray-400 dark:text-zinc-500 uppercase tracking-wider mb-2"
@@ -1351,6 +1358,8 @@
                             class="cursor-hover w-full inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 text-sm font-semibold shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-blue-500/25">
                             Send Message
                         </button>
+                        <!-- 📍 ข้อความสถานะหลังกดส่ง (กำลังส่ง / ส่งสำเร็จ / ส่งไม่สำเร็จ) main.js เป็นตัวเติมข้อความ -->
+                        <p id="contact-form-status" class="hidden text-sm font-medium text-center" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -1731,6 +1740,6 @@
         });
     </script>
     <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ JavaScript หลักภายนอก (main.js?v=13) - จัดการระบบสลับสองภาษา (i18n), เมนูมือถือ, เม็ดประกายพื้นหลัง, และ Case Study Modal -->
-    <script src="assets/js/main.js?v=13"></script>
+    <script src="assets/js/main.js?v=14"></script>
 
 </html>
