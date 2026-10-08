@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=15">
+    <link rel="stylesheet" href="assets/css/style.css?v=16">
 
     <!-- 📍 สไตล์สำหรับเอฟเฟกต์เลื่อนหน้าจอ (AOS CSS: Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -1423,9 +1423,6 @@
     <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ไลบรารี AOS สำหรับเอฟเฟกต์เลื่อนหน้าจอแล้วองค์ประกอบลอยขึ้น (Scroll Animation) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 📍 ตำแหน่งบนหน้าเว็บ: ส่วน Footer - อัปเดตตัวเลขปีปัจจุบันอัตโนมัติในแท็ก #current-year เพื่อไม่ต้องแก้โค้ดทุกปี
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
         // 📍 ตำแหน่งบนหน้าเว็บ: ทั่วทั้งหน้าเว็บ - ตรวจจับว่าอุปกรณ์เป็นหน้าจอสัมผัส (Touch Device เช่น สมาร์ตโฟน/แท็บเล็ต) หรือไม่ เพื่อปิดเอฟเฟกต์เมาส์ที่ไม่จำเป็น
         const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
@@ -1741,7 +1738,8 @@
             });
         });
     </script>
-    <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ JavaScript หลักภายนอก (main.js?v=13) - จัดการระบบสลับสองภาษา (i18n), เมนูมือถือ, เม็ดประกายพื้นหลัง, และ Case Study Modal -->
-    <script src="assets/js/main.js?v=14"></script>
+    <!-- 📍 ตำแหน่งบนหน้าเว็บ: สคริปต์ JavaScript หลักภายนอก (main.js) - จัดการระบบสลับสองภาษา (i18n), เมนูมือถือ, เม็ดประกายพื้นหลัง, ปีใน Footer และ Case Study Modal -->
+    <script src="assets/js/main.js?v=15"></script>
+</body>
 
 </html>
