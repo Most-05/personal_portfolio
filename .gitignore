@@ -11,7 +11,6 @@ exercise/
 *.backup.*
 *.bak
 *.tmp
-index.phase3-final.html
 *.metadata.json
 .tempmediaStorage/
 
