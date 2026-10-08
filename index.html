@@ -407,7 +407,8 @@
                             class="text-gray-400 dark:text-zinc-500 font-normal">.dev</span></a>
                 </div>
 
-                <div class="hidden md:flex items-center gap-6">
+                <!-- แสดงเมนูเต็มตั้งแต่ lg (1024px) เพราะช่วง 768–1023px เมนูเบียดจนโลโก้ชน Home และ Contact Me ตกบรรทัด -->
+                <div class="hidden lg:flex items-center gap-6">
                     <a href="#hero" data-i18n="nav_home"
                         class="text-sm font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 transition-colors cursor-hover">Home</a>
                     <a href="#about-bento" data-i18n="nav_about"
@@ -447,7 +448,7 @@
                     </button>
                 </div>
                 <!-- 📍 ตำแหน่งบนหน้าเว็บ: แผงปุ่มควบคุมบนจอมือถือ (Mobile Actions: ภาษา, ธีม, และ Hamburger) -->
-                <div class="md:hidden flex items-center gap-2">
+                <div class="lg:hidden flex items-center gap-2">
                     <!-- 📍 ปุ่มสลับภาษาบนมือถือ (#lang-toggle-mobile) -->
                     <button id="lang-toggle-mobile"
                         class="cursor-hover inline-flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full border border-gray-200 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all duration-200 text-gray-700 dark:text-zinc-300"
@@ -483,7 +484,7 @@
 
             <!-- 📍 ตำแหน่งบนหน้าเว็บ: แถบเมนูแบบเลื่อนลงมาบนหน้าจอมือถือ (#mobile-menu) -->
             <div id="mobile-menu"
-                class="hidden md:hidden px-6 pt-2 pb-6 border-b border-gray-200 dark:border-zinc-800 bg-white/95 dark:bg-[#0a0a0f]/95 transition-all">
+                class="hidden lg:hidden px-6 pt-2 pb-6 border-b border-gray-200 dark:border-zinc-800 bg-white/95 dark:bg-[#0a0a0f]/95 transition-all">
                 <div class="flex flex-col space-y-4 pt-2">
                     <a href="#hero" data-i18n="nav_home"
                         class="text-base font-medium text-gray-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
