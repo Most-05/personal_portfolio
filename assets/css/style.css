@@ -128,15 +128,19 @@
     opacity: 1;
 }
 
+/* ใช้พื้นทึบแทน backdrop-filter: blur เพราะเบลอต้องคำนวณใหม่ทุกเฟรมตามจุดลอยและลำแสงหมุนด้านหลัง (การ์ด 9 ใบ)
+   ความทึบนี้พอดีบังลำแสงตรงกลางการ์ดให้เหลือเป็นเส้นขอบเหมือนเดิม และไม่ให้จุดลอยด้านหลังโผล่ชัด */
 .border-beam::after {
     content: '';
     position: absolute;
     inset: 1px;
     border-radius: calc(1rem - 1px);
-    background: inherit;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
     z-index: -1;
+}
+
+.dark .border-beam::after {
+    background: rgba(10, 10, 15, 0.9);
 }
 
 .border-beam > * {

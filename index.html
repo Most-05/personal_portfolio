@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=14">
+    <link rel="stylesheet" href="assets/css/style.css?v=15">
 
     <!-- 📍 สไตล์สำหรับเอฟเฟกต์เลื่อนหน้าจอ (AOS CSS: Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -110,6 +110,24 @@
 
         .blob-d {
             animation: blob 8s ease-in-out 3s infinite;
+        }
+
+        /* วงแสงฟุ้งใช้ radial-gradient แทนวงกลม + filter: blur(140px) เพราะเบลอรัศมีใหญ่ขนาดนี้ต้องคำนวณใหม่ทุกเฟรมที่วงแสงขยับ
+           ขนาดกล่องเผื่อระยะฟุ้งของเบลอเดิม (รัศมีเดิม + 2 เท่าของเบลอ) และจุดศูนย์กลางอยู่ตำแหน่งเดิม */
+        .aurora-blue {
+            background: radial-gradient(closest-side, rgba(219, 234, 254, 0.45) 0%, rgba(219, 234, 254, 0.25) 50%, transparent 100%);
+        }
+
+        .dark .aurora-blue {
+            background: radial-gradient(closest-side, rgba(30, 58, 138, 0.14) 0%, rgba(30, 58, 138, 0.075) 50%, transparent 100%);
+        }
+
+        .aurora-violet {
+            background: radial-gradient(closest-side, rgba(237, 233, 254, 0.36) 0%, rgba(237, 233, 254, 0.2) 50%, transparent 100%);
+        }
+
+        .dark .aurora-violet {
+            background: radial-gradient(closest-side, rgba(76, 29, 149, 0.09) 0%, rgba(76, 29, 149, 0.05) 50%, transparent 100%);
         }
 
         /* 4.3 Floating 3D Icons */
@@ -487,9 +505,9 @@
         <section id="hero" class="relative min-h-[90vh] flex items-center pt-12 md:pt-0 overflow-hidden">
             <!-- 📍 ตำแหน่งบนหน้าเว็บ: เลเยอร์แสงออโรราด้านหลัง Hero (Aurora Blobs) ฟุ้งกระจายเพื่อเพิ่มมิติความลึก (Parallax) แบบไม่รบกวนสายตา -->
             <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-                <div class="blob absolute -top-24 -left-24 w-[650px] h-[650px] rounded-full bg-blue-100/50 dark:bg-blue-900/15 blur-[140px] mix-blend-multiply dark:mix-blend-lighten"
+                <div class="blob aurora-blue absolute -top-[376px] -left-[376px] w-[1210px] h-[1210px] mix-blend-multiply dark:mix-blend-lighten"
                     data-depth="0.8"></div>
-                <div class="blob-d absolute top-12 -right-32 w-[550px] h-[550px] rounded-full bg-violet-100/40 dark:bg-violet-900/10 blur-[120px] mix-blend-multiply dark:mix-blend-lighten"
+                <div class="blob-d aurora-violet absolute -top-[192px] -right-[368px] w-[1030px] h-[1030px] mix-blend-multiply dark:mix-blend-lighten"
                     data-depth="1.2"></div>
             </div>
 
