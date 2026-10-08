@@ -550,10 +550,11 @@
                 </div>
             </div>
 
-            <div class="max-w-6xl mx-auto px-6 w-full text-center md:text-left grid md:grid-cols-2 gap-12 items-center relative z-10"
+            <div class="max-w-6xl mx-auto px-6 w-full text-center md:text-left grid md:grid-cols-[3fr_2fr] gap-12 items-center relative z-10"
                 data-depth="0.3">
                 <!-- 📍 ตำแหน่งบนหน้าเว็บ: คอลัมน์ฝั่งซ้ายของ Hero - สรุปประวัติย่อ ป้ายสถานะ และปุ่ม Action -->
-                <div class="flex flex-col items-center md:items-start fade-up" style="animation-delay: 0.2s;">
+                <!-- min-w-0 กันไม่ให้ชื่อตัวใหญ่ดันคอลัมน์กว้างเกินจอ (ปกติ grid จะขยายคอลัมน์ตามคำที่ยาวที่สุด ทำให้ทั้งก้อนล้นบนมือถือ) -->
+                <div class="flex flex-col items-center md:items-start fade-up min-w-0" style="animation-delay: 0.2s;">
                     <!-- 📍 ตำแหน่งบนหน้าเว็บ: รูปโปรไฟล์แบบวงกลมสำหรับหน้าจอมือถือ (ซ่อนบนหน้าจอคอม) -->
                     <div
                         class="md:hidden w-32 h-32 rounded-full bg-gray-200 dark:bg-zinc-800 border-4 border-white dark:border-zinc-900 shadow-lg overflow-hidden mb-8 flex items-center justify-center">
@@ -575,12 +576,12 @@
 
                     <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อภาษาอังกฤษขนาดใหญ่ สไตล์ตัวหนังสือกลวง (Text-Outline) นีออน -->
                     <h1
-                        class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-2 text-outline uppercase">
+                        class="text-[10vw] md:text-[6vw] xl:text-7xl font-extrabold tracking-tighter leading-none mb-2 text-outline uppercase">
                         Sidtisak
                     </h1>
                     <!-- 📍 ตำแหน่งบนหน้าเว็บ: นามสกุลภาษาอังกฤษขนาดใหญ่ สีทึบมีเงาซอฟต์แวร์ (Drop Shadow) -->
                     <h1
-                        class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none text-gray-900 dark:text-zinc-100 mb-4 uppercase drop-shadow-lg">
+                        class="text-[10vw] md:text-[6vw] xl:text-7xl font-extrabold tracking-tighter leading-none text-gray-900 dark:text-zinc-100 mb-4 uppercase drop-shadow-lg">
                         Hanthongchai
                     </h1>
                     <!-- 📍 ตำแหน่งบนหน้าเว็บ: ชื่อ-นามสกุลภาษาไทย พร้อมฟอนต์ JetBrains Mono สไตล์โค้ดเดอร์ -->
