@@ -737,7 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "Type-Safe Architecture Migration",
                         points: [
-                            "Refactored entire data layer away from raw untyped Maps (<code>Map<String, dynamic></code>) to strongly typed Dart Model classes.",
+                            "Refactored entire data layer away from raw untyped Maps (<code>Map&lt;String, dynamic&gt;</code>) to strongly typed Dart Model classes.",
                             "Implemented <code>factory Model.fromJson(...)</code> constructors across all models, enabling compile-time validation of API contract mismatches and eliminating runtime null errors."
                         ]
                     },
