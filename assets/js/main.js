@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3_title: "Property Viewing App",
             p3_desc: "Flutter mobile booking application. Built end-to-end booking flow across 5 API routes. Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model classes with fromJson, and covered with Flutter integration_test.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
+            p3_context: "Coursework 308-493 · 2-person team",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
             exp_eyebrow: "Experience",
@@ -201,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3_title: "Property Viewing App",
             p3_desc: "แอปจองดูบ้านด้วย Flutter พัฒนาระบบจองครบวงจร 5 เส้นทาง API คุม 11 endpoints ด้วย checkAccessToken middleware ออกแบบ 5 คลาส Model แบบ Type-safe พร้อมครอบคลุมการทำงานด้วยชุดทดสอบ Integration Test",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
+            p3_context: "รายวิชา 308-493 · ทีม 2 คน",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
             exp_eyebrow: "ประสบการณ์",
