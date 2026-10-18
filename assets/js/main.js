@@ -489,6 +489,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 sections: [
                     {
+                        heading: "System Design Before Code",
+                        points: [
+                            "Designed the system before writing code — a <strong>context diagram</strong>, <strong>two levels of DFD across 8 processes</strong>, an <strong>ER model</strong> and a <strong>data dictionary</strong>."
+                        ]
+                    },
+                    {
                         heading: "Architectural Decision: Property Viewing Slots",
                         points: [
                             "Designed the <code>property_viewing_slots</code> table in Prisma schema.",
@@ -497,16 +503,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         ]
                     },
                     {
-                        heading: "API-Level Business Rules & Concurrency Control",
+                        heading: "API-Level Business Rules & Booking Conflicts",
                         points: [
                             "Enforced business invariants on backend API routes rather than relying on UI button states.",
                             "Strict limit: <strong>1 pending booking</strong> per client per property.",
-                            "<strong>Pre-commit slot verification</strong> to eliminate race conditions.",
-                            "Duplicate cancellation prevention and cross-property broker conflict checks."
+                            "<strong>Availability checked before insert</strong> to prevent double booking.",
+                            "Duplicate cancellation prevention and cross-property broker conflict checks.",
+                            "Rebuilt the agent double-booking check as <code>hasAgentBookingConflict</code>, reading <strong>real appointments instead of opened slots</strong> — a deliberate redesign of my own earlier approach."
                         ]
                     },
                     {
-                        heading: "Security Hardening (3 Critical Vulnerabilities Fixed)",
+                        heading: "Security Hardening (3 Access-Control Holes Closed)",
                         points: [
                             "Enforced listing ownership resolution directly from <strong>verified session tokens</strong>, rejecting arbitrary user IDs in request bodies.",
                             "Restricted listing approval and status toggling exclusively to <strong>verified Admin role</strong>.",
@@ -563,6 +570,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 sections: [
                     {
+                        heading: "ออกแบบระบบก่อนเขียนโค้ด (System Design)",
+                        points: [
+                            "ออกแบบระบบก่อนลงมือเขียนโค้ด ได้แก่ <strong>Context Diagram</strong>, <strong>DFD 2 ระดับ ครอบคลุม 8 กระบวนการ</strong>, <strong>ER Model</strong> และ <strong>Data Dictionary</strong>"
+                        ]
+                    },
+                    {
                         heading: "การออกแบบสถาปัตยกรรม: ตารางรอบวันว่างเข้าชม (property_viewing_slots)",
                         points: [
                             "ออกแบบตาราง <code>property_viewing_slots</code> ใน <code>prisma/schema.prisma</code>",
@@ -576,11 +589,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             "บังคับกฎธุรกิจไว้ที่ชั้น API ไม่ใช่แค่การซ่อนปุ่มบนหน้าเว็บ",
                             "กำหนดให้ 1 ลูกค้าต่อ 1 บ้าน<strong>สามารถจองค้างได้เพียง 1 ครั้งเท่านั้น</strong>",
                             "ตรวจสอบว่ารอบเวลานั้นว่างจริงก่อนบันทึก (<strong>ป้องกันการจองชนกัน</strong>)",
-                            "ป้องกันการกดยกเลิกซ้ำ และตรวจการชนกันของวันว่างข้ามบ้านของนายหน้าคนเดียวกัน"
+                            "ป้องกันการกดยกเลิกซ้ำ และตรวจการชนกันของวันว่างข้ามบ้านของนายหน้าคนเดียวกัน",
+                            "รื้อระบบตรวจนายหน้ารับนัดชนกันใหม่เป็น <code>hasAgentBookingConflict</code> ให้อ่านจาก<strong>นัดหมายจริงแทนรอบที่เปิดไว้</strong> — เป็นการตั้งใจแก้วิธีเดิมที่ผมเขียนเองก่อนหน้า"
                         ]
                     },
                     {
-                        heading: "ปิดช่องโหว่ความปลอดภัย 3 จุดสำคัญ (Security Vulnerability Fixes)",
+                        heading: "ปิดช่องโหว่ด้านสิทธิ์การเข้าถึง 3 จุด (Access Control)",
                         points: [
                             "ยึดตัวตนเจ้าของประกาศจาก <strong>Session โดยตรง</strong> แทนการรับ user ID จาก Request Body เพื่อป้องกันการสวมสิทธิ์",
                             "จำกัดให้เฉพาะ<strong>ผู้ดูแลระบบ (Admin) เท่านั้น</strong>ที่สามารถเปลี่ยนสถานะประกาศได้",
