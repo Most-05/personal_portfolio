@@ -690,8 +690,8 @@ document.addEventListener('DOMContentLoaded', () => {
         propertyapp: {
             en: {
                 title: "Property Viewing App — Mobile Booking Application",
-                badge: "Academic Capstone (Course 308-493)",
-                meta: "60 / 78 Commits (77% contribution) · 5 Core Functions · 5 Model Classes · Flutter integration_test",
+                badge: "Coursework Project (Course 308-493)",
+                meta: "60 / 78 Commits (77% contribution) · 5 Booking API Routes · 11 Guarded Endpoints · 5 Model Classes · Flutter integration_test",
                 repo: "https://github.com/Most-05",
                 overview: "A mobile booking application built with Flutter and Express.js, featuring secure authentication, property discovery, and an end-to-end appointment scheduling lifecycle.",
                 imageType: "mobile",
@@ -730,7 +730,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "API Security & Access Control Guardrails",
                         points: [
-                            "Guarded endpoints with custom <code>checkAccessToken</code> middleware.",
+                            "Guarded <strong>11 endpoints</strong> with custom <code>checkAccessToken</code> middleware.",
                             "Coupled token verification with ownership authorization checks to guarantee properties can only be edited or deleted by their verified creator."
                         ]
                     },
@@ -738,7 +738,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading: "Type-Safe Architecture Migration",
                         points: [
                             "Refactored entire data layer away from raw untyped Maps (<code>Map&lt;String, dynamic&gt;</code>) to strongly typed Dart Model classes.",
-                            "Implemented <code>factory Model.fromJson(...)</code> constructors across all models, enabling compile-time validation of API contract mismatches and eliminating runtime null errors."
+                            "Implemented <code>factory Model.fromJson(...)</code> constructors across all models, so field-name mismatches with the API surface early and null errors are far less likely."
                         ]
                     },
                     {
@@ -752,7 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading: "Automated Integration Testing & Live Demonstration Guide",
                         points: [
                             "Authored Flutter <code>integration_test</code> suites verifying end-to-end booking user flows on emulator/device.",
-                            "Authored comprehensive step-by-step presentation manual ensuring flawless live demonstration during coursework evaluation."
+                            "Wrote a step-by-step demo guide for the live presentation during coursework evaluation."
                         ]
                     }
                 ]
@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', () => {
             th: {
                 title: "ระบบการจองดูบ้าน — แอปพลิเคชันมือถือด้วย Flutter",
                 badge: "ผลงานรายวิชา 308-493 ชุดวิชาชีพเฉพาะทาง (6 หน่วยกิต)",
-                meta: "60 / 78 Commits เป็นของผม (77%) · 5 ฟังก์ชันหลัก · 5 คลาส Model · Flutter integration_test",
+                meta: "60 / 78 Commits เป็นของผม (77%) · 5 เส้นทาง API การจอง · คุม 11 Endpoints · 5 คลาส Model · Flutter integration_test",
                 repo: "https://github.com/Most-05",
                 overview: "แอปพลิเคชันจองดูบ้านบนมือถือที่พัฒนาด้วย Flutter และ Express.js มีระบบล็อกอิน ค้นหาอสังหาริมทรัพย์ และวงจรการนัดหมายครบวงจร",
                 imageType: "mobile",
@@ -799,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "ความปลอดภัยของ API และการตรวจสอบสิทธิ์",
                         points: [
-                            "ป้องกัน Endpoint ของบ้านด้วย Middleware <code>checkAccessToken</code>",
+                            "ป้องกัน <strong>11 Endpoints</strong> ด้วย Middleware <code>checkAccessToken</code>",
                             "ทำงานร่วมกับระบบตรวจสอบสิทธิ์เจ้าของประกาศ เพื่อให้มั่นใจว่ามีเฉพาะเจ้าของตัวจริงเท่านั้นที่สามารถแก้ไขหรือลบประกาศได้"
                         ]
                     },
@@ -807,7 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading: "ยกระดับสู่สถาปัตยกรรม Type-Safe ด้วย Dart Model",
                         points: [
                             "เปลี่ยนจากการรับส่งข้อมูลเป็น Map ดิบทั้งแอป มาใช้คลาส Model ที่มี <code>factory Model.fromJson(...)</code> ครบถ้วน",
-                            "ช่วยให้ตรวจจับข้อผิดพลาดของชื่อฟิลด์ได้ตั้งแต่ขั้นตอน Compile หมดปัญหา Null Pointer Runtime Exception"
+                            "ช่วยให้เจอชื่อฟิลด์ที่ไม่ตรงกับ API ได้เร็วขึ้น และลดโอกาสเกิด Null Error ตอนแอปทำงาน"
                         ]
                     },
                     {
