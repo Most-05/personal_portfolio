@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแบบฟอร์มติดต่อ (Contact Section: #contact)
             contact_eyebrow: "Contact",
-            contact_heading: "Interested in working together?",
-            contact_subheading: "Feel free to email me directly or leave a message in the form below. I will get back to you as soon as possible.",
+            contact_heading: "Looking for a co-op student?",
+            contact_subheading: "I am available for a full-time co-op placement from 16 Nov 2026 to 7 Mar 2027 (40 hrs/week). Email me directly or leave a message in the form, and I will get back to you as soon as possible.",
             contact_email_label: "Email",
             contact_phone_label: "Phone",
             contact_github_label: "GitHub",
@@ -241,8 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนแบบฟอร์มติดต่อ (Contact Section: #contact)
             contact_eyebrow: "ติดต่อ",
-            contact_heading: "สนใจติดต่อร่วมงาน?",
-            contact_subheading: "สามารถส่งอีเมลมาหาผมโดยตรง หรือฝากข้อความไว้ในฟอร์มได้เลยครับ ยินดีตอบกลับโดยเร็วที่สุด",
+            contact_heading: "สนใจรับนักศึกษาฝึกสหกิจไหมครับ?",
+            contact_subheading: "ผมพร้อมฝึกสหกิจเต็มเวลา 16 พ.ย. 2569 – 7 มี.ค. 2570 (40 ชม./สัปดาห์) ส่งอีเมลมาหาผมโดยตรง หรือฝากข้อความไว้ในฟอร์มได้เลยครับ ยินดีตอบกลับโดยเร็วที่สุด",
             contact_email_label: "อีเมล",
             contact_phone_label: "เบอร์โทร",
             contact_github_label: "GitHub",
