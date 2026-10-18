@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และรีดขนาดไฟล์เว็บจาก 8.4MB เหลือเพียง 1.25MB เพื่อความเร็วสูงสุด",
+            p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และรีดขนาดไฟล์เว็บจาก 8.4MB เหลือเพียง 1.25MB",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
@@ -643,12 +643,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         ]
                     },
                     {
-                        heading: "Critical Production Bugs Uncovered by Playwright (Undetectable by Eye)",
+                        heading: "Real Bugs Caught by Playwright (Missed by Visual Review)",
                         points: [
                             "<strong>Missing CartProvider:</strong> Caught an unmounted context provider that broke the shopping cart across the entire application.",
                             "<strong>Checkout Payment Bypass:</strong> Detected that checkout falsely showed success without deducting the user's actual wallet balance.",
                             "<strong>Broken Dynamic Routes:</strong> Identified subtle URL typos that prevented specific product categories from rendering.",
-                            "<strong>Linux File Case-Sensitivity Trap:</strong> Uncovered mismatched casing between local asset file paths and import statements. While Windows silently tolerated the casing discrepancy, deployment to a standard Linux server would have corrupted 19 out of 26 item images!"
+                            "<strong>Linux File Case-Sensitivity Trap:</strong> Uncovered mismatched casing between local asset file paths and import statements. While Windows silently tolerated the casing discrepancy, deployment to a standard Linux server would have left 19 out of 26 item images failing to load."
                         ]
                     },
                     {
@@ -684,7 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ]
                     },
                     {
-                        heading: "บั๊กจริงระดับ Production ที่ Playwright ตรวจพบ (การตรวจด้วยตาไม่มีวันเจอ)",
+                        heading: "บั๊กจริงที่ Playwright ตรวจพบ (ตรวจด้วยตาแล้วไม่เจอ)",
                         points: [
                             "<strong>ขาด CartProvider:</strong> ตรวจพบคอนเท็กซ์ที่ไม่ได้ครอบไว้ ทำให้ระบบตะกร้าพังทั้งเว็บเมื่อเกิดข้อผิดพลาด",
                             "<strong>หน้าชำระเงินไม่ตัดเงินจริง:</strong> หน้าบ้านขึ้นว่าชำระเงินสำเร็จ แต่เบื้องหลังไม่ได้ตัดยอดเงินใน Wallet จริง",
