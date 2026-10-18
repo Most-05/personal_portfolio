@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_role: "> Full Stack Developer_",
             hero_desc: "Fourth-year ICT student at Prince of Songkla University. 454 commits across 3 codebases (Web, Web App, Mobile). Hands-on with Next.js, React, Node.js, and Flutter, with an emphasis on readable, well-structured code and automated testing.",
             hero_location: "📍 Hat Yai, Songkhla, Thailand",
+            hero_relocate: "✈️ Open to on-site co-op anywhere in Thailand",
             hero_btn_works: "View Projects",
             hero_btn_contact: "Contact Me",
             hero_btn_cv: "Resume CV",
@@ -148,11 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_status: "ผู้สมัครฝึกสหกิจศึกษา (16 พ.ย. 2569 – 7 มี.ค. 2570)",
             hero_th_name: "สิทธิศักดิ์ หาญธงไชย",
             hero_role: "> Full Stack Developer_",
-            hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ เจ้าของ 454 Commits ใน 3 โปรเจกต์จริง (เว็บ, เว็บแอป, มือถือ) มีประสบการณ์ลงมือทำจริงกับ Next.js, React, Node.js และ Flutter มุ่งเน้นโค้ดที่อ่านง่าย จัดโครงสร้างชัด และการทดสอบอัตโนมัติ",
+            hero_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยสงขลานครินทร์ เขียนโค้ดไปแล้ว 454 Commits ใน 3 โปรเจกต์จริง (เว็บ, เว็บแอป, มือถือ) มีประสบการณ์ลงมือทำจริงกับ Next.js, React, Node.js และ Flutter มุ่งเน้นโค้ดที่อ่านง่าย จัดโครงสร้างชัด และการทดสอบอัตโนมัติ",
             hero_location: "📍 หาดใหญ่, สงขลา, ประเทศไทย",
+            hero_relocate: "✈️ พร้อมไปฝึกสหกิจแบบ On-site ได้ทุกจังหวัด",
             hero_btn_works: "ดูผลงาน",
             hero_btn_contact: "ติดต่อผม",
-            hero_btn_cv: "เรซูเม CV",
+            hero_btn_cv: "เรซูเม่ (CV)",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: แถบข้อความและโลโก้วิ่ง (Tech Marquee)
             tech_heading: "เทคโนโลยีและเครื่องมือที่ใช้ในปัจจุบัน",
