@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_job1_title: "Data Analyst Intern",
             exp_job1_date: "16 Apr – 12 Jun 2026",
             exp_job1_company: "Khunying Long Athakravisunthorn Learning Resources Center, PSU",
-            exp_job1_b1: "Cleaned and restructured 5 years (2021–2025) of library statistics for 5 universities in Excel and Power Query, created a 5-page Power BI dashboard for the department head, and produced a comprehensive 21-page handover manual for successors.",
+            exp_job1_b1: "Cleaned and restructured 5 years (2021–2025) of library statistics for 5 universities in Excel and Power Query, created a 5-page Power BI dashboard for the department head, and wrote a 21-page handover manual for successors.",
             exp_job1_b2: "Key finding for the head of IT & Corporate Communications: PSU ran 48 IT systems (peer avg <25) on an IT budget 6x smaller than the largest peer, alongside the highest average downtime in the group (based on the data collected; not every university reported every figure).",
             exp_job1_video: "Watch Presentation Clip (YouTube)",
 
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_job1_title: "Data Analyst Intern (นักศึกษาฝึกงาน)",
             exp_job1_date: "16 เม.ย. – 12 มิ.ย. 2569",
             exp_job1_company: "สำนักทรัพยากรการเรียนรู้คุณหญิงหลง อรรถกระวีสุนทร ม.อ.",
-            exp_job1_b1: "ทำความสะอาดและจัดโครงสร้างข้อมูลสถิติห้องสมุด 5 ปี (2021–2025) ของ 5 มหาวิทยาลัยด้วย Excel และ Power Query พร้อมสร้าง Dashboard บน Power BI 5 หน้าเสนอหัวหน้าฝ่าย และจัดทำคู่มือส่งต่องานฉบับสมบูรณ์ความยาว 21 หน้าสำหรับรุ่นถัดไป",
+            exp_job1_b1: "ทำความสะอาดและจัดโครงสร้างข้อมูลสถิติห้องสมุด 5 ปี (2021–2025) ของ 5 มหาวิทยาลัยด้วย Excel และ Power Query พร้อมสร้าง Dashboard บน Power BI 5 หน้าเสนอหัวหน้าฝ่าย และจัดทำคู่มือส่งต่องาน 21 หน้าสำหรับรุ่นถัดไป",
             exp_job1_b2: "ข้อค้นพบที่นำเสนอหัวหน้าฝ่ายเทคโนโลยีสารสนเทศและสื่อสารองค์กร: ม.อ. มีระบบสารสนเทศ 48 ระบบ (คู่เทียบเฉลี่ยไม่ถึง 25) แต่งบ IT น้อยกว่ามหาวิทยาลัยที่งบสูงสุดถึง 6 เท่า และมีค่า Downtime เฉลี่ยสูงที่สุดในกลุ่ม (จากข้อมูลที่เก็บได้ ซึ่งบางมหาวิทยาลัยยังส่งข้อมูลไม่ครบ)",
             exp_job1_video: "ชมคลิปนำเสนอผลงานจริง (YouTube)",
 
@@ -462,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Senior Capstone Project",
                 meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs · 35 Pages · 3 User Roles",
                 repo: "https://github.com/PHmeen/SrichaiProperty",
-                overview: "A full-stack real estate trading platform developed as a Senior Capstone Project. It enables property listing, viewing slot booking, and integrates a comprehensive admin dashboard with SLA metrics.",
+                overview: "A full-stack real estate trading platform developed as a Senior Capstone Project. It enables property listing, viewing slot booking, and includes an admin dashboard with SLA metrics.",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
                 // 📍 ภาพหน้าจอจริงของ Srichai ไล่ตามระบบนัดดูบ้านที่ผมรับผิดชอบ (ลูกค้าจอง → นายหน้าเปิดรอบ → นายหน้าจัดคิว)
                 imageType: "desktop",
@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         points: [
                             "Designed the <code>property_viewing_slots</code> table in Prisma schema.",
                             "Proposed <strong>decoupling availability from 'Agent'</strong> and binding it directly to 'Each Property' — an architectural pivot adopted by the entire team for the remainder of the project.",
-                            "Engineered <strong>full booking lifecycle</strong>: Booking &rarr; Slot Lock &rarr; Agent Confirm/Reject/Complete &rarr; Client Reschedule/Cancel &rarr; Slot Restitution, broadcasting state changes via <strong>Pusher</strong>."
+                            "Built the <strong>full booking lifecycle</strong>: Booking &rarr; Slot Lock &rarr; Agent Confirm/Reject/Complete &rarr; Client Reschedule/Cancel &rarr; Slot Restitution, broadcasting state changes via <strong>Pusher</strong>."
                         ]
                     },
                     {
@@ -526,14 +526,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading: "Admin Analytics, SLA Engine & Health Metrics",
                         points: [
                             "Authored <code>/api/admin/analytics</code> executing <strong>8 Prisma queries in parallel</strong> via <code>Promise.all</code>, aggregating data across daily, monthly, and yearly intervals with dynamic % period comparisons for Recharts rendering.",
-                            "Engineered <strong>slaService</strong> with historical audit trail capabilities: added <code>reviewed_by</code> and <code>reviewed_at</code> to properties schema to calculate review durations and quantify SLA compliance percentage (answering midterm faculty evaluation criteria).",
+                            "Built <strong>slaService</strong> with a review history: added <code>reviewed_by</code> and <code>reviewed_at</code> to properties schema to calculate review durations and quantify SLA compliance percentage (requested by faculty at the midterm review, with a 24-hour target).",
                             "Integrated <strong>Appointment Health metrics</strong> (completed / no-show / rejected / cancelled) based on real audit data, and deployed anti-view spamming guardrails (PR #19)."
                         ]
                     },
                     {
                         heading: "Structured Rejection & Cancellation Reasons",
                         points: [
-                            "Engineered structured cancellation reason modal capturing client feedback into <code>cancel_reason</code> while offering a streamlined 1-click rebooking button.",
+                            "Built a cancellation-reason modal that saves the client's reason to <code>cancel_reason</code> and offers a 1-click rebooking button.",
                             "Expanded listing rejection reasons from 5 to 9 standardized criteria defined in <code>REJECT_REASONS</code> constants."
                         ]
                     }
@@ -638,8 +638,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "Zero-Dependency Node.js Mock Server Architecture",
                         points: [
-                            "Original backend was lost with only a SQL dump remaining. Architected a clean, dependency-free Node.js mock server from scratch.",
-                            "Integrated the mock server seamlessly into the development pipeline via <code>src/setupProxy.js</code>, allowing the entire full-stack application to boot with a single command.",
+                            "Original backend was lost with only a SQL dump remaining. Wrote a clean, dependency-free Node.js mock server from scratch.",
+                            "Mounted the mock server onto the dev server via <code>src/setupProxy.js</code>, so the whole app starts with a single command.",
                         ]
                     },
                     {
@@ -750,14 +750,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading: "End-to-End Mobile Booking Lifecycle",
                         points: [
                             "Developed complete appointment scheduling pipeline: Browse viewings, create new bookings, modify dates, cancel slots, and compute booking counts per property.",
-                            "Seamless coordination between client-side Flutter application and backend Express.js REST API."
+                            "Wrote both the Flutter screens and the Express.js REST API routes behind them."
                         ]
                     },
                     {
                         heading: "API Security & Access Control Guardrails",
                         points: [
                             "Guarded <strong>11 endpoints</strong> with custom <code>checkAccessToken</code> middleware.",
-                            "Coupled token verification with ownership authorization checks to guarantee properties can only be edited or deleted by their verified creator."
+                            "Coupled token verification with ownership checks so only a property's creator can edit or delete it."
                         ]
                     },
                     {
@@ -770,7 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "Province Master Data & SQL Aggregations",
                         points: [
-                            "Engineered province master data endpoints feeding dynamic dropdowns in property creation forms.",
+                            "Built province master-data endpoints that feed the dropdowns in the property creation form.",
                             "Implemented analytical backend queries using SQL <code>GROUP BY</code> to summarize and display property distribution per province."
                         ]
                     },
@@ -818,8 +818,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "ระบบการจองดูบ้านครบวงจรบนมือถือ (Full Mobile Booking Lifecycle)",
                         points: [
-                            "พัฒนาระบบจองครบวงจร: แสดงรายการนัด, เพิ่มการจองใหม่, แก้ไขวันเวลา, ขอยกเลิก และนับจำนวนการจองของบ้านแต่ละหลัง ทั้งฝั่งแอปพลิเคชัน Flutter และฝั่ง Express.js API",
-                            "เชื่อมโยงการทำงานระหว่างหน้าบ้านและหลังบ้านอย่างลื่นไหล"
+                            "พัฒนาระบบจองครบวงจร: แสดงรายการนัด, เพิ่มการจองใหม่, แก้ไขวันเวลา, ขอยกเลิก และนับจำนวนการจองของบ้านแต่ละหลัง ทั้งฝั่งแอปพลิเคชัน Flutter และฝั่ง Express.js API"
                         ]
                     },
                     {
