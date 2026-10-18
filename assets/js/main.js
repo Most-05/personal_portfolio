@@ -462,6 +462,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 repo: "https://github.com/PHmeen/SrichaiProperty",
                 overview: "A full-stack real estate trading platform developed as a Senior Capstone Project. It enables property listing, viewing slot booking, and integrates a comprehensive admin dashboard with SLA metrics.",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
+                // 📍 ภาพหน้าจอจริงของ Srichai ไล่ตามระบบนัดดูบ้านที่ผมรับผิดชอบ (ลูกค้าจอง → นายหน้าเปิดรอบ → นายหน้าจัดคิว)
+                imageType: "desktop",
+                screenshotsTitle: "Viewing Appointment Workflow & Real UI",
+                screenshots: [
+                    {
+                        src: "assets/images/srichai-1.jpg",
+                        title: "1. Property Search",
+                        desc: "Home page with buy/rent search and popular locations"
+                    },
+                    {
+                        src: "assets/images/srichai-2.jpg",
+                        title: "2. Book a Viewing",
+                        desc: "Customer picks a date from the slots the agent opened for this property"
+                    },
+                    {
+                        src: "assets/images/srichai-3.jpg",
+                        title: "3. Agent Availability",
+                        desc: "Agent opens morning/afternoon viewing slots per property on a calendar"
+                    },
+                    {
+                        src: "assets/images/srichai-4.jpg",
+                        title: "4. Appointment Queue",
+                        desc: "Agent confirms or rejects requests, with each customer's attendance history"
+                    }
+                ],
                 sections: [
                     {
                         heading: "Architectural Decision: Property Viewing Slots",
@@ -512,6 +537,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 repo: "https://github.com/PHmeen/SrichaiProperty",
                 overview: "เว็บแอปพลิเคชันซื้อขายอสังหาริมทรัพย์แบบครบวงจร (โปรเจกต์จบการศึกษา) รองรับการลงประกาศบ้าน ระบบจองรอบดูบ้าน และระบบหลังบ้านสำหรับผู้ดูแลระบบพร้อมหน้าปัดแสดงสถิติ SLA",
                 tags: ["Next.js 16", "TypeScript", "Prisma ORM 7", "PostgreSQL", "NextAuth v4", "Tailwind CSS", "Pusher", "Recharts"],
+                imageType: "desktop",
+                screenshotsTitle: "ภาพหน้าจอจริงของระบบนัดดูบ้าน (Viewing Appointment Workflow)",
+                screenshots: [
+                    {
+                        src: "assets/images/srichai-1.jpg",
+                        title: "1. ค้นหาบ้าน",
+                        desc: "หน้าแรก ค้นหาบ้านซื้อ/เช่า และทำเลยอดนิยม"
+                    },
+                    {
+                        src: "assets/images/srichai-2.jpg",
+                        title: "2. จองนัดดูบ้าน",
+                        desc: "ลูกค้าเลือกวันจากรอบที่นายหน้าเปิดไว้ให้บ้านหลังนั้น"
+                    },
+                    {
+                        src: "assets/images/srichai-3.jpg",
+                        title: "3. นายหน้าเปิดวันว่าง",
+                        desc: "นายหน้าเปิดรอบเช้า/บ่ายให้แต่ละประกาศบนปฏิทิน"
+                    },
+                    {
+                        src: "assets/images/srichai-4.jpg",
+                        title: "4. จัดการคิวนัดหมาย",
+                        desc: "นายหน้ายืนยันหรือปฏิเสธคำขอ พร้อมดูประวัติการมาตามนัดของลูกค้า"
+                    }
+                ],
                 sections: [
                     {
                         heading: "การออกแบบสถาปัตยกรรม: ตารางรอบวันว่างเข้าชม (property_viewing_slots)",
@@ -916,7 +965,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // แกลเลอรีภาพถ่ายหน้าจอแสดงขั้นตอนการทำงานบนมือถือจริง (App Workflow Gallery)
             if (data.screenshots && data.screenshots.length > 0) {
-                const aspectRatioClass = data.imageType === 'desktop' ? 'aspect-video' : 'aspect-[9/16]';
+                // ภาพจอคอม (16:10) แสดงแถวละ 2 รูปให้อ่านออก ส่วนภาพมือถือแนวตั้งแสดงแถวละ 4 รูปเหมือนเดิม
+                const isDesktopShots = data.imageType === 'desktop';
+                const aspectRatioClass = isDesktopShots ? 'aspect-[16/10]' : 'aspect-[9/16]';
+                const gridColsClass = isDesktopShots ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-2 sm:grid-cols-4';
                 html += `
                     <div class="bg-gradient-to-b from-gray-50 to-white dark:from-white/[0.03] dark:to-white/[0.01] border border-gray-100 dark:border-white/5 rounded-2xl p-5 mt-4">
                         <h4 class="font-bold text-gray-900 dark:text-white mb-3.5 text-base flex items-center gap-2">
@@ -925,7 +977,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </svg>
                             ${data.screenshotsTitle || "Application Workflow"}
                         </h4>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="grid ${gridColsClass} gap-3">
                             ${data.screenshots.map(s => `
                                 <a href="${s.src}" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden border border-gray-200/80 dark:border-white/10 bg-gray-900/5 dark:bg-black/30 hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200">
                                     <div class="${aspectRatioClass} overflow-hidden bg-slate-900 relative">
