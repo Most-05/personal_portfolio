@@ -71,16 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
             p1_title: "Srichai Property",
             p1_desc: "Real estate capstone platform. Designed 32 DB tables & 8 DFD processes. Built API access control, SLA countdown service, Recharts analytics, and rebuilt hasAgentBookingConflict to prevent overlapping client viewings.",
             p1_meta: "250 Commits · 19 PRs · 32 Tables · 32 APIs",
+            p1_date: "Jul 2026 – Present",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
             p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt backend as a dependency-free Node.js mock server. Optimized page assets, cutting page size from 8.4MB to 1.25MB.",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
+            p2_date: "2025, rebuilt Aug 2026",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
             p3_desc: "Flutter mobile booking application. Built end-to-end booking flow across 5 API routes. Guarded 11 endpoints with checkAccessToken middleware, implemented 5 type-safe Model classes with fromJson, and covered with Flutter integration_test.",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
+            p3_date: "Aug 2026 – Present",
             p3_context: "Coursework 308-493 · 2-person team",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
@@ -194,16 +197,19 @@ document.addEventListener('DOMContentLoaded', () => {
             p1_title: "Srichai Property",
             p1_desc: "โปรเจกต์จบการศึกษาแพลตฟอร์มอสังหาริมทรัพย์ ออกแบบ 32 ตารางฐานข้อมูล และ 8 กระบวนการ DFD พัฒนาระบบคุมสิทธิ์ API, ระบบนับถอยหลัง SLA, แดชบอร์ดสรุปข้อมูลด้วย Recharts และปรับปรุงอัลกอริทึมเพื่อป้องกันนายหน้ารับนัดชนกัน",
             p1_meta: "250 Commits · 19 PRs · 32 ตาราง · 32 APIs",
+            p1_date: "ก.ค. 2569 – ปัจจุบัน",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
             p2_desc: "เว็บร้านขายไอเทมเกมด้วย React พร้อมชุดทดสอบ Playwright 81 เคส ครอบคลุมทุก route และ auth flow รื้อระบบหลังบ้านเป็น Node.js Mock Server และรีดขนาดไฟล์เว็บจาก 8.4MB เหลือเพียง 1.25MB",
             p2_meta: "144 Commits · 81 เทส · ย่อ 8.4MB → 1.25MB",
+            p2_date: "2568, รื้อทำใหม่ ส.ค. 2569",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
             p3_title: "Property Viewing App",
             p3_desc: "แอปจองดูบ้านด้วย Flutter พัฒนาระบบจองครบวงจร 5 เส้นทาง API คุม 11 endpoints ด้วย checkAccessToken middleware ออกแบบ 5 คลาส Model แบบ Type-safe พร้อมครอบคลุมการทำงานด้วยชุดทดสอบ Integration Test",
             p3_meta: "60/78 Commits · 5 Models · Integration Test",
+            p3_date: "ส.ค. 2569 – ปัจจุบัน",
             p3_context: "รายวิชา 308-493 · ทีม 2 คน",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: ส่วนประวัติการทำงาน การศึกษา และกิจกรรม (Experience Section: #experience)
