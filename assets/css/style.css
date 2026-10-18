@@ -339,3 +339,38 @@ body.modal-open #scroll-to-top {
 .modal-scroll::-webkit-scrollbar-thumb:hover {
     background: rgba(156, 163, 175, 0.5);
 }
+
+/* ==========================================================================
+   📍 ตำแหน่งบนหน้าเว็บ: ป้ายสกิลในการ์ด "> SKILLS_STACK" (Bento Grid) เฉพาะโหมดสว่าง (.skill-chip)
+   ทำไม: คลาสเดิมออกแบบมาสำหรับโหมดมืด (พื้น bg-black/40 + ตัว text-zinc-300) พอเป็นโหมดสว่างจะได้พื้นเทาเข้ม ตัวเทาอ่อน อ่านยาก
+   ใช้ !important เพราะต้องชนะคลาส Tailwind บนแท็กเดิม และใช้ :not(:hover) กับขอบ เพื่อให้ขอบสีประจำเทค (hover:border-*) ยังทำงาน
+   แบบที่ใช้: ก. พื้นขาวเรียบ (ผู้ใช้เลือก 2026-10-18) — โหมดมืดไม่ถูกแตะ
+   ========================================================================== */
+html:not(.dark) .skill-chip {
+    background: #ffffff !important;
+    color: #374151 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+html:not(.dark) .skill-chip:not(:hover) {
+    border-color: #e5e7eb !important;
+}
+html:not(.dark) .skill-chip:hover {
+    color: #111827 !important;
+}
+
+/* แบบสำรอง ข. ปุ่มนูนแบบป้ายเทคใน Case Study (.tag-tactile-3d) — ผู้ใช้ชอบ เก็บไว้เผื่อเปลี่ยนในอนาคต
+   วิธีใช้: ลบ 3 กฎของแบบ ก ด้านบน แล้วเอาคอมเมนต์ครอบด้านล่างนี้ออก
+html:not(.dark) .skill-chip {
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%) !important;
+    color: #1e293b !important;
+    border-bottom-width: 2px !important;
+    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+html:not(.dark) .skill-chip:not(:hover) {
+    border-color: #e2e8f0 !important;
+    border-bottom-color: #cbd5e1 !important;
+}
+html:not(.dark) .skill-chip:hover {
+    color: #0f172a !important;
+}
+*/

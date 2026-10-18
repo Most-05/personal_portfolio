@@ -356,6 +356,11 @@ focus-item border-beam glow-card cursor-hover p-6|p-8 rounded-3xl bg-white/60 da
 - ใต้ตัวเลขมี label 2 บรรทัด (หลัก `text-xs font-semibold` / รอง `text-[10px] text-gray-400`)
 </details>
 
+### ป้ายสกิล (`.skill-chip` ในการ์ด `> SKILLS_STACK`) — *เพิ่มใน v2*
+- โหมดมืด: คลาส Tailwind บนแท็ก `bg-black/40 dark:bg-zinc-900/60 border border-zinc-800 text-zinc-300 rounded-xl font-mono-custom` hover แล้วขอบและตัวหนังสือเป็นสีประจำเทค (เช่น `hover:border-cyan-400`) + ยกขึ้น `hover:-translate-y-0.5`
+- โหมดสว่าง: ใช้ **แบบ ก. พื้นขาวเรียบ** (เลือก 2026-10-18) เขียนไว้ใน `style.css` ใต้หัวข้อ `.skill-chip` คือพื้น `#fff` ตัว `#374151` ขอบ `#e5e7eb` (hover แล้วขอบยังเป็นสีประจำเทค)
+- **แบบสำรอง ข. ปุ่มนูน** (ผู้ใช้ชอบ เก็บไว้เผื่อเปลี่ยน): พื้นไล่ `#fff → #f1f5f9` ตัว `#1e293b` ขอบ `#e2e8f0` ขอบล่าง 2px `#cbd5e1` + เงาเหมือน `.tag-tactile-3d` ใน modal โค้ดพร้อมใช้อยู่ในคอมเมนต์ใต้แบบ ก ใน `style.css` (สลับได้โดยลบแบบ ก แล้วเปิดคอมเมนต์)
+
 ### Case Study Modal — *เพิ่มใน v2*
 - เปิดจากปุ่ม `.open-case-study-btn[data-project]` บนการ์ดผลงาน ข้อมูลอยู่ใน `caseStudyData` ใน `main.js` (2 ภาษา)
 - พื้นหลัง `bg-[#050508]/[0.97]` (เกือบทึบ ไม่มีเบลอ) และซ่อนหน้าเว็บด้านหลังเมื่อเปิด (`body.modal-open`) เพื่อไม่ให้ scroll กระตุก
