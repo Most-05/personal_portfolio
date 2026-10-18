@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_job1_date: "16 Apr – 12 Jun 2026",
             exp_job1_company: "Khunying Long Athakravisunthorn Learning Resources Center, PSU",
             exp_job1_b1: "Cleaned and restructured 5 years (2021–2025) of library statistics for 5 universities in Excel and Power Query, created a 5-page Power BI dashboard for the department head, and produced a comprehensive 21-page handover manual for successors.",
-            exp_job1_b2: "Key management insight: PSU operated 48 IT systems (peer avg <25) on a 6x smaller IT budget, correlating with the group's highest average downtime.",
+            exp_job1_b2: "Key finding for the head of IT & Corporate Communications: PSU ran 48 IT systems (peer avg <25) on an IT budget 6x smaller than the largest peer, alongside the highest average downtime in the group (based on the data collected; not every university reported every figure).",
             exp_job1_video: "Watch Presentation Clip (YouTube)",
 
             exp_edu_title: "B.Sc. in ICT (Information & Communication Technology)",
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exp_job1_date: "16 เม.ย. – 12 มิ.ย. 2569",
             exp_job1_company: "สำนักทรัพยากรการเรียนรู้คุณหญิงหลง อรรถกระวีสุนทร ม.อ.",
             exp_job1_b1: "ทำความสะอาดและจัดโครงสร้างข้อมูลสถิติห้องสมุด 5 ปี (2021–2025) ของ 5 มหาวิทยาลัยด้วย Excel และ Power Query พร้อมสร้าง Dashboard บน Power BI 5 หน้าเสนอหัวหน้าฝ่าย และจัดทำคู่มือส่งต่องานฉบับสมบูรณ์ความยาว 21 หน้าสำหรับรุ่นถัดไป",
-            exp_job1_b2: "ข้อค้นพบสำคัญที่ฝ่ายบริหารนำไปใช้: ม.อ. มีระบบสารสนเทศมากที่สุด 48 ระบบ แต่งบ IT น้อยกว่าคู่เทียบ 6 เท่า สอดคล้องกับค่า Downtime เฉลี่ยที่สูงที่สุด",
+            exp_job1_b2: "ข้อค้นพบที่นำเสนอหัวหน้าฝ่ายเทคโนโลยีสารสนเทศและสื่อสารองค์กร: ม.อ. มีระบบสารสนเทศ 48 ระบบ (คู่เทียบเฉลี่ยไม่ถึง 25) แต่งบ IT น้อยกว่ามหาวิทยาลัยที่งบสูงสุดถึง 6 เท่า และมีค่า Downtime เฉลี่ยสูงที่สุดในกลุ่ม (จากข้อมูลที่เก็บได้ ซึ่งบางมหาวิทยาลัยยังส่งข้อมูลไม่ครบ)",
             exp_job1_video: "ชมคลิปนำเสนอผลงานจริง (YouTube)",
 
             exp_edu_title: "วิทยาศาสตรบัณฑิต (วท.บ.) ICT",
