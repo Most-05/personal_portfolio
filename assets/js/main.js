@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "System Design Before Code",
                         points: [
-                            "Designed the system before writing code — a <strong>context diagram</strong>, <strong>two levels of DFD across 8 processes</strong>, an <strong>ER model</strong> and a <strong>data dictionary</strong>."
+                            "Designed the system before writing code — a <strong>context diagram</strong>, <strong>two levels of DFD across 8 processes</strong>, an <strong>ER model of 32 tables</strong> and a <strong>data dictionary</strong>."
                         ]
                     },
                     {
@@ -582,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "ออกแบบระบบก่อนเขียนโค้ด (System Design)",
                         points: [
-                            "ออกแบบระบบก่อนลงมือเขียนโค้ด ได้แก่ <strong>Context Diagram</strong>, <strong>DFD 2 ระดับ ครอบคลุม 8 กระบวนการ</strong>, <strong>ER Model</strong> และ <strong>Data Dictionary</strong>"
+                            "ออกแบบระบบก่อนลงมือเขียนโค้ด ได้แก่ <strong>Context Diagram</strong>, <strong>DFD 2 ระดับ ครอบคลุม 8 กระบวนการ</strong>, <strong>ER Model 32 ตาราง</strong> และ <strong>Data Dictionary</strong>"
                         ]
                     },
                     {
@@ -697,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "<strong>ขาด CartProvider:</strong> ตรวจพบคอนเท็กซ์ที่ไม่ได้ครอบไว้ ทำให้ระบบตะกร้าพังทั้งเว็บเมื่อเกิดข้อผิดพลาด",
                             "<strong>หน้าชำระเงินไม่ตัดเงินจริง:</strong> หน้าบ้านขึ้นว่าชำระเงินสำเร็จ แต่เบื้องหลังไม่ได้ตัดยอดเงินใน Wallet จริง",
                             "<strong>Route สะกดผิด:</strong> จับจุดพิมพ์ตกในเส้นทาง URL ที่ทำให้บางหน้าเปิดไม่ติด",
-                            "<strong>บั๊กตัวพิมพ์เล็ก-ใหญ่บน Linux (Case Sensitivity):</strong> ตรวจพบชื่อไฟล์รูปภาพตัวพิมพ์ไม่ตรงกับโค้ดเรียกใช้ ซึ่งบนเครื่อง Windows จะเปิดได้ปกติ แต่ทันทีที่ Deploy ขึ้นเซิร์ฟเวอร์ Linux รูปภาพจะพังทันที 19 จาก 26 รูป!"
+                            "<strong>บั๊กตัวพิมพ์เล็ก-ใหญ่บน Linux (Case Sensitivity):</strong> ตรวจพบชื่อไฟล์รูปภาพตัวพิมพ์ไม่ตรงกับโค้ดเรียกใช้ ซึ่งบนเครื่อง Windows จะเปิดได้ปกติ แต่ถ้า Deploy ขึ้นเซิร์ฟเวอร์ Linux รูปภาพจะโหลดไม่ขึ้น 19 จาก 26 รูป"
                         ]
                     },
                     {
@@ -727,7 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Coursework Project (Course 308-493)",
                 meta: "60 / 78 Commits (77% contribution) · 5 Booking API Routes · 11 Guarded Endpoints · 5 Model Classes · Flutter integration_test",
                 repo: "https://github.com/Most-05",
-                overview: "A mobile booking application built with Flutter and Express.js, featuring secure authentication, property discovery, and an end-to-end appointment scheduling lifecycle.",
+                overview: "A mobile booking application built with Flutter and Express.js, with login, property discovery, and an end-to-end appointment scheduling lifecycle.",
                 imageType: "mobile",
                 tags: ["Flutter", "Dart", "Express.js", "MariaDB", "JWT", "Google Sign-In", "integration_test"],
                 screenshotsTitle: "Mobile Application Workflow & Real UI",
@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         src: "assets/images/flutter-1.png",
                         title: "1. Authentication",
-                        desc: "Secure Login & Registration via Email/Password & Google Sign-In"
+                        desc: "Login & Registration via Email/Password & Google Sign-In"
                     },
                     {
                         src: "assets/images/flutter-2.png",
@@ -785,7 +785,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         heading: "Automated Integration Testing & Live Demonstration Guide",
                         points: [
-                            "Authored Flutter <code>integration_test</code> suites verifying end-to-end booking user flows on emulator/device.",
+                            "Wrote a Flutter <code>integration_test</code> covering the end-to-end booking flow on an emulator/device.",
                             "Wrote a step-by-step demo guide for the live presentation during coursework evaluation."
                         ]
                     }
