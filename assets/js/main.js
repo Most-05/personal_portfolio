@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 2 (GameStore) ในหมวด PROJECTS
             p2_title: "GameStore",
-            p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt backend as a dependency-free Node.js mock server. Optimized page assets reducing bundle size from 8.4MB to 1.25MB.",
+            p2_desc: "React storefront with 81 Playwright E2E tests covering every route and auth flow. Rebuilt backend as a dependency-free Node.js mock server. Optimized page assets, cutting page size from 8.4MB to 1.25MB.",
             p2_meta: "144 Commits · 81 Tests · 8.4MB → 1.25MB",
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดผลงานโปรเจกต์ที่ 3 (Property Viewing App) ในหมวด PROJECTS
@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: "Solo Rebuild Project",
                 meta: "144 Commits · 81 Playwright E2E Tests · 14 Web Pages · 8.4MB → 1.25MB Asset Size",
                 repo: "https://github.com/Most-05/game-store",
-                overview: "A solo rebuild of a gaming storefront to recover lost backend architecture. Includes a custom zero-dependency Node.js mock server and extensive Playwright E2E testing to ensure production stability.",
+                overview: "A solo rebuild of a gaming storefront to recover lost backend architecture. Includes a custom zero-dependency Node.js mock server and extensive Playwright E2E testing.",
                 imageType: "desktop",
                 tags: ["React 19", "Playwright E2E", "React Router 7", "React Bootstrap", "Node.js Mock Server"],
                 sections: [
@@ -638,7 +638,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         points: [
                             "Original backend was lost with only a SQL dump remaining. Architected a clean, dependency-free Node.js mock server from scratch.",
                             "Integrated the mock server seamlessly into the development pipeline via <code>src/setupProxy.js</code>, allowing the entire full-stack application to boot with a single command.",
-                            "Structured modular test suites across 8 spec suites: <code>e2e/01-routes ... 08-rov.spec.js</code>."
                         ]
                     },
                     {
@@ -651,11 +650,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         ]
                     },
                     {
-                        heading: "Asset & Bundle Size Optimization (85% Reduction)",
+                        heading: "Page Size Optimization (85% Reduction)",
                         points: [
                             "Reduced total page payload from 8.4 MB down to 1.25 MB.",
-                            "Migrated 19 hotlinked external images into optimized, compressed local project assets to prevent broken links and reduce network latency.",
-                            "Adhered to atomic Git commit standards with descriptive messages detailing 'why' changes occurred rather than just 'what'."
+                            "Migrated 19 hotlinked external images into optimized, compressed local project assets to prevent broken links and reduce network latency."
+                        ]
+                    },
+                    {
+                        heading: "Test Suite Structure & Commit Practice",
+                        points: [
+                            "Structured the tests as 8 spec files (<code>e2e/01-routes ... 08-rov.spec.js</code>) covering every route and internal link, sign-up/login, the shared wallet and all three shops.",
+                            "Kept atomic Git commits with messages that explain 'why' a change was made, not just 'what'."
                         ]
                     }
                 ]
@@ -674,7 +679,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         points: [
                             "Backend ตัวเดิมหายไปจากเครื่องเหลือเพียงไฟล์ SQL จึงเขียน Mock Server ขึ้นมาใหม่ด้วย Node.js ล้วนโดยไม่พึ่งพา third-party library",
                             "เชื่อมต่อเข้ากับ Dev Server ผ่าน <code>src/setupProxy.js</code> ทำให้ระบบทั้งหมดสามารถรันขึ้นมาใช้งานได้ด้วยคำสั่งเดียว",
-                            "จัดโครงสร้างชุดทดสอบ 8 ไฟล์สเปก (<code>e2e/01-routes ... 08-rov.spec.js</code>) ครอบคลุมทุก route, ทุกลิงก์ภายใน, ระบบสมัคร/ล็อกอิน, ยอดเงินในกระเป๋า และร้านค้าทั้งสามร้าน"
                         ]
                     },
                     {
@@ -690,7 +694,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading: "การเพิ่มประสิทธิภาพหน้าเว็บและขนาดไฟล์ (ลดลง 85%)",
                         points: [
                             "ลดขนาดข้อมูลต่อหน้าจาก 8.4 MB เหลือเพียง 1.25 MB",
-                            "ย้ายรูปภาพ 19 ภาพที่เคย Hotlink จากภายนอกเข้ามาเก็บไว้ในโปรเจกต์ พร้อมทำการบีบอัดขนาดไฟล์ ป้องกันรูปตายและลดเวลาโหลด",
+                            "ย้ายรูปภาพ 19 ภาพที่เคย Hotlink จากภายนอกเข้ามาเก็บไว้ในโปรเจกต์ พร้อมทำการบีบอัดขนาดไฟล์ ป้องกันรูปตายและลดเวลาโหลด"
+                        ]
+                    },
+                    {
+                        heading: "โครงสร้างชุดทดสอบและการคอมมิต",
+                        points: [
+                            "จัดโครงสร้างชุดทดสอบ 8 ไฟล์สเปก (<code>e2e/01-routes ... 08-rov.spec.js</code>) ครอบคลุมทุก route, ทุกลิงก์ภายใน, ระบบสมัคร/ล็อกอิน, ยอดเงินในกระเป๋า และร้านค้าทั้งสามร้าน",
                             "คอมมิตแบบแยกเรื่องละก้อน (Atomic Commits) พร้อมระบุเหตุผล 'ทำไม' ในข้อความคอมมิต"
                         ]
                     }
