@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดตารางประวัติและทักษะ (Bento Grid / Profile)
             bento_eyebrow: "> PROFILE_",
-            bento_heading: "BENTO GRID",
+            bento_heading: "OVERVIEW",
             bento_about_title: "> About Me",
             bento_about_desc: "Fourth-year Information and Communication Technology (ICT) student at Prince of Songkla University, Hat Yai Campus. Experienced in full-lifecycle system design (Context Diagrams, DFD, ER Models, Figma Interactive Prototyping across 5 team projects) to working code, owning core subsystems with verified Git commits and automated testing.",
             bento_tag_clean: "Readable Code",
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 📍 ตำแหน่งบนหน้าเว็บ: การ์ดตารางประวัติและทักษะ (Bento Grid / Profile)
             bento_eyebrow: "> ข้อมูลส่วนตัว_",
-            bento_heading: "BENTO GRID",
+            bento_heading: "ภาพรวม",
             bento_about_title: "> เกี่ยวกับฉัน",
             bento_about_desc: "นักศึกษาปี 4 สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) ม.สงขลานครินทร์ วิทยาเขตหาดใหญ่ มีประสบการณ์ออกแบบระบบตั้งแต่ต้นน้ำ (Context Diagram, DFD, ER Model, Figma Interactive Prototype ใน 5 โปรเจกต์ทีม) สู่โค้ดที่ใช้งานได้จริง รับผิดชอบระบบหลักพร้อมตัวเลขสถิติ Git และชุดทดสอบอัตโนมัติที่ตรวจสอบย้อนกลับได้จริง",
             bento_tag_clean: "Readable Code",
